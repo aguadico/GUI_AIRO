@@ -74,12 +74,10 @@ class window(QMainWindow):
 
         mainMenu = self.menuBar()
         fileMenu = mainMenu.addMenu('&File')
-        #fileMenu.addAction(extractAction)
         fileMenu.addAction(openFile)
         fileMenu.addAction(openFolder)
-        #fileMenu.addAction(loadFileT)
 
-    
+ 
         self.setWindowTitle("AIRO logfile Analysis")
 
         self.fileMenu = QtWidgets.QMenu('&File', self)
@@ -89,7 +87,6 @@ class window(QMainWindow):
         self.help_menu = QtWidgets.QMenu('&Help', self)
         self.menuBar().addSeparator()
         self.menuBar().addMenu(self.help_menu)
-        #self.help_menu.addAction('&About', self.about)
         self.main_widget = QtWidgets.QWidget(self)
         self.plot_widget = QWidget(self.main_widget)
         self.plot_widget.setGeometry(250,180,500,600)
@@ -102,16 +99,13 @@ class window(QMainWindow):
 
         self.home(l)
         self.setMinimumSize(1000, 800)
-        #self.resize(450, 100)
+
        
     def editor(self):
         self.textEdit = QTextEdit()
         self.setCentralWidget(self.textEdit)
 
-    
-    #def launch_script(self):
-    #    self.panel = saving_files_summary.get_data_tuple()
-    #      self.panel.show()
+
     
     def file_open(self):
         options = QFileDialog.Options()

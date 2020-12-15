@@ -12,7 +12,7 @@ import sys
 sys.path.append("/Users/anagtv/Desktop/Cyclotron_python")
 sys.path.append("/Users/anagtv/Documents/Beta-Beat.src-master")
 #from tfs_files import tfs_pandas
-from mpl_interaction import figure_pz
+#from mpl_interaction import figure_pz
 import matplotlib.pyplot as plt
 import tfs
 from collections import OrderedDict
@@ -103,8 +103,12 @@ def _check_scan_rotor(line):
     testd5 = "#f11 Prepared GainCal" in line
     testd6 = "#f11 Prepared QCFullScan" in line
     testd7 = "#f11 Prepared EStopTest" in line
-    testd8 = "2020-07-" in line
+    testd8 = "#f11 Prepared QCAxialFullScan" in line
+    testd9 = "#f11 Prepared QCAxialDailyScan" in line
+    testd8 = "2020-" in line
     testd9 = ((testd or testd2 or testd3 or testd4 or testd5 or testd6 or testd7) and testd8)
+    print ("TESTTTT")
+    print (testd9)
     return testd9
 
 def _check_scan_gimbal(line):
@@ -115,7 +119,7 @@ def _check_scan_gimbal(line):
     testd5 = "#z11 Prepared GainCal" in line
     testd6 = "#z11 Prepared QCFullScan" in line
     testd7 = "#z11 Prepared EStopTest" in line 
-    testd8 = "2020-07-" in line
+    testd8 = "2020-" in line
     testd9 = ((testd or testd2 or testd3 or testd4 or testd5 or testd6 or testd7) and testd8)
     return testd9
 
@@ -127,7 +131,7 @@ def _check_scan_pendant(line):
     testd5 = "#i11 Prepared GainCal" in line
     testd6 = "#i11 Prepared QCFullScan" in line
     testd7 = "#i11 Prepared EStopTest" in line 
-    testd8 = "2020-07-" in line
+    testd8 = "2020-" in line
     testd9 = ((testd or testd2 or testd3 or testd4 or testd5 or testd6 or testd7) and testd8)
     return testd9
 
@@ -139,7 +143,7 @@ def _check_scan_system(line):
     testd5 = "#s11 Prepared GainCal" in line
     testd6 = "#s11 Prepared QCFullScan" in line
     testd7 = "#s11 Prepared EStopTest" in line    
-    testd8 = "2020-07-" in line 
+    testd8 = "2020-" in line 
     testd9 = ((testd or testd2 or testd3 or testd4 or testd5 or testd6 or testd7) and testd8) 
     return testd9
 
@@ -383,168 +387,6 @@ def main():
     # DEFINITION: CONCATENATING ALL THE SUB DATA FRAMES IN ORDER TO HAVE A INDIVIDUAL DATA FRAME
     data_df_all_subsystems = (pd.concat([data_df_system,data_df_rotor,data_df_pendant,data_df_gimbal], axis=1, sort=False))
 
-
-    print (data_df_rotor)
-    print (data_df_gimbal)
-    print (data_df_system)
-    print (data_df_pendant)
-    print ("this one")
-    print (data_df_rotor)
-    print (data_df_pendant)
-    print (data_df_all_subsystems)
-
-    open_files = ["SystemManagerApp.log","RotorControlApp.log","PendantUIApp.log","GimbalControlApp.log"]
-    all_scan_different_components_names = ["SYSTEM","ROTOR","PENDANT","GIMBAL"]
-    df_date_unique_columns_names = ["SYSTEM","ROTOR","PENDANT","GIMBAL","SCAN"]
-    # DEFINITION: STARTING A DATAFRAME WITH DATES NO-REPEATED
-    df_dates = pd.DataFrame(columns=df_date_unique_columns_names)
-    
-    # DEFINITION: ITERATION OVER ALL THE DIFFERENT LOG FILES ---- move to 
-    for j in range(len(all_scan_different_components_names)):
-       print ("COMPONENT")
-       print (all_scan_different_components_names[j])        
-       column_names  = ["SCAN_" + all_scan_different_components_names[j],"DAY_" + all_scan_different_components_names[j] ,"HOUR_" + all_scan_different_components_names[j],'FILE_NAME_' + all_scan_different_components_names[j]]
-       hours = (getattr(data_df_all_subsystems,column_names[2])).dropna()
-       names = (getattr(data_df_all_subsystems,column_names[3])).dropna()
-       scans = (getattr(data_df_all_subsystems,column_names[0])).dropna()
-       days = (getattr(data_df_all_subsystems,column_names[1])).dropna()
-       print ("HEREEE")
-       print (days)
-       # DEFINTION: SAVING DAYS ASSOCIATED TO EACH FILE IN DATA FRAME
-       df_dates[all_scan_different_components_names[j]] = (days)       
-       # DEFINITION: READING FILES AND WRITING THE SELECTED LINES INTO FILE
-       for i in range(len(days)):
-           print (i)
-           print (scans.iloc[i])
-           print (scans[i])
-           print (hours.iloc[i])
-           print (hours[i])
-           print (days.iloc[i])
-           print (days[i])
-           file_path_name = os.path.join("/Users/anagtv/Desktop/Visitas_Airo/File_analysis",names[i])
-           #print (scans[i],hours[i]. ,days[i].replace("_", "-"))
-           #print (file_path_name)
-           with open(open_files[j], "r") as reader, open(file_path_name, "w") as writer:   
-                 print (open_files[j])       
-                 if open_files[j] == "RotorControlApp.log":
-                   writer.writelines(line for line in reader if sel.check_line(line,scans[i],hours[i].replace("_", ":"),days[i]))
-                 elif open_files[j] == "GimbalControlApp.log":
-                   print ("HEREEE")
-                   writer.writelines(line for line in reader if sel_gimbal.check_line(line,scans[i],hours[i].replace("_", ":"),days[i]))
-                 elif open_files[j] == "SystemManagerApp.log":
-                   print ("HEREEE ")
-                   writer.writelines(line for line in reader if sel_system.check_line(line,scans[i],hours[i].replace("_", ":"),days[i]))
-                 elif open_files[j] == "PendantUIApp.log":
-                   print ("HEREEE")
-                   writer.writelines(line for line in reader if sel_pendant.check_line(line,scans[i],hours[i].replace("_", ":"),days[i]))
-    # DEFINTION: REMOVING THE NAN DATAFRAME ELEMENTS 
-    df_dates["SCAN"] = (getattr(data_df_all_subsystems,"SCAN_ROTOR")).dropna()
-    # TO DO: FinD THE LONGEST ELEMENT
-    # STARTING THE DOCUMENT MERGING
-    # Select the non-repeated dates
-    df_date_unique = (df_dates.drop_duplicates(subset=all_scan_different_components_names[1],keep = "last"))
-    print ("df_date_unique")
-    print (df_date_unique)
-    for i in range(len(df_date_unique.ROTOR)):
-        print ("I 1")
-        print (i)
-        df_frame_one_day = (data_df_all_subsystems[data_df_all_subsystems["DAY_ROTOR"] == df_date_unique.ROTOR.iloc[i]])
-        # DEFINITION: KNOWING HOW MANY LOG FILES COVER THAT GIVEN DAY AND THE INDEX
-        # DEFINITION: FINDING THE INDEX OF THE SCANS AT THAT GIVEN DAY (IN THE COMPLETE MATRIX)
-        index_day_rotor = np.array((data_df_all_subsystems[data_df_all_subsystems["DAY_ROTOR"] == df_date_unique.ROTOR.iloc[i]].index))
-        index_day_pendant = np.array((data_df_all_subsystems[data_df_all_subsystems["DAY_PENDANT"] == df_date_unique.ROTOR.iloc[i]].index))
-        index_day_system = np.array((data_df_all_subsystems[data_df_all_subsystems["DAY_SYSTEM"] == df_date_unique.ROTOR.iloc[i]].index))
-        index_day_gimbal = np.array((data_df_all_subsystems[data_df_all_subsystems["DAY_GIMBAL"] == df_date_unique.ROTOR.iloc[i]].index))
-        # DEFINTION: REPLACE THE : BY _ IN ORDER TO AVOID PROBLEMS WITH THE FILE NAME
-        day_name = str(df_date_unique.ROTOR.iloc[i]).replace("_", ":")
-        print (index_day_rotor,index_day_pendant,index_day_system,index_day_gimbal)
-        # DEFINITION: CHECK HOW MANY SCANS ARE AT A GIVEN DAY
-        len_index_day_rotor =   len(index_day_rotor)
-        len_index_day_pendant = len(index_day_pendant)
-        len_index_day_system =  len(index_day_system)
-        len_index_day_gimbal =  len(index_day_gimbal)
-        # DEFINTION: IF FOR A GIVEN DAY THERE IS NOT SCANS, THEN DO NOT CONSIDER THAT FILE.
-        names_components = ["ROTOR","PENDANT","SYSTEM","GIMBAL"]
-        columns_names_components = ["FILE_NAME_ROTOR","FILE_NAME_PENDANT","FILE_NAME_SYSTEM","FILE_NAME_GIMBAL"]
-        index_day = [index_day_rotor,index_day_pendant,index_day_system,index_day_gimbal] 
-        len_index_day = [len_index_day_rotor,len_index_day_pendant,len_index_day_system,len_index_day_gimbal] 
-        zero_index = [m for m, e in enumerate(len_index_day) if e == 0]
-        for l in range(len(zero_index)): 
-            print (l)
-            print (zero_index[l])
-            index_day.pop(zero_index[l]-l)
-            names_components.pop(zero_index[l]-l)
-            columns_names_components.pop(zero_index[l]-l)
-        # DEFINITION: ITERATES OVER THE LOG FILE WITH THE MAXIUM NUMBER OF SCANS FOR A GIVEN DAY
-        for j in range(np.max(len_index_day)):  
-            file_components_path = []   
-            output_name = str(data_df_all_subsystems.SCAN_ROTOR.iloc[index_day[1][j]]) + "_" + day_name + "_" + str(data_df_all_subsystems.HOUR_ROTOR.iloc[index_day[1][j]])
-            output_name_combined = str(data_df_all_subsystems.SCAN_ROTOR.iloc[index_day[1][j]]) + "_" + day_name + "_" + str(data_df_all_subsystems.HOUR_ROTOR.iloc[index_day[1][j]]) + "_combined"
-            output_path = os.path.join("/Users/anagtv/Desktop/Visitas_Airo/File_analysis/",output_name)
-            output_path_combined = os.path.join("/Users/anagtv/Desktop/Visitas_Airo/File_analysis/",output_name_combined)
-            for k in range(len(names_components)):
-                file_name_path = (getattr(data_df_all_subsystems,columns_names_components[k])).iloc[index_day[k][j]]
-                file_components_path.append(os.path.join("/Users/anagtv/Desktop/Visitas_Airo/File_analysis/",file_name_path))
-            combined_file = []
-            combined_file_element = []
-            combined_file_hours = []
-            print ("OUTPUT PATH")
-            print (output_path)
-            for file_path_name in file_components_path:
-                print ("HEREEE ARE INDIVIDUAL PATHS")
-                print (file_path_name)
-                file_path_name_rotor_read = open(file_path_name,"r")
-                for line in file_path_name_rotor_read:
-                   parts = line.split()
-                   combined_file.append(parts)
-                   combined_file_hours.append(parts[0][11:27])
-                   if (file_path_name[49]) == "R":
-                       combined_file_element.append("ROTOR")
-                   elif (file_path_name[49]) == "G":
-                       combined_file_element.append("GIMBAL")
-                   elif (file_path_name[49]) == "S":
-                       combined_file_element.append("SYSTEM")
-                   elif (file_path_name[49]) == "P":
-                       combined_file_element.append("PENDANT")
-            # DEFINITION: SORTING COMBINED FILE BY HOUR           
-            combined_file_sorted = [combined_file for _,combined_file in sorted(zip(combined_file_hours,combined_file))]
-            combined_file_element_sorted = [combined_file_element for _,combined_file_element in sorted(zip(combined_file_hours,combined_file_element))]
-            # DEFINITION: INITIALIZE VARIABLES
-            time_stamp = []
-            message_information = []
-            action = []
-            file_type = []
-            for i in range(len(combined_file_sorted)):
-            #    # REMOVING EXTRA LINES
-                if ">" not in combined_file_sorted[i][0]:
-                    time_stamp.append(combined_file_sorted[i][0][1:])
-                    message_information.append('_'.join(combined_file_sorted[i][1:3]))
-                    action.append('_'.join(combined_file_sorted[i][3:]))
-                    file_type.append(combined_file_element_sorted[i])
-            ## SETTING DATAFRAME FOR USING AS AN OUTPUT
-            data_df_combined = pd.DataFrame.from_records({'TIME_STAMP':time_stamp, 'TYPE': message_information, 'ACTION':action, 'FILE_TYPE': file_type})
-            data_df_combined =  data_df_combined.loc[:, ['FILE_TYPE', 'TIME_STAMP',   'TYPE',  'ACTION']]  
-            #WRITING 
-            file_path_name_combined = "test_" + str(j) + ".out"
-            file_path_name_combined_filtered = "test_filtered_" + str(j) + ".out"
-            tfs.write(output_path, data_df_combined, save_index="index_column")
-            data_to_verify = tfs.read(output_path)
-            #KEEP REMOVING UNNECESARY ELEMENTS
-            data_to_verify_1 = (data_to_verify[~data_to_verify.ACTION.str.contains("Previous_Entry_Repeats")])
-            data_to_verify_2 = (data_to_verify_1[~data_to_verify_1.ACTION.str.contains("$s00_Executing_Transitioning_ScoutScan")])
-            data_to_verify_3 = (data_to_verify_2[~data_to_verify_2.ACTION.str.contains("Handling_Client_Message:_#&22_History/RotorPC/LastKnownOnTime")])
-            data_to_verify_4 = (data_to_verify_3[~data_to_verify_3.ACTION.str.contains("ConfigStore.Set:_History/RotorPC/LastKnownOnTime")])
-            print ("HEREEEEE")
-            print (data_to_verify_4)
-            #print (data_to_verify)
-            tfs.write(output_path_combined, data_to_verify_4) 
-    #file_path_name_gimbal_read = open(ffile_path_name[0],"r")
-    #print (new_column.iloc[0])
-    #file_path_name = os.path.join("/Users/anagtv/Desktop/Visitas_Airo/File_analysis",df_frame_one_day_one_hour)
-    #print (file_path_name)
-    #data_df_all_subsystems[all_scan_different_components_names[]][excel_data_df['Target_I'].astype(float) > float(current)]
-
-    
 
 if __name__ == "__main__":
     #_input_path,_output_path,target_current = _parse_args()
