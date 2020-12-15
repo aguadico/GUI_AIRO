@@ -156,9 +156,15 @@ class window(QMainWindow):
         hours = (getattr(self.df_scans_rotor,column_names[1])).dropna()
         scans = (getattr(self.df_scans_rotor,column_names[2])).dropna()
         days = (getattr(self.df_scans_rotor,column_names[0])).dropna()
-
+        print (self.data_df_all_subsystems)
+        print ("NAMES")
+        print (hours)
+        print (scans)
+        print (days)
         list_initial_logfiles = []
         for ind_logfile in os.listdir(self.dir_):
+            print ("HEEREEE")
+            print (ind_logfile)
             if ind_logfile in open_files:
                 list_initial_logfiles.append(ind_logfile)
         for i in range (len(hours)):
@@ -259,11 +265,11 @@ class window(QMainWindow):
 
     def filter_output_scan(self):
         print ("HEREEEEE")
-        python_analysis_dataframe_20200416.reading_rotor_best_scan(self,"/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visita_AIRO_20200729/AIRO-Logs-0168-2020-07-29T19-13-31")
-        python_analysis_dataframe_20200416.reading_rotor_motion(self,"/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visita_AIRO_20200729/AIRO-Logs-0168-2020-07-29T19-13-31")
-        rotor_control_app_path_scan = os.path.join("/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visita_AIRO_20200729/AIRO-Logs-0168-2020-07-29T19-13-31","scan_rotor_summary")
-        rotor_control_app_path_best = os.path.join("/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visita_AIRO_20200729/AIRO-Logs-0168-2020-07-29T19-13-31","best_rotor_summary")
-        rotor_control_motion = os.path.join("/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visita_AIRO_20200729/AIRO-Logs-0168-2020-07-29T19-13-31","motion_rotor_summary")
+        python_analysis_dataframe_20200416.reading_rotor_best_scan(self,"/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10")
+        python_analysis_dataframe_20200416.reading_rotor_motion(self,"/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10")
+        rotor_control_app_path_scan = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10","scan_rotor_summary")
+        rotor_control_app_path_best = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10","best_rotor_summary")
+        rotor_control_motion = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10","motion_rotor_summary")
         file_scan = open(str(rotor_control_app_path_scan), "r")
         file_best = open(str(rotor_control_app_path_best), "r")
         file_motion = open(str(rotor_control_motion), "r")
@@ -375,14 +381,17 @@ class window(QMainWindow):
         file_components_path = []   
         output_name = str(self.df_day_scan_hour.SCAN_ROTOR.iloc[0]) + "_" + str(self.df_day_scan_hour.DAY_ROTOR.iloc[0]) + "_" + str(self.df_day_scan_hour.HOUR_ROTOR.iloc[0])
         output_name_combined = str(self.df_day_scan_hour.SCAN_ROTOR.iloc[0]) + "_" + str(self.df_day_scan_hour.DAY_ROTOR.iloc[0]) + "_" + str(self.df_day_scan_hour.HOUR_ROTOR.iloc[0]) + "_combined"
-        output_path = os.path.join("/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visita_AIRO_20200729/AIRO-Logs-0168-2020-07-29T19-13-31",output_name)
-        output_path_combined = os.path.join("/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visita_AIRO_20200729/AIRO-Logs-0168-2020-07-29T19-13-31",output_name_combined)
+        output_path = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10",output_name)
+        output_path_combined = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10",output_name_combined)
         print ("HERRREEEEEE")
         print (self.names_components)
         for k in range(len(self.names_components)):
             file_name_path = (getattr(self.df_day_scan_hour,self.columns_names_components[k]))
+            print ("One more test")
+            print (self.df_day_scan_hour)
+            print (self.columns_names_components[k])
             print (str(np.array(file_name_path)[0]))
-            file_components_path.append(os.path.join("/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visita_AIRO_20200729/AIRO-Logs-0168-2020-07-29T19-13-31",str(np.array(file_name_path)[0])))
+            file_components_path.append(os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10",str(np.array(file_name_path)[0])))
         combined_file = []
         combined_file_element = []
         combined_file_hours = []
