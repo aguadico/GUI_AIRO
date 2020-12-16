@@ -106,7 +106,6 @@ class window(QMainWindow):
         self.setCentralWidget(self.textEdit)
 
 
-    
     def file_open(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
@@ -125,13 +124,7 @@ class window(QMainWindow):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         self.dir_ = QFileDialog.getExistingDirectory(self, 'Select a folder:', '/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visitas_Airo/', QFileDialog.ShowDirsOnly)
-        print ("HEREEEE OPENING A FOLDER")
-        print (self.dir_)
-        python_analysis_dataframe_20200416.writing_files(self.dir_)
-        self.rotor_control_app_path_output = os.path.join(self.dir_,"all_scans_rotor")
-        self.gimbal_control_app_path_output = os.path.join(self.dir_,"all_scans_gimbal")
-        self.system_control_app_path_output = os.path.join(self.dir_,"all_scans_system")
-        self.pendant_control_app_path_output = os.path.join(self.dir_,"all_scans_pendant")
+        [self.rotor_control_app_path_output,self.gimbal_control_app_path_output,self.pendant_control_app_path_output,self.system_control_app_path_output] = python_analysis_dataframe_20200416.writing_files(self.dir_)
         self.logfile_rotor = open(self.rotor_control_app_path_output,'r') 
         self.logfile_gimbal = open(self.gimbal_control_app_path_output,'r') 
         self.logfile_system = open(self.system_control_app_path_output,'r') 
@@ -142,35 +135,19 @@ class window(QMainWindow):
         self.df_scans_system = python_analysis_dataframe_20200416.selecting_entries(self.logfile_system,"SYSTEM") 
         self.df_scans_pendant = python_analysis_dataframe_20200416.selecting_entries(self.logfile_pendant,"PENDANT") 
         self.data_df_all_subsystems = (pd.concat([self.df_scans_rotor,self.df_scans_gimbal,self.df_scans_system,self.df_scans_pendant], axis=1, sort=False))
+        print ("ALL DATAFRAMES")
+        print (self.data_df_all_subsystems)
         open_files = ["RotorControlApp.log","GimbalControlApp.log","SystemManagerApp.log","PendantUIApp.log"]
-        all_scan_different_components_names = ["ROTOR","GIMBAL","SYSTEM","PENDANT"]
-        df_date_unique_columns_names = ["ROTOR","GIMBAL","SYSTEM","PENDANT"]
-
         column_names  = ["DAY_ROTOR","HOUR_ROTOR","SCAN_ROTOR"]
         hours = (getattr(self.df_scans_rotor,column_names[1])).dropna()
         scans = (getattr(self.df_scans_rotor,column_names[2])).dropna()
         days = (getattr(self.df_scans_rotor,column_names[0])).dropna()
-        print (self.data_df_all_subsystems)
-        print ("NAMES")
-        print (hours)
-        print (scans)
-        print (days)
-        list_initial_logfiles = []
-        for ind_logfile in os.listdir(self.dir_):
-            print ("HEEREEE")
-            print (ind_logfile)
-            if ind_logfile in open_files:
-                list_initial_logfiles.append(ind_logfile)
         for i in range (len(hours)):
            self.tablefiles_tab2.setItem(self.current_row_files,0, QTableWidgetItem(str(days.iloc[i])))
            self.tablefiles_tab2.setItem(self.current_row_files,1, QTableWidgetItem(str(hours.iloc[i])))
            self.tablefiles_tab2.setItem(self.current_row_files,2, QTableWidgetItem(str(scans.iloc[i])))
            self.current_row_files +=1 
-        #for ind_logfile in list_initial_logfiles: 
-        #   self.tablestatistic_tab2.setItem(self.current_row_logfiles,0, QTableWidgetItem(str(ind_logfile))) 
-        #   self.current_row_logfiles += 1
-        #self.tablestatistic_tab2.setItem(self.current_row_logfiles,0, QTableWidgetItem(str(hours.iloc[i])))
-        #self.tablestatistic_tab2.setItem(self.current_row_logfiles,0, QTableWidgetItem(str(hours.iloc[i])))
+
 
     def handleSelectionChanged_component(self, selected, deselected):
         index=(self.tablestatistic_tab2.selectionModel().currentIndex())

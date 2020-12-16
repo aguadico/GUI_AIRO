@@ -212,17 +212,15 @@ def selecting_entries(logfile,component):
          parts = line.split()
          date_format = "%Y-%m-%d"
          date_stamp = datetime.datetime.strptime(parts[0][1:11],date_format).date()
-         print ("DAYYYYY")
-         print (date_stamp)
          day_no_format.append(parts[0][1:11].replace("-", "_"))
          day.append(date_stamp)
          hours.append(parts[0][12:22].replace(":", "_"))
          scan.append(parts[-1])
     data_df = pd.DataFrame.from_records({column_names[0]:scan, column_names[1]: day, column_names[2]:hours})
     data_df_no_format = pd.DataFrame.from_records({column_names[0]:scan, column_names[1]: day_no_format, column_names[2]:hours})
-    new_column = data_df_no_format[[column_names[0],column_names[1], column_names[2]]].agg('_'.join, axis=1)
-    new_column =  (component + '_' + new_column.astype(str))
-    data_df[column_names[3]] = pd.Series(new_column, index=data_df.index)    
+    ID_column = data_df_no_format[[column_names[0],column_names[1], column_names[2]]].agg('_'.join, axis=1)
+    ID_column =  (component + '_' + ID_column.astype(str))
+    data_df[column_names[3]] = pd.Series(ID_column, index=data_df.index)    
     return data_df
 
 def writing_files(input_path):
@@ -244,6 +242,7 @@ def writing_files(input_path):
           writer.writelines(line for line in reader if _check_scan(line,"#i11"))
     with open(system_manager_app_path, "r") as reader, open(system_manager_app_path_output, "w") as writer: 
           writer.writelines(line for line in reader if _check_scan(line,"#s11"))
+    return rotor_control_app_path_output,gimbal_control_app_path_output,pendant_ui_app_path_output,system_manager_app_path_output
 
 
 
