@@ -377,25 +377,13 @@ class window(QMainWindow):
         output_name_combined = str(self.df_day_scan_hour.SCAN_ROTOR.iloc[0]) + "_" + str(self.df_day_scan_hour.DAY_ROTOR.iloc[0]) + "_" + str(self.df_day_scan_hour.HOUR_ROTOR.iloc[0]) + "_combined"
         output_path = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10",output_name)
         output_path_combined = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10",output_name_combined)
-        print ("HERRREEEEEE")
-        print (self.names_components)
         for k in range(len(self.names_components)):
             file_name_path = (getattr(self.df_day_scan_hour,self.columns_names_components[k]))
-            print ("One more test")
-            print (self.df_day_scan_hour)
-            print (self.columns_names_components[k])
-            print (str(np.array(file_name_path)[0]))
             file_components_path.append(os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10",str(np.array(file_name_path)[0])))
         combined_file = []
         combined_file_element = []
         combined_file_hours = []
-        print ("OUTPUT PATH")
-        print (output_path)
-        print ("FILEEEEEEEEE")
-        print (file_components_path)
         for file_path_name in file_components_path:
-          print ("HEREEE ARE INDIVIDUAL PATHS")
-          print (file_path_name)
           file_path_name_rotor_read = open(file_path_name,"r")
           for line in file_path_name_rotor_read:
              parts = line.split()
@@ -472,6 +460,7 @@ class window(QMainWindow):
         self.scan_selected = self.indexs.sibling(self.index_scan,2).data()
         date_format = "%Y-%m-%d"
         date_stamp = datetime.datetime.strptime(self.day_selected,date_format).date()
+        #selection of the scan in the dataframen
         df_day = (self.data_df_all_subsystems[self.data_df_all_subsystems["DAY_ROTOR"] == date_stamp])
         hour_index = (df_day[df_day["HOUR_ROTOR"] == self.hour_selected].index)
         df_day_scan = (df_day[df_day["SCAN_ROTOR"] == self.scan_selected])

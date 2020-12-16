@@ -90,62 +90,17 @@ class Selection_system:
     return self.verification 
 
 
-
-def _check_scout_scan(line):
-    test = "#f11 Prepared ScoutScan" in line
+def _check_scan(line,scan_type):
+    test_scout =scan_type + " Prepared ScoutScan" in line
+    test_axial_scan = scan_type + " Prepared AxialScan" in line 
+    test_helical_scan = scan_type + " Prepared HelicalScan" in line
+    test_warm_up_scan = scan_type + " Prepared WarmupScan" in line
+    test_gain_cal = scan_type + " Prepared GainCal" in line
+    test_QC = scan_type + " Prepared QCAxialFullScan" in line 
+    testd_month = "2020-" in line
+    test = ((test_scout or test_axial_scan or test_helical_scan or test_warm_up_scan or test_gain_cal or test_QC) and testd_month)
     return test
 
-def _check_scan_rotor(line):
-    testd = "#f11 Prepared ScoutScan" in line
-    testd2 = "#f11 Prepared AxialScan" in line 
-    testd3 = "#f11 Prepared HelicalScan" in line
-    testd4 = "#f11 Prepared WarmupScan" in line
-    testd5 = "#f11 Prepared GainCal" in line
-    testd6 = "#f11 Prepared QCFullScan" in line
-    testd7 = "#f11 Prepared EStopTest" in line
-    testd8 = "#f11 Prepared QCAxialFullScan" in line
-    testd9 = "#f11 Prepared QCAxialDailyScan" in line
-    testd8 = "2020-" in line
-    testd9 = ((testd or testd2 or testd3 or testd4 or testd5 or testd6 or testd7) and testd8)
-    print ("TESTTTT")
-    print (testd9)
-    return testd9
-
-def _check_scan_gimbal(line):
-    testd = "#z11 Prepared ScoutScan" in line
-    testd2 = "#z11 Prepared AxialScan" in line 
-    testd3 = "#z11 Prepared HelicalScan" in line
-    testd4 = "#z11 Prepared WarmupScan" in line
-    testd5 = "#z11 Prepared GainCal" in line
-    testd6 = "#z11 Prepared QCFullScan" in line
-    testd7 = "#z11 Prepared EStopTest" in line 
-    testd8 = "2020-" in line
-    testd9 = ((testd or testd2 or testd3 or testd4 or testd5 or testd6 or testd7) and testd8)
-    return testd9
-
-def _check_scan_pendant(line):
-    testd = "#i11 Prepared ScoutScan" in line
-    testd2 = "#i11 Prepared AxialScan" in line 
-    testd3 = "#i11 Prepared HelicalScan" in line
-    testd4 = "#i11 Prepared WarmupScan" in line
-    testd5 = "#i11 Prepared GainCal" in line
-    testd6 = "#i11 Prepared QCFullScan" in line
-    testd7 = "#i11 Prepared EStopTest" in line 
-    testd8 = "2020-" in line
-    testd9 = ((testd or testd2 or testd3 or testd4 or testd5 or testd6 or testd7) and testd8)
-    return testd9
-
-def _check_scan_system(line):
-    testd = "#s11 Prepared ScoutScan" in line
-    testd2 = "#s11 Prepared AxialScan" in line 
-    testd3 = "#s11 Prepared HelicalScan" in line
-    testd4 = "#s11 Prepared WarmupScan" in line
-    testd5 = "#s11 Prepared GainCal" in line
-    testd6 = "#s11 Prepared QCFullScan" in line
-    testd7 = "#s11 Prepared EStopTest" in line    
-    testd8 = "2020-" in line 
-    testd9 = ((testd or testd2 or testd3 or testd4 or testd5 or testd6 or testd7) and testd8) 
-    return testd9
 
 def _check_rotor_scan(line):
     best_1 = "ReconstructionManager received scan protocol: ScanProtocol:" in line
@@ -281,25 +236,15 @@ def writing_files(input_path):
     gimbal_control_app_path_output = os.path.join(input_path,"all_scans_gimbal")
     pendant_ui_app_path_output = os.path.join(input_path,"all_scans_pendant")
     system_manager_app_path_output =  os.path.join(input_path,"all_scans_system")
-    print ("checking scans")
     with open(rotor_control_app_path, "r") as reader, open(rotor_control_app_path_output, "w") as writer: 
-          writer.writelines(line for line in reader if _check_scan_rotor(line))
+          writer.writelines(line for line in reader if _check_scan(line,"#f11"))
     with open(gimbal_control_app_path, "r") as reader, open(gimbal_control_app_path_output, "w") as writer: 
-          writer.writelines(line for line in reader if _check_scan_gimbal(line))
+          writer.writelines(line for line in reader if _check_scan(line,"#z11"))
     with open(pendant_ui_app_path, "r") as reader, open(pendant_ui_app_path_output, "w") as writer: 
-          writer.writelines(line for line in reader if _check_scan_pendant(line))
+          writer.writelines(line for line in reader if _check_scan(line,"#i11"))
     with open(system_manager_app_path, "r") as reader, open(system_manager_app_path_output, "w") as writer: 
-          writer.writelines(line for line in reader if _check_scan_system(line))
+          writer.writelines(line for line in reader if _check_scan(line,"#s11"))
 
-
-def reading_rotor_best_scan(self,output_path):
-    #INPUT FILES 
-    rotor_control_app_path_scan = os.path.join(output_path,"scan_rotor_summary")
-    rotor_control_app_path_best = os.path.join(output_path,"best_rotor_summary")
-    with open(self.file_to_display, "r") as reader, open(rotor_control_app_path_scan, "w") as writer: 
-          writer.writelines(line for line in reader if _check_rotor_scan(line))
-    with open(self.file_to_display, "r") as reader, open(rotor_control_app_path_best, "w") as writer: 
-          writer.writelines(line for line in reader if _check_rotor_best(line))
 
 
 def reading_rotor_motion(self,output_path):
@@ -308,6 +253,14 @@ def reading_rotor_motion(self,output_path):
     with open(self.file_to_display, "r") as reader, open(rotor_motion_app_path_scan, "w") as writer: 
           writer.writelines(line for line in reader if _check_rotor_motion(line))
     
+def reading_rotor_best_scan(self,output_path,name,function_scan,function_best):
+    #INPUT FILES 
+    rotor_control_app_path_scan = os.path.join(output_path,name)
+    rotor_control_app_path_best = os.path.join(output_path,name)
+    with open(self.file_to_display, "r") as reader, open(rotor_control_app_path_scan, "w") as writer: 
+          writer.writelines(line for line in reader if function_scan(line))
+    with open(self.file_to_display, "r") as reader, open(rotor_control_app_path_best, "w") as writer: 
+          writer.writelines(line for line in reader if function_best(line))
 
 def reading_system_best_scan(self,output_path):
     #INPUT FILES 
@@ -386,6 +339,7 @@ def main():
     data_df_system = selecting_entries(logfile_system,"SYSTEM")
     # DEFINITION: CONCATENATING ALL THE SUB DATA FRAMES IN ORDER TO HAVE A INDIVIDUAL DATA FRAME
     data_df_all_subsystems = (pd.concat([data_df_system,data_df_rotor,data_df_pendant,data_df_gimbal], axis=1, sort=False))
+
 
 
 if __name__ == "__main__":
