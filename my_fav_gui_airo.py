@@ -152,22 +152,15 @@ class window(QMainWindow):
     def handleSelectionChanged_component(self, selected, deselected):
         index=(self.tablestatistic_tab2.selectionModel().currentIndex())
         self.fileName=index.sibling(index.row(),index.column()).data()
-        print ("TYPE OF FILE")
         if self.fileName == "SystemManagerApp.log":
            self.logfile_type = "SYSTEM"
         elif self.fileName == "RotorControlApp.log":
            self.logfile_type = "ROTOR"
         elif self.fileName == "PendantUIApp.log":
-           print ("IM HERE")
            self.logfile_type = "PENDANT"
         elif self.fileName == "GimbalControlApp.log":
            self.logfile_type = "GIMBAL"
-        print (self.logfile_type)
-        print ("HEREEEEEEE")
-        print (index.row())
-        print (index.column())
-        print(self.fileName)
-
+        
     def file_output(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
@@ -176,42 +169,20 @@ class window(QMainWindow):
         column_day = "DAY_" + str(self.logfile_type)
         scan_day = "SCAN_" + str(self.logfile_type)
         hour_day = "HOUR_" + str(self.logfile_type)
-        print ("DAY SELECTED")
-        print (type(self.day_selected))
-        print (getattr(self.data_df_all_subsystems,column_day))
-        print (getattr(self.data_df_all_subsystems,scan_day))
-        print ("Checking values")
+        column_names  = [scan_day,column_day ,hour_day,column_file_names]
         checking_values = []
-        date_values = list((getattr(self.data_df_all_subsystems,column_day)))
-        print (date_values)
+        #date_values = list((getattr(self.data_df_all_subsystems,column_day)))
         date_format = "%Y-%m-%d"
         date_stamp = datetime.datetime.strptime(self.day_selected,date_format).date()
-        for i in range(len(date_values)):
-              print ((date_values[i]))
-              print (str(self.day_selected))
-              try:
-                 checking_values.append(date_values[i] == date_stamp)
-              except:
-                 checking_values.append(date_values[i] == str(self.day_selected))
-        print (checking_values)
-        print ((getattr(self.data_df_all_subsystems,column_day) == date_stamp))
-        print (np.array((getattr(self.data_df_all_subsystems,scan_day) == self.scan_selected)))
-        print ("INDEX ALTERNATIVE")
-        index_alternative = np.array((self.data_df_all_subsystems[(getattr(self.data_df_all_subsystems,column_day) == date_stamp) & (getattr(self.data_df_all_subsystems,scan_day) == self.scan_selected) & getattr(self.data_df_all_subsystems,hour_day).str.contains(self.hour_selected[0:4])].index))
-        #print (getattr(self.data_df_all_subsystems,hour_day).dt.strftime('%m/%d/%Y'))
-        #print (adsfaf)
-        print ("HEREEE")
-        print (index_alternative)
+        condition_1 = (getattr(self.data_df_all_subsystems,column_day) == date_stamp) 
+        condition_2 = (getattr(self.data_df_all_subsystems,scan_day) == self.scan_selected) 
+        condition_3 = (getattr(self.data_df_all_subsystems,hour_day).str.contains(self.hour_selected[0:4]))
+        self.index_scan = np.array((self.data_df_all_subsystems[condition_1 & condition_2 & condition_3].index))[0]
+        #self.index_scan = index_alternative[0]
+        python_analysis_dataframe_20200416.generate_output_file(self,"/Users/anagtv/Desktop/Visitas_Airo/File_analysis",column_names )
         print (self.index_scan)
-        self.index_scan = index_alternative[0]
-        python_analysis_dataframe_20200416.generate_output_file(self,"/Users/anagtv/Desktop/Visitas_Airo/File_analysis")
-        name = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[index_alternative[0]]
+        name = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[self.index_scan]
         #name_2 = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[index_alternative[1]]
-        print ("HEREEEE")
-        print (self.logfile_type)
-        print ((getattr(self.data_df_all_subsystems,column_file_names)).dropna())     
-        print (self.index_scan)
-        print (name)
         self.file_to_display = os.path.join(self.output_path,name)
         file = open(str(self.file_to_display), "r")
         with file:
@@ -340,78 +311,6 @@ class window(QMainWindow):
         self.question.buttonClicked.connect(self.file_output_second)
         self.question.show()
 
-    def analyze_all_selected_files(self,values):
-        self.question_all =  QMessageBox()
-        self.question_all.setText("Select an output folder")
-        self.question_all.setGeometry(QtCore.QRect(200, 300, 100, 50)) 
-        self.question_all.setStandardButtons(QMessageBox.Save)
-        self.question_all.buttonClicked.connect(self.combining_several_files)
-        self.question_all.show() 
-        
-    def combining_several_files(self):
-        file_components_path = []   
-        output_name = str(self.df_day_scan_hour.SCAN_ROTOR.iloc[0]) + "_" + str(self.df_day_scan_hour.DAY_ROTOR.iloc[0]) + "_" + str(self.df_day_scan_hour.HOUR_ROTOR.iloc[0])
-        output_name_combined = str(self.df_day_scan_hour.SCAN_ROTOR.iloc[0]) + "_" + str(self.df_day_scan_hour.DAY_ROTOR.iloc[0]) + "_" + str(self.df_day_scan_hour.HOUR_ROTOR.iloc[0]) + "_combined"
-        output_path = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10",output_name)
-        output_path_combined = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10",output_name_combined)
-        for k in range(len(self.names_components)):
-            file_name_path = (getattr(self.df_day_scan_hour,self.columns_names_components[k]))
-            file_components_path.append(os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10",str(np.array(file_name_path)[0])))
-        combined_file = []
-        combined_file_element = []
-        combined_file_hours = []
-        for file_path_name in file_components_path:
-          file_path_name_rotor_read = open(file_path_name,"r")
-          for line in file_path_name_rotor_read:
-             parts = line.split()
-             combined_file.append(parts)
-             combined_file_hours.append(parts[0][11:27])
-             if (file_path_name[49]) == "R":
-                 combined_file_element.append("ROTOR")
-             elif (file_path_name[49]) == "G":
-                 combined_file_element.append("GIMBAL")
-             elif (file_path_name[49]) == "S":
-                 combined_file_element.append("SYSTEM")
-             elif (file_path_name[49]) == "P":
-                 combined_file_element.append("PENDANT")
-             # DEFINITION: SORTING COMBINED FILE BY HOUR           
-        combined_file_sorted = [combined_file for _,combined_file in sorted(zip(combined_file_hours,combined_file))]
-        combined_file_element_sorted = [combined_file_element for _,combined_file_element in sorted(zip(combined_file_hours,combined_file_element))]
-        time_stamp = []
-        message_information = []
-        action = []
-        file_type = []
-        for i in range(len(combined_file_sorted)):
-        #    # REMOVING EXTRA LINES
-            if ">" not in combined_file_sorted[i][0]:
-                time_stamp.append(combined_file_sorted[i][0][1:])
-                message_information.append('_'.join(combined_file_sorted[i][1:3]))
-                action.append('_'.join(combined_file_sorted[i][3:]))
-                file_type.append(combined_file_element_sorted[i])
-        ## SETTING DATAFRAME FOR USING AS AN OUTPUT
-        data_df_combined = pd.DataFrame.from_records({'TIME_STAMP':time_stamp, 'TYPE': message_information, 'ACTION':action, 'FILE_TYPE': file_type})
-        data_df_combined =  data_df_combined.loc[:, ['FILE_TYPE', 'TIME_STAMP',   'TYPE',  'ACTION']]  
-        #WRITING 
-        #file_path_name_combined = "test_" + str(j) + ".out"
-        #file_path_name_combined_filtered = "test_filtered_" + str(j) + ".out"
-        #tfs.write(output_path, data_df_combined, save_index="index_column")
-        tfs.write(output_path, data_df_combined)
-        data_to_verify = tfs.read(output_path)
-        #KEEP REMOVING UNNECESARY ELEMENTS
-        data_to_verify_1 = (data_to_verify[~data_to_verify.ACTION.str.contains("Previous_Entry_Repeats")])
-        data_to_verify_2 = (data_to_verify_1[~data_to_verify_1.ACTION.str.contains("$s00_Executing_Transitioning_ScoutScan")])
-        data_to_verify_3 = (data_to_verify_2[~data_to_verify_2.ACTION.str.contains("Handling_Client_Message:_#&22_History/RotorPC/LastKnownOnTime")])
-        self.data_to_verify_4 = (data_to_verify_3[~data_to_verify_3.ACTION.str.contains("ConfigStore.Set:_History/RotorPC/LastKnownOnTime")])
-        print ("HEREEEEE")
-        print (self.data_to_verify_4)
-        #print (data_to_verify)
-        tfs.write(output_path_combined, self.data_to_verify_4) 
-        file = open(str(output_path_combined), "r")
-        with file:
-            text = file.read()
-            self.textEdit_files.setText(text)
-        #self.df_scans = python_analysis_dataframe_20200416.selecting_entries(self.logfile,self.logfile_type) 
-
 
     def set_analysis_output_file(self,values):
         self.question =  QMessageBox()
@@ -425,104 +324,60 @@ class window(QMainWindow):
         options |= QFileDialog.DontUseNativeDialog
         self.fileanalysis_outputpath, _ = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","All Files (*);;Python Files (*.py)", options=options)
 
+    def checking_functions(self,hour_column,day_column,scan_column,date_stamp,hour_selected,scan_selected):
+        if len(getattr(self.data_df_all_subsystems,hour_column).dropna()) != 0:
+           condition_day = getattr(self.data_df_all_subsystems,day_column) == date_stamp
+           condition_hour = getattr(self.data_df_all_subsystems,hour_column).str.contains(self.hour_selected[0:4]) 
+           condition_rotor = getattr(self.data_df_all_subsystems,scan_column).str.contains(self.scan_selected)
+           index_hour = getattr(self.data_df_all_subsystems,hour_column)[(condition_day) & (condition_hour) & (condition_rotor)]
+        else:
+           index_hour = []
+        return index_hour
+  
     def handleSelectionChanged_scan(self, selected, deselected):
-        self.tablestatistic_tab2.setItem(0,0, QTableWidgetItem(str())) 
-        self.tablestatistic_tab2.setItem(1,0, QTableWidgetItem(str())) 
-        self.tablestatistic_tab2.setItem(2,0, QTableWidgetItem(str())) 
-        self.tablestatistic_tab2.setItem(3,0, QTableWidgetItem(str())) 
-        self.indexs=(self.tablefiles_tab2.selectionModel().currentIndex())
+        self.indexs =(self.tablefiles_tab2.selectionModel().currentIndex())
         self.index_scan = self.indexs.row()
         self.day_selected = self.indexs.sibling(self.index_scan,0).data()
         self.hour_selected = self.indexs.sibling(self.index_scan,1).data()
         self.scan_selected = self.indexs.sibling(self.index_scan,2).data()
         date_format = "%Y-%m-%d"
         date_stamp = datetime.datetime.strptime(self.day_selected,date_format).date()
-        #selection of the scan in the dataframen
-        df_day = (self.data_df_all_subsystems[self.data_df_all_subsystems["DAY_ROTOR"] == date_stamp])
-        hour_index = (df_day[df_day["HOUR_ROTOR"] == self.hour_selected].index)
-        df_day_scan = (df_day[df_day["SCAN_ROTOR"] == self.scan_selected])
-        self.df_day_scan_hour = (df_day_scan[df_day_scan["HOUR_ROTOR"] == self.hour_selected])
-        print ("ALL SCANS")
-        print (self.data_df_all_subsystems)
-        print ("SCAN DAY")
-        print (df_day)
-        print ("SCAN SELECTED")
-        print (self.df_day_scan_hour)
-        index_hour_rotor = ((df_day_scan.HOUR_ROTOR[df_day_scan["HOUR_ROTOR"] == self.hour_selected]).dropna())
-        #index_hour_pendant = np.array((self.data_df_all_subsystems["HOUR_PENDANT"].iloc[hour_index]).dropna())
-        #index_hour_system = np.array((self.data_df_all_subsystems["HOUR_SYSTEM"].iloc[hour_index]).dropna())
-        #index_hour_gimbal = np.array((self.data_df_all_subsystems["HOUR_GIMBAL"].iloc[hour_index]).dropna())
-        print ("before")
-        print (self.hour_selected[0:3])
-        print (getattr(self.data_df_all_subsystems,"HOUR_PENDANT").dropna())
-        #print ((getattr(self.data_df_all_subsystems,"HOUR_PENDANT").dropna()).str.contains(self.hour_selected[0:2]))
-        #print (self.data_df_all_subsystems.HOUR_ROTOR[(getattr(self.data_df_all_subsystems,"DAY_ROTOR") == date_stamp) & getattr(self.data_df_all_subsystems,"HOUR_ROTOR").str.contains(self.hour_selected[0:2]) & getattr(self.data_df_all_subsystems,"SCAN_ROTOR").str.contains(self.scan_selected)].index)
-        if len(getattr(self.data_df_all_subsystems,"HOUR_ROTOR").dropna()) != 0:
-           index_hour_rotor_all = (self.data_df_all_subsystems.HOUR_ROTOR[(getattr(self.data_df_all_subsystems,"DAY_ROTOR") == date_stamp) & getattr(self.data_df_all_subsystems,"HOUR_ROTOR").str.contains(self.hour_selected[0:4]) & getattr(self.data_df_all_subsystems,"SCAN_ROTOR").str.contains(self.scan_selected)].index)
-        else:
-           index_hour_rotor_all = []
-        if len(getattr(self.data_df_all_subsystems,"HOUR_PENDANT").dropna()) != 0:
-           index_hour_pendant = (self.data_df_all_subsystems.HOUR_PENDANT[(getattr(self.data_df_all_subsystems,"DAY_PENDANT") == date_stamp) & getattr(self.data_df_all_subsystems,"HOUR_PENDANT").str.contains(self.hour_selected[0:4]) & getattr(self.data_df_all_subsystems,"SCAN_PENDANT").str.contains(self.scan_selected)].index)
-        else: 
-            index_hour_pendant = []          
-        if len(getattr(self.data_df_all_subsystems,"HOUR_SYSTEM").dropna()) != 0:
-            index_hour_system = (self.data_df_all_subsystems.HOUR_SYSTEM[(getattr(self.data_df_all_subsystems,"DAY_SYSTEM") == date_stamp) & getattr(self.data_df_all_subsystems,"HOUR_SYSTEM").str.contains(self.hour_selected[0:4]) & getattr(self.data_df_all_subsystems,"SCAN_SYSTEM").str.contains(self.scan_selected)].index)
-        else:
-            index_hour_system = []
-        if len(getattr(self.data_df_all_subsystems,"HOUR_GIMBAL").dropna()) != 0:
-            index_hour_gimbal = (self.data_df_all_subsystems.HOUR_GIMBAL[(getattr(self.data_df_all_subsystems,"DAY_GIMBAL") == date_stamp) & getattr(self.data_df_all_subsystems,"HOUR_GIMBAL").str.contains(self.hour_selected[0:4]) & getattr(self.data_df_all_subsystems,"SCAN_GIMBAL").str.contains(self.scan_selected)].index)
-        else:
-            index_hour_gimbal  = []        #
-        print ("HEREEE")
-        #
-        print ("INDEX HEREE")
-        print (index_hour_rotor_all)
-        print (index_hour_pendant)
-        print (index_hour_system)
-        print (index_hour_gimbal)
-        len_index_hour_rotor =   len(index_hour_rotor_all)
-        len_index_hour_pendant = len(index_hour_pendant)
-        len_index_hour_system =  len(index_hour_system)
-        len_index_hour_gimbal =  len(index_hour_gimbal)
-        # DEFINTION: IF FOR A GIVEN DAY THERE IS NOT SCANS, THEN DO NOT CONSIDER THAT FILE.
         self.names_components = ["ROTOR","PENDANT","SYSTEM","GIMBAL"]
         self.columns_names_components = ["FILE_NAME_ROTOR","FILE_NAME_PENDANT","FILE_NAME_SYSTEM","FILE_NAME_GIMBAL"]
-        self.index_hour = [index_hour_rotor,index_hour_pendant,index_hour_system,index_hour_gimbal] 
-        self.len_index_hour = [len_index_hour_rotor,len_index_hour_pendant,len_index_hour_system,len_index_hour_gimbal] 
-        print ("HERE CHECKING")
-        print (self.len_index_hour)
-        print (max(self.len_index_hour))
-        zero_index = [m for m, e in enumerate(self.len_index_hour) if e == 0]
-        not_completed = [m for m, e in enumerate(self.len_index_hour) if e != max(self.len_index_hour)]
+        #selection of the scan in the dataframen
+        df_day = (self.data_df_all_subsystems[self.data_df_all_subsystems["DAY_ROTOR"] == date_stamp])
+        df_day_scan = (df_day[df_day["SCAN_ROTOR"] == self.scan_selected])
+        self.df_day_scan_hour = (df_day_scan[df_day_scan["HOUR_ROTOR"] == self.hour_selected])
+        index_hour_rotor = ((df_day_scan.HOUR_ROTOR[df_day_scan["HOUR_ROTOR"] == self.hour_selected]).dropna())
+        condition_day = getattr(self.data_df_all_subsystems,"DAY_ROTOR") == date_stamp
+        condition_hour = getattr(self.data_df_all_subsystems,"HOUR_ROTOR").str.contains(self.hour_selected[0:4]) 
+        condition_rotor = getattr(self.data_df_all_subsystems,"SCAN_ROTOR").str.contains(self.scan_selected)
+        index_hour_rotor_all = self.data_df_all_subsystems.HOUR_ROTOR[(condition_day) & (condition_hour) & (condition_rotor)]
+        self.index_hour_all = []
+        self.len_index_hour_all = []
+        for i in range(len(self.names_components)):
+            day_column = "DAY_" + str(self.names_components[i])
+            scan_column = "SCAN_" + str(self.names_components[i])
+            hour_column = "HOUR_" + str(self.names_components[i])
+            index_hour_i = self.checking_functions(hour_column,day_column,scan_column,date_stamp,self.hour_selected,self.scan_selected)
+            len_index_i = len(index_hour_i)
+            self.index_hour_all.append(index_hour_i)
+            self.len_index_hour_all.append(len_index_i)
+        # select index of 0 values 
+        zero_index = [m for m, e in enumerate(self.len_index_hour_all) if e == 0]
+        # select files not maximum
+        #not_completed = [m for m, e in enumerate(self.len_index_hour_all) if e != max(self.len_index_hour_all)]
         self.open_files = ["RotorControlApp.log","PendantUIApp.log","SystemManagerApp.log","GimbalControlApp.log"]
-        print ("HEREEEE")
-        print (index_hour_rotor)
-        print (index_hour_pendant)
-        print (index_hour_system)
-        print (index_hour_gimbal)
-        print (zero_index)
-        print (not_completed)
-        print ((df_day_scan.HOUR_ROTOR[df_day_scan["HOUR_ROTOR"] == self.hour_selected]))
-        #print ((df_day_scan.HOUR_ROTOR[df_day_scan["HOUR_ROTOR"] == self.hour_selected]) - len(not_completed[0]))
-        #Removing elements
+        # Remove the files with 0 length
         for l in range(len(zero_index)): 
-            self.index_hour.pop(zero_index[l]-l)
+            self.index_hour_all.pop(zero_index[l]-l)
             self.names_components.pop(zero_index[l]-l)
             self.columns_names_components.pop(zero_index[l]-l)
             self.open_files.pop(zero_index[l]-l)
-        print ("trying a new thing")
-        print (self.index_hour)
-        print (self.names_components)
-        print (self.columns_names_components)
-        print (self.open_files)
         for ind_logfile in self.open_files: 
            self.tablestatistic_tab2.setItem(self.current_row_logfiles,0, QTableWidgetItem(str(ind_logfile))) 
            self.current_row_logfiles += 1
         self.current_row_logfiles = 0
-        #self.tablestatistic_tab2.setItem(self.current_row_logfiles,0, QTableWidgetItem(str(hours.iloc[i])))
-        #self.tablestatistic_tab2.setItem(self.current_row_logfiles,0, QTableWidgetItem(str(hours.iloc[i])))
-        #self.fileName=index.sibling(index.row(),index.column()).data()
-        #print(self.fileName)
 
     def folder_analyze(self,values):
         print (self.lis_files_names)
@@ -679,6 +534,10 @@ class window(QMainWindow):
         self.tablestatistic_tab2.setColumnCount(1)
         self.tablestatistic_tab2.setHorizontalHeaderLabels(["Log Files"]) 
         self.tablestatistic_tab2.setObjectName("tableView")
+        self.tablestatistic_tab2.setItem(0,0, QTableWidgetItem(str())) 
+        self.tablestatistic_tab2.setItem(1,0, QTableWidgetItem(str())) 
+        self.tablestatistic_tab2.setItem(2,0, QTableWidgetItem(str())) 
+        self.tablestatistic_tab2.setItem(3,0, QTableWidgetItem(str())) 
 
         self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab2)
         self.pushButton_analyze.setGeometry(QtCore.QRect(20, 490, 221, 30))
@@ -689,9 +548,7 @@ class window(QMainWindow):
         self.pushButton_analyze.clicked.connect(self.analyze_selected_files)
         self.pushButton_analyze_second.clicked.connect(self.analyze_selected_files_second)
         #
-        self.pushButton_analyze = QtWidgets.QPushButton('Analyze all', self.tab2)
-        self.pushButton_analyze.setGeometry(QtCore.QRect(20, 570, 221, 30))
-        self.pushButton_analyze.clicked.connect(self.analyze_all_selected_files)
+        
 
         self.selection_scan_tpye = self.tablefiles_tab2.selectionModel()
         self.selection_scan_tpye.selectionChanged.connect(self.handleSelectionChanged_scan)
