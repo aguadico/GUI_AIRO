@@ -160,8 +160,8 @@ class window(QMainWindow):
            self.logfile_type = "PENDANT"
         elif self.fileName == "GimbalControlApp.log":
            self.logfile_type = "GIMBAL"
-        
-    def file_output(self):
+
+    def file_output_filtering(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         self.output_path = QFileDialog.getExistingDirectory(self, 'Select a folder:', 'C:\\', QFileDialog.ShowDirsOnly)
@@ -185,9 +185,20 @@ class window(QMainWindow):
         #name_2 = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[index_alternative[1]]
         self.file_to_display = os.path.join(self.output_path,name)
         file = open(str(self.file_to_display), "r")
-        with file:
-            text = file.read()
+        return file
+        
+    def file_output(self):
+        file_first_window = self.file_output_filtering()
+        with file_first_window:
+            text = file_first_window.read()
             self.textEdit_files.setText(text)
+            #elif number == "Second":
+            #   self.textEdit_files_2.setText(text)
+    def file_output_second(self):
+        file_second_window = self.file_output_filtering()
+        with file_second_window:
+            text = file_second_window.read()
+            self.textEdit_files_2.setText(text)
 
 
     def extract_best(self):
@@ -239,60 +250,6 @@ class window(QMainWindow):
         print (speed_values_2)
         #self.sc3.axes.errorbar(speed_values_1,yerr=0,"o",label= "SPEED ROTOR 1", picker=5)
         #self.sc3.axes.errorbar(speed_values_2,yerr=0,"o",label= "SPEED ROTOR 2", picker=5)
-
-    def file_output_second(self):
-        options = QFileDialog.Options()
-        options |= QFileDialog.DontUseNativeDialog
-        self.output_path = QFileDialog.getExistingDirectory(self, 'Select a folder:', 'C:\\', QFileDialog.ShowDirsOnly)
-        column_file_names = "FILE_NAME_" + str(self.logfile_type) 
-        column_day = "DAY_" + str(self.logfile_type)
-        scan_day = "SCAN_" + str(self.logfile_type)
-        hour_day = "HOUR_" + str(self.logfile_type)
-        print ("DAY SELECTED")
-        print (type(self.day_selected))
-        print (getattr(self.data_df_all_subsystems,column_day))
-        print (getattr(self.data_df_all_subsystems,scan_day))
-        print ("Checking values")
-        checking_values = []
-        date_values = list((getattr(self.data_df_all_subsystems,column_day)))
-        print (date_values)
-        date_format = "%Y-%m-%d"
-        date_stamp = datetime.datetime.strptime(self.day_selected,date_format).date()
-        for i in range(len(date_values)):
-              print ((date_values[i]))
-              print (str(self.day_selected))
-              try:
-                 checking_values.append(date_values[i] == date_stamp)
-              except:
-                 checking_values.append(date_values[i] == str(self.day_selected))
-        print (checking_values)
-        print ((getattr(self.data_df_all_subsystems,column_day) == date_stamp))
-        print (np.array((getattr(self.data_df_all_subsystems,scan_day) == self.scan_selected)))
-        print ("INDEX ALTERNATIVE")
-        index_alternative = np.array((self.data_df_all_subsystems[(getattr(self.data_df_all_subsystems,column_day) == date_stamp) & (getattr(self.data_df_all_subsystems,scan_day) == self.scan_selected) & getattr(self.data_df_all_subsystems,hour_day).str.contains(self.hour_selected[0:3])].index))
-        #print (getattr(self.data_df_all_subsystems,hour_day).dt.strftime('%m/%d/%Y'))
-        #print (adsfaf)
-        print ("Now also hour")
-        print (getattr(self.data_df_all_subsystems,hour_day))
-        print (self.hour_selected[0:3])
-        print (getattr(self.data_df_all_subsystems,hour_day).str.contains(self.day_selected[0:2]))
-        print ("HEREEE")
-        print (index_alternative)
-        print (self.index_scan)
-        self.index_scan = index_alternative[0]
-        python_analysis_dataframe_20200416.generate_output_file(self,"/Users/anagtv/Desktop/Visitas_Airo/File_analysis")
-        name = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[index_alternative[0]]
-        #name_2 = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[index_alternative[1]]
-        print ("HEREEEE")
-        print (self.logfile_type)
-        print ((getattr(self.data_df_all_subsystems,column_file_names)).dropna())     
-        print (self.index_scan)
-        print (name)
-        self.file_to_display_2 = os.path.join(self.output_path,name)
-        file = open(str(self.file_to_display_2), "r")
-        with file:
-            text = file.read()
-            self.textEdit_files_2.setText(text)
         #saving_files_summary_list.main(self,"/Users/anagtv/Desktop",0)
 
     def analyze_selected_files(self,values):
@@ -300,6 +257,7 @@ class window(QMainWindow):
         self.question.setText("Select an output folder")
         self.question.setGeometry(QtCore.QRect(200, 300, 100, 50)) 
         self.question.setStandardButtons(QMessageBox.Save)
+        self.location = "First"
         self.question.buttonClicked.connect(self.file_output)
         self.question.show()
 
@@ -308,6 +266,7 @@ class window(QMainWindow):
         self.question.setText("Select an output folder")
         self.question.setGeometry(QtCore.QRect(200, 300, 100, 50)) 
         self.question.setStandardButtons(QMessageBox.Save)
+        self.location = "Second"
         self.question.buttonClicked.connect(self.file_output_second)
         self.question.show()
 
@@ -366,7 +325,6 @@ class window(QMainWindow):
         # select index of 0 values 
         zero_index = [m for m, e in enumerate(self.len_index_hour_all) if e == 0]
         # select files not maximum
-        #not_completed = [m for m, e in enumerate(self.len_index_hour_all) if e != max(self.len_index_hour_all)]
         self.open_files = ["RotorControlApp.log","PendantUIApp.log","SystemManagerApp.log","GimbalControlApp.log"]
         # Remove the files with 0 length
         for l in range(len(zero_index)): 
@@ -385,6 +343,7 @@ class window(QMainWindow):
         self.question.setText("Select an output folder")
         self.question.setGeometry(QtCore.QRect(200, 300, 100, 50)) 
         self.question.setStandardButtons(QMessageBox.Save)
+        self.location = "First"
         self.question.buttonClicked.connect(self.file_output)
         self.question.show()
 
