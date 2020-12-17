@@ -252,23 +252,26 @@ class window(QMainWindow):
         #self.sc3.axes.errorbar(speed_values_2,yerr=0,"o",label= "SPEED ROTOR 2", picker=5)
         #saving_files_summary_list.main(self,"/Users/anagtv/Desktop",0)
 
-    def analyze_selected_files(self,values):
+    def question_output(self,number):
         self.question =  QMessageBox()
         self.question.setText("Select an output folder")
         self.question.setGeometry(QtCore.QRect(200, 300, 100, 50)) 
         self.question.setStandardButtons(QMessageBox.Save)
-        self.location = "First"
-        self.question.buttonClicked.connect(self.file_output)
         self.question.show()
+        if number == "1":
+            self.question.buttonClicked.connect(self.file_output)
+        else: 
+            self.question.buttonClicked.connect(self.file_output_second)
+
+
+    def analyze_selected_files(self,values):
+        self.question_output("1")
+        
 
     def analyze_selected_files_second(self,values):
-        self.question =  QMessageBox()
-        self.question.setText("Select an output folder")
-        self.question.setGeometry(QtCore.QRect(200, 300, 100, 50)) 
-        self.question.setStandardButtons(QMessageBox.Save)
-        self.location = "Second"
-        self.question.buttonClicked.connect(self.file_output_second)
-        self.question.show()
+        self.question_output("2")
+        
+    
 
 
     def set_analysis_output_file(self,values):
@@ -368,125 +371,22 @@ class window(QMainWindow):
         if valid:
             self.styleChoice.setFont(font)
 
-    def home(self, main_layout):
-
-        self.tabs = QtWidgets.QTabWidget()
-        self.tab2 = QtWidgets.QWidget()
-        self.tab1 = QtWidgets.QWidget()
-        self.tab3 = QtWidgets.QWidget()
-        self.tab4 = QtWidgets.QWidget()
-        self.tabs.resize(300,200)
-
-        # Add tabs
-        #self.tabs.addTab(self.tab1,"Individual Files")
-        self.tabs.addTab(self.tab2,"Overview")
-        self.tabs.addTab(self.tab1,"Rotor")
-        self.tabs.addTab(self.tab3,"SystemManager/Pendant")
-        #self.tabs.addTab(self.tab4,"Pendant")
-
-        # tab 2: for trend analysis
-        self.tab2.main_layout = QtWidgets.QVBoxLayout(self)
-        self.tab2.setLayout(self.tab2.main_layout)
-
-        # TAB 2
-
+    def tab1_layout(self):
         self.widget_tab2 = QtWidgets.QWidget(self.tab2)
         self.widget_tab2.setGeometry(QtCore.QRect(20, 20, 280, 230))
         self.widget_tab2.setObjectName("widget")
-
-        #self.textEdit = QtWidgets.QTextEdit()
-        #self.toolbar_tab2.setGeometry(QtCore.QRect(250, 10, 1200, 800))
-
         self.textEdit_files = QtWidgets.QTextEdit(self.tab2)
         self.textEdit_files.setGeometry(QtCore.QRect(340, 10, 450, 600))
-
         self.textEdit_files_2 = QtWidgets.QTextEdit(self.tab2)
         self.textEdit_files_2.setGeometry(QtCore.QRect(800, 10, 450, 600))
 
-        # TAB 3
-
-        self.plot_central = Canvas_tab2(width=8, height=20, dpi=100, parent=self.tab1) 
-        self.plot_central.setGeometry(QtCore.QRect(10, 10, 500, 500))
-
-        self.textEdit_files_selection_rotor = QtWidgets.QTextEdit(self.tab1)
-        self.textEdit_files_selection_rotor.setGeometry(QtCore.QRect(520, 10, 350, 430))
-
-        self.textEdit_files_selection_2_rotor = QtWidgets.QTextEdit(self.tab1)
-        self.textEdit_files_selection_2_rotor.setGeometry(QtCore.QRect(880, 10, 350, 430))
-
-        self.pushButton_analyze_rotor = QtWidgets.QPushButton('Summarize Rotor', self.tab1)
-        self.pushButton_analyze_rotor.setGeometry(QtCore.QRect(20, 490, 221, 30))
-
-        self.pushButton_analyze_rotor.clicked.connect(self.filter_output_scan)
-
-
-        # TAB 4
-
-        self.label_best_pendant = QLabel("Best Search Pendant:",self.tab3)
-        self.label_best_pendant.setGeometry(QtCore.QRect(10, 5, 200, 30))
-
-        self.textEdit_files_selection_system = QtWidgets.QTextEdit(self.tab3)
-        self.textEdit_files_selection_system.setGeometry(QtCore.QRect(10, 50, 400, 430))
-
-        self.label_best_pendant = QLabel("Best Search System:",self.tab3)
-        self.label_best_pendant.setGeometry(QtCore.QRect(450, 5, 200, 30))
-
-        self.textEdit_files_selection_system = QtWidgets.QTextEdit(self.tab3)
-        self.textEdit_files_selection_system.setGeometry(QtCore.QRect(450, 50, 400, 430))
-
-        self.label_best_pendant = QLabel("Summary Scan Pendant:",self.tab3)
-        self.label_best_pendant.setGeometry(QtCore.QRect(880, 5, 200, 30))
-
-        self.textEdit_files_selection_2_system = QtWidgets.QTextEdit(self.tab3)
-        self.textEdit_files_selection_2_system.setGeometry(QtCore.QRect(880, 50, 400, 430))
-
-        self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab3)
-        self.pushButton_analyze.setGeometry(QtCore.QRect(20, 490, 221, 30))
-
-
-        #self.textbox_file = QtWidgets.QLineEdit(self.tab2)
-        #self.textbox_file.setGeometry(QtCore.QRect(940, 10, 100, 30))
-        #self.textbox_time = QtWidgets.QLineEdit(self.tab2)
-        #self.textbox_time.setGeometry(QtCore.QRect(940, 50, 100, 30))
-        #self.textbox_action = QtWidgets.QLineEdit(self.tab2)
-        #self.textbox_action.setGeometry(QtCore.QRect(940, 90, 100, 30))
-        #self.textbox_type = QtWidgets.QLineEdit(self.tab2)
-        #self.textbox_type.setGeometry(QtCore.QRect(940, 130, 100, 30))
-
-        #self.button_file = QPushButton('Filter by File', self.tab2)
-        #self.button_file.setGeometry(QtCore.QRect(1050, 10, 200, 30))
-        #self.button_time = QPushButton('Filter by Time', self.tab2)
-        #self.button_time.setGeometry(QtCore.QRect(1050, 50, 200, 30))
-        #self.button_action = QPushButton('Filter by Action', self.tab2)
-        #self.button_action.setGeometry(QtCore.QRect(1050, 90, 200, 30))
-        #self.button_type = QPushButton('Filter by Type', self.tab2)
-        #self.button_type.setGeometry(QtCore.QRect(1050, 130, 200, 30))
-        #self.button_all = QPushButton('Filter by All', self.tab2)
-        #self.button_all.setGeometry(QtCore.QRect(1050, 170, 200, 30))
-        # connect button to function on_click
-        #self.button_file.clicked.connect(self.on_click)
-        #self.show()
-        #self.button_time.clicked.connect(self.on_click)
-        #self.show()
-        #self.button_action.clicked.connect(self.on_click)
-        #self.show()
-        #self.button_type.clicked.connect(self.on_click)
-        #self.button_all.clicked.connect(self.on_click)
-        self.show()
-
-    
-
-       #QMessageBox.question(self, 'Message - pythonspot.com', "You typed: " + textboxValue, QMessageBox.Ok, QMessageBox.Ok)
-              #self.textbox.setText("")
-        
-        
+    def tab1_buttons(self):
         self.tablefiles_tab2 = QtWidgets.QTableWidget(self.tab2)
         self.tablefiles_tab2.setGeometry(QtCore.QRect(20, 10, 310, 350))
         self.tablefiles_tab2.setObjectName("tableWidget")
         self.tablefiles_tab2.setRowCount(100)
         self.tablefiles_tab2.setColumnCount(3)
         self.tablefiles_tab2.setHorizontalHeaderLabels(["Day","Hour","Scan"])
-
         self.tablestatistic_tab2 = QtWidgets.QTableWidget(self.tab2)
         self.tablestatistic_tab2.setGeometry(QtCore.QRect(20, 370, 221, 100))
         self.tablestatistic_tab2.setRowCount(5)
@@ -498,6 +398,7 @@ class window(QMainWindow):
         self.tablestatistic_tab2.setItem(2,0, QTableWidgetItem(str())) 
         self.tablestatistic_tab2.setItem(3,0, QTableWidgetItem(str())) 
 
+    def tab1_activities(self):
         self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab2)
         self.pushButton_analyze.setGeometry(QtCore.QRect(20, 490, 221, 30))
         #
@@ -507,17 +408,62 @@ class window(QMainWindow):
         self.pushButton_analyze.clicked.connect(self.analyze_selected_files)
         self.pushButton_analyze_second.clicked.connect(self.analyze_selected_files_second)
         #
-        
-
         self.selection_scan_tpye = self.tablefiles_tab2.selectionModel()
         self.selection_scan_tpye.selectionChanged.connect(self.handleSelectionChanged_scan)
         self.selection_logfile = self.tablestatistic_tab2.selectionModel()
         self.selection_logfile.selectionChanged.connect(self.handleSelectionChanged_component)
+
+    def tab2_layout(self):
+        self.plot_central = Canvas_tab2(width=8, height=20, dpi=100, parent=self.tab1) 
+        self.plot_central.setGeometry(QtCore.QRect(10, 10, 500, 500))
+        self.textEdit_files_selection_rotor = QtWidgets.QTextEdit(self.tab1)
+        self.textEdit_files_selection_rotor.setGeometry(QtCore.QRect(520, 10, 350, 430))
+        self.textEdit_files_selection_2_rotor = QtWidgets.QTextEdit(self.tab1)
+        self.textEdit_files_selection_2_rotor.setGeometry(QtCore.QRect(880, 10, 350, 430))
+        self.pushButton_analyze_rotor = QtWidgets.QPushButton('Summarize Rotor', self.tab1)
+        self.pushButton_analyze_rotor.setGeometry(QtCore.QRect(20, 490, 221, 30))
+        self.pushButton_analyze_rotor.clicked.connect(self.filter_output_scan)
+
+    def tab3_layout(self):
+        self.label_best_pendant = QLabel("Best Search Pendant:",self.tab3)
+        self.label_best_pendant.setGeometry(QtCore.QRect(10, 5, 200, 30))
+        self.textEdit_files_selection_system = QtWidgets.QTextEdit(self.tab3)
+        self.textEdit_files_selection_system.setGeometry(QtCore.QRect(10, 50, 400, 430))
+        self.label_best_pendant = QLabel("Best Search System:",self.tab3)
+        self.label_best_pendant.setGeometry(QtCore.QRect(450, 5, 200, 30))
+        self.textEdit_files_selection_system = QtWidgets.QTextEdit(self.tab3)
+        self.textEdit_files_selection_system.setGeometry(QtCore.QRect(450, 50, 400, 430))
+        self.label_best_pendant = QLabel("Summary Scan Pendant:",self.tab3)
+        self.label_best_pendant.setGeometry(QtCore.QRect(880, 5, 200, 30))
+        self.textEdit_files_selection_2_system = QtWidgets.QTextEdit(self.tab3)
+        self.textEdit_files_selection_2_system.setGeometry(QtCore.QRect(880, 50, 400, 430))
+        self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab3)
+        self.pushButton_analyze.setGeometry(QtCore.QRect(20, 490, 221, 30))
+
+    def home(self, main_layout):
+        self.tabs = QtWidgets.QTabWidget()
+        self.tab2 = QtWidgets.QWidget()
+        self.tab1 = QtWidgets.QWidget()
+        self.tab3 = QtWidgets.QWidget()
+        self.tab4 = QtWidgets.QWidget()
+        self.tabs.resize(300,200)
+        # Add tabs
+        self.tabs.addTab(self.tab2,"Overview")
+        self.tabs.addTab(self.tab1,"Rotor")
+        self.tabs.addTab(self.tab3,"SystemManager/Pendant")
+        self.tab2.main_layout = QtWidgets.QVBoxLayout(self)
+        self.tab2.setLayout(self.tab2.main_layout)
+        # TAB 1        
+        self.tab1_layout()
+        self.tab1_buttons()
+        self.tab1_activities()
+        # TAB 2 
+        self.tab2_layout()
+        # TAB 3
+        self.tab3_layout()
         self.show()
         # Add tabs to widget
         main_layout.addWidget(self.tabs)
-        #self.setLayout(self.layout)
-
 
     def Clear(self):
         self.ui.widget.canvas.ax.clear()

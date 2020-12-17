@@ -25,11 +25,13 @@ class Selection_axial:
    def __init__(self):
         self.verification = False
         self.verification_delay = False
-   def check_line(self,line,scan_type,hours,day):
-    if "#f11 Prepared " + str(scan_type) in line and hours in line:
+   def check_line(self,line,scan_type,hours,day,initial,final):
+    #print (initial)
+    #print (final)
+    if initial in line and hours in line:
          self.verification = True
          self.verification_delay = True 
-    elif "ReconstructionManager: transitioning to Completed" in line and self.verification_delay == True:
+    elif (final[0] in line or final[1] in line) and self.verification_delay == True:
          self.verification_delay = False
          self.verification = True
     else:
@@ -283,19 +285,27 @@ def generate_output_file(self,output_path,column_names):
     # DEFINITION: READING FILES AND WRITING THE SELECTED LINES INTO FILE
     open_files = str(os.path.join(self.dir_,self.fileName))
     file_path_name = os.path.join(self.output_path,str(name))
+    self.list_files = ["RotorControlApp.log","GimbalControlApp.log","SystemManagerApp.log","PendantUIApp.log"]
+    self.initial_verification = ["#f11 Prepared " + str(scan),"#t11 Prepared " + str(scan),"#i11 Prepared " + str(scan), "#s11 Prepared " + str(scan)]
+    self.end_verification = [["ReconstructionManager: transitioning to Completed","aaaaaaaa"],["New Status From Power Control Board: ZZ","New Mode From Power Control Board: ZZ"], ["$s00 Completed OK ", "WaitFor3DScan:ScanTerminatedEarly"],["SuccessfulScan","aaaaa"]]
     sel = Selection_axial()
     sel_gimbal = Selection_gimbal()
     sel_pendant = Selection_pendant()
     sel_system = Selection_system()
-    with open(str(open_files), "r") as reader, open(file_path_name, "w") as writer:      
-          if self.fileName == "RotorControlApp.log":
-            writer.writelines(line for line in reader if sel.check_line(line,scan,hour.replace("_", ":"),day))
-          elif self.fileName == "GimbalControlApp.log":
-            writer.writelines(line for line in reader if sel_gimbal.check_line(line,scan,hour.replace("_", ":"),day))
-          elif self.fileName == "SystemManagerApp.log":
-            writer.writelines(line for line in reader if sel_system.check_line(line,scan,hour.replace("_", ":"),day))
-          elif self.fileName == "PendantUIApp.log":
-            writer.writelines(line for line in reader if sel_pendant.check_line(line,scan,hour.replace("_", ":"),day))
+    index = self.list_files.index(self.fileName)
+    print ("INDEX")
+    print (index)
+    with open(str(open_files), "r") as reader, open(file_path_name, "w") as writer:        
+             #if self.fileName == self.list_files[i]:
+          writer.writelines(line for line in reader if sel.check_line(line,scan,hour.replace("_", ":"),day,self.initial_verification[index],self.end_verification[index]))
+              #if self.fileName == "RotorControlApp.log":
+              #  writer.writelines(line for line in reader if sel.check_line(line,scan,hour.replace("_", ":"),day,0))
+              #elif self.fileName == "GimbalControlApp.log":
+              #  writer.writelines(line for line in reader if sel_gimbal.check_line(line,scan,hour.replace("_", ":"),day))
+              #elif self.fileName == "SystemManagerApp.log":
+              #  writer.writelines(line for line in reader if sel_system.check_line(line,scan,hour.replace("_", ":"),day))
+              #elif self.fileName == "PendantUIApp.log":
+              #  writer.writelines(line for line in reader if sel_pendant.check_line(line,scan,hour.replace("_", ":"),day))
     
 
 def main():
