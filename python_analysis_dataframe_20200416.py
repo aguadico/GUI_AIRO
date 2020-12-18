@@ -115,14 +115,6 @@ def writing_files(input_path):
         print (files_control_output[i])
         with open(files_control_input[i], "r") as reader, open(files_control_output[i], "w") as writer: 
           writer.writelines(line for line in reader if _check_scan(line,codes_control[i]))
-    #with open(rotor_control_app_path, "r") as reader, open(rotor_control_app_path_output, "w") as writer: 
-    #      writer.writelines(line for line in reader if _check_scan(line,"#f11"))
-    #with open(gimbal_control_app_path, "r") as reader, open(gimbal_control_app_path_output, "w") as writer: 
-    #      writer.writelines(line for line in reader if _check_scan(line,"#z11"))
-    #with open(pendant_ui_app_path, "r") as reader, open(pendant_ui_app_path_output, "w") as writer: 
-    #      writer.writelines(line for line in reader if _check_scan(line,"#i11"))
-    #with open(system_manager_app_path, "r") as reader, open(system_manager_app_path_output, "w") as writer: 
-    #      writer.writelines(line for line in reader if _check_scan(line,"#s11"))
     return rotor_control_app_path_output,gimbal_control_app_path_output,pendant_ui_app_path_output,system_manager_app_path_output
 
 
