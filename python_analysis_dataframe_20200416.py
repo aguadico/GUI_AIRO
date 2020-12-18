@@ -21,6 +21,7 @@ from datetime import timedelta
 
 
 
+
 class Selection_axial:
    def __init__(self):
         self.verification = False
@@ -50,6 +51,21 @@ def _check_scan(line,scan_type):
     test = ((test_scout or test_axial_scan or test_helical_scan or test_warm_up_scan or test_gain_cal or test_QC) and testd_month)
     return test
 
+
+
+
+def _check_general(line,search):
+    results = []
+    results_true = []
+    for best in search:
+        results.append(best in line)
+        if (best in line)== True:
+            results_true.append(best in line)
+    if len(results_true) >= 1:
+       result = True
+    else:
+       result = False 
+    return result
 
 def _check_rotor_scan(line):
     best_1 = "ReconstructionManager received scan protocol: ScanProtocol:" in line
@@ -194,38 +210,13 @@ def writing_files(input_path):
     return rotor_control_app_path_output,gimbal_control_app_path_output,pendant_ui_app_path_output,system_manager_app_path_output
 
 
-
-def reading_rotor_motion(self,output_path):
-    #INPUT FILES 
-    rotor_motion_app_path_scan = os.path.join(output_path,"motion_rotor_summary")
-    with open(self.file_to_display, "r") as reader, open(rotor_motion_app_path_scan, "w") as writer: 
-          writer.writelines(line for line in reader if _check_rotor_motion(line))
     
-def reading_rotor_best_scan(self,output_path,name,function_scan,function_best):
+def summarising_file(self,file_input,file_scan,search):
     #INPUT FILES 
-    rotor_control_app_path_scan = os.path.join(output_path,name)
-    rotor_control_app_path_best = os.path.join(output_path,name)
-    with open(self.file_to_display, "r") as reader, open(rotor_control_app_path_scan, "w") as writer: 
-          writer.writelines(line for line in reader if function_scan(line))
-    with open(self.file_to_display, "r") as reader, open(rotor_control_app_path_best, "w") as writer: 
-          writer.writelines(line for line in reader if function_best(line))
-
-def reading_system_best_scan(self,output_path):
-    #INPUT FILES 
-    rotor_control_app_path_scan = os.path.join(output_path,"scan_system_summary")
-    rotor_control_app_path_best = os.path.join(output_path,"scan_system_summary")
-    with open(self.file_to_display, "r") as reader, open(rotor_control_app_path_scan, "w") as writer: 
-          writer.writelines(line for line in reader if _check_system_scan(line))
-    with open(self.file_to_display, "r") as reader, open(rotor_control_app_path_best, "w") as writer: 
-          writer.writelines(line for line in reader if _check_system_best(line))
-
-
-def pendant_system_best_scan(self,output_path):
-    #INPUT FILES 
-    rotor_control_app_path_scan = os.path.join(output_path,"scan_pendant_summary")
-    rotor_control_app_path_best = os.path.join(output_path,"scan_pendant_summary")
-    with open(self.file_to_display, "r") as reader, open(rotor_control_app_path_best, "w") as writer: 
-          writer.writelines(line for line in reader if _check_pendant_best(line))
+    with open(file_input, "r") as reader, open(file_scan, "w") as writer: 
+          writer.writelines(line for line in reader if _check_general(line,search))
+    #with open(self.file_to_display, "r") as reader, open(file_best, "w") as writer: 
+    #      writer.writelines(line for line in reader if _check_general(line,ROTOR_BEST))
 
 
 def generate_output_file(self,output_path,column_names):
@@ -242,8 +233,7 @@ def generate_output_file(self,output_path,column_names):
     self.initial_verification = ["#f11 Prepared " + str(scan),"#t11 Prepared " + str(scan),"#i11 Prepared " + str(scan), "#s11 Prepared " + str(scan)]
     self.end_verification = [["ReconstructionManager: transitioning to Completed","aaaaaaaa"],["New Status From Power Control Board: ZZ","New Mode From Power Control Board: ZZ"], ["$s00 Completed OK ", "WaitFor3DScan:ScanTerminatedEarly"],["SuccessfulScan","aaaaa"]]
     sel = Selection_axial()
-    print ("INDEX")
-    print (index)
+    index = self.list_files.index(self.fileName)
     with open(str(open_files), "r") as reader, open(file_path_name, "w") as writer:        
           writer.writelines(line for line in reader if sel.check_line(line,scan,hour.replace("_", ":"),day,self.initial_verification[index],self.end_verification[index]))
 

@@ -40,7 +40,45 @@ import python_analysis_dataframe_20200416
 import datetime
 from datetime import timedelta
 import datetime
-#matplotlib.use('Qt5Agg')
+
+ROTOR_SCAN = ["ReconstructionManager received scan protocol: ScanProtocol:","Category=","DICOMName=","#f11 Prepared","#r11 Prepared","FrameGrabber Started", "ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row="
+"XRaySummary is: kV:", "AirQualifyClass Loaded Current Scan","#n11 Completed","#xxm Y" ,"ReconstructionManager.TransitionStates: Starting FrameGrabber",
+"ReconstructionManager.TransitionStates: FrameGrabber Started","New Status From X-Ray Control Board: Ymr","New Status From X-Ray Control Board: Ym","New Status From X-Ray Control Board: Yaw",
+"New Status From X-Ray Control Board: Yxq","ScoutScanConsumer Finish method completed","New Status From X-Ray Control Board: YKY","New Mode From X-Ray Control Board: YT", "ReconstructionManager released frames"
+"New Status From X-Ray Control Board: NN","New Status From X-Ray Control Board:","TubeCoolDownTimer Logged Scan:",
+"New Mode From Power Control Board: DD", "New Mode From Power Control Board: XKX","New Mode From Power Control Board: XM","New Mode From Power Control Board: XM",
+"New Mode From Power Control Board: ZZ","ReconstructionManager.TransitionStates","ReconstructionManager: transitioning to Completed","ReconstructionManager released frames","successfully completed","TubeCoolDownTimer Logged Scan"]
+ROTOR_BEST = ["AirQualifyClass is unable to Load Candidate Scan","Too many bad detectors found!","Pleora Device Open Failed","NoGPUAvailable","ReconstructionInitializer.FullSetup failed","New Mode From X-Ray Control Board:",
+"ReconstructionManager.TransitionStates:","Stopping Rotor Control Application","Starting Rotor Control Application","ConfigStore.Set: History/MaintenanceScans ->"]
+ROTOR_MOTION = ["MotorController.LogRotorData"]
+
+SYSTEM_SCAN = ["MQM message received: @D#s11 Prepared ","MQM send message: #*11 Prepared ","CsScriptEngine.RunScript, script=Prepare, args= ","-- Start PrepareFor","-- PrepareFor ","SystemManager.OnScriptCompleted SUCCESS","MQM message received: @D#s11 Completed ",
+"MQM send message: #*11 Completed ","SystemStatusAgglomerator raising ReadyToScan event ","CsScriptEngine.RunScript, script=StartScan, args= ","SystemManager.OnScriptCompleted SUCCESS, id=G ","Component Status Changed: Address x | Completed | Transitioning | ","Component Status Changed: Address r | Completed | OK | ",
+"Component Status Changed: Address x | Completed | Transitioning | ","Component Status Changed: Address x | Completed | Transitioning | ","Component Status Changed: Address x | Completed | OK | WarmupScan | ","CsScriptEngine.RunScript, script=CompleteScan",
+"CompleteScan script dock LAN connected! ","MaintenanceManager recording ","Undocking","Moving","Accelerating","XRaying","ScanComplete","SystemManager.OnScriptCompleted SUCCESS"]
+SYSTEM_BEST = ["MaintenanceManager recording WarmUp at","MaintenanceManager recording GainCal","MaintenanceManager recording EstopTest","MaintenanceManager recording QCSAB","MaintenanceManager recording QCSTB","ConfigStore.Set: Primary ->","ConfigStore.Set: User ->","ConfigStore.Set: System ->","ConfigStore.Set: History ->",
+"MaintenanceManager recording WarmUp at","MaintenanceManager recording GainCal","MaintenanceManager recording EstopTest","MaintenanceManager recording QCSAB","MaintenanceManager recording QCSTB","System address n not registered with queue manager","System address x not registered with queue manager",
+"System address g not registered with queue manager","System address r not registered with queue manager","System address f not registered with queue manager","PrepareForScan Script Failed","Error loading Config file",
+"MIGimbal n","MIGimbal p","MIGimbal z","MIGimbal t", "MIRotor n", "MIRotor x", "MIRotor g", "MIRotor r","Script Failed"]
+
+PENDANT_SCAN = ["UI: StateMachine: Fire"]
+PENDANT_BEST =  ["Failed DB Integrity Check: DB Corruption Found","UI: StateMachine: Fire"]
+GIMBAL_SCAN = ["Handling Client Message: #t11 Prepared","New Scan From Power Control Board: AA","New Scan From Power Control Board: DD","Handling Client Message: p11 Completed","New Scan From Power Control Board: XKX","New Scan From Power Control Board: XKS",
+"New Scan From Power Control Board: XM","New Scan From Power Control Board: DD","New Scan From Power Control Board: ZZ"]
+GIMBAL_BEST = []
+
+
+
+SHUTDOWN_CODES =["FsI","FsN","FsP","FsB","FsW","FsF","FsK","FsZ"]
+SHUTDOWN_CODES_MEANING = ["1st turn turning on after board is flashed",
+"power to the control board failed unexpectedly",
+"shutdown normally (Base: user power switch, Rotor: signal from Base)",
+"battery error (Base only)",
+"shutdown off automatically after timeout (Base only)",
+"computer requested shutdown (currently Base only, but intend to add this to rotor to allow self-reboot)",
+"timed out waiting for re-docking to complete", "timed out waiting for computer to acknowledge scan termination FsX – Rotor Control firmware fault"]
+
+
 
 class window(QMainWindow):
 
@@ -161,6 +199,17 @@ class window(QMainWindow):
         elif self.fileName == "GimbalControlApp.log":
            self.logfile_type = "GIMBAL"
 
+    def classify_display_file(self,file_to_display):
+        if "ROTOR" in self.file_to_display:
+            self.file_to_display_rotor = file_to_display
+        elif "GIMBAL" in self.file_to_display:
+            self.file_to_display_gimbal = file_to_display
+        elif "SYSTEM" in self.file_to_display:
+            self.file_to_display_system = file_to_display
+        elif "PENDANT" in self.file_to_display:
+            self.file_to_display_pendant = file_to_display
+
+
     def file_output_filtering(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
@@ -183,7 +232,8 @@ class window(QMainWindow):
         print (self.index_scan)
         name = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[self.index_scan]
         #name_2 = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[index_alternative[1]]
-        self.file_to_display = os.path.join(self.output_path,name)
+        self.file_to_display = (os.path.join(self.output_path,name))
+        self.classify_display_file(self.file_to_display)
         file = open(str(self.file_to_display), "r")
         return file
         
@@ -214,40 +264,43 @@ class window(QMainWindow):
             text = file.read()
             self.textEdit_files.setText(text)
 
-
-
-    def filter_output_scan(self):
-        print ("HEREEEEE")
-        python_analysis_dataframe_20200416.reading_rotor_best_scan(self,"/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10")
-        python_analysis_dataframe_20200416.reading_rotor_motion(self,"/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10")
-        rotor_control_app_path_scan = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10","scan_rotor_summary")
-        rotor_control_app_path_best = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10","best_rotor_summary")
-        rotor_control_motion = os.path.join("/Users/anagtv/Documents/Visitas_AIRO/Visita_AIRO_2020112123/AIRO-Logs-0168-2020-11-20T18-55-10","motion_rotor_summary")
-        file_scan = open(str(rotor_control_app_path_scan), "r")
-        file_best = open(str(rotor_control_app_path_best), "r")
-        file_motion = open(str(rotor_control_motion), "r")
+    def filter_general_file(self,path_scan,path_best,file_input,notebook,notebook_2,filter_scan,filter_best):
+        python_analysis_dataframe_20200416.summarising_file(self,file_input,path_scan,filter_scan)
+        python_analysis_dataframe_20200416.summarising_file(self,file_input,path_best,filter_best)      
+        file_scan = open(str(path_scan), "r")
+        file_best = open(str(path_best), "r")
+        print (filter_scan)
+        print (filter_best)
         with file_scan:
+            print ("HEREEE")
             text_scan = file_scan.read()
-            self.textEdit_files_selection_rotor.setText(text_scan)
+            notebook.setText(text_scan)
         with file_best:
             text_best = file_best.read()
-            self.textEdit_files_selection_2_rotor.setText(text_best)
+            notebook_2.setText(text_best)
+
+    def filter_rotor_speed(self,path_motion):
+        file_motion = open(str(path_motion), "r")
         with file_motion:
             text_motion = (file_motion.readlines())
-            print ("TEXT MOTION")
-            print ("HEREEE")
-            print (text_motion)
-            print (len(text_motion))
             speed_values_1 = []
             speed_values_2 = []
             for line in (text_motion):
-                print (line)
-                print (line.split())
-                speed_values_1.append(line.split()[5])
+                speed_values_1.append(float(line.split()[5][:-1]))
                 speed_values_2.append(line.split()[-1])
-        print ("SPEED VALUES")
-        print (speed_values_1)
-        print (speed_values_2)
+
+    def filter_output_scan_rotor(self):
+        rotor_control_app_path_scan = os.path.join(self.output_path,"motion_rotor_scan")
+        rotor_control_app_path_best = os.path.join(self.output_path,"motion_rotor_best")
+        rotor_control_motion = os.path.join(self.output_path,"motion_rotor_summary")
+        self.filter_general_file(rotor_control_app_path_scan,rotor_control_app_path_best,self.file_to_display_rotor,self.textEdit_files_selection_rotor,self.textEdit_files_selection_2_rotor,ROTOR_SCAN,ROTOR_BEST)
+        self.filter_rotor_speed(rotor_control_motion)
+        
+    def filter_output_scan_gimbal(self):
+        rotor_gimbal_app_path_scan = os.path.join(self.output_path,"motion_gimbal_scan")
+        rotor_gimbal_app_path_best = os.path.join(self.output_path,"motion_gimbal_best")
+        self.filter_general_file(rotor_gimbal_app_path_scan,rotor_gimbal_app_path_best,self.file_to_display_gimbal,self.textEdit_files_selection_gimbal,self.textEdit_files_selection_2_gimbal,GIMBAL_SCAN,GIMBAL_BEST)
+        
         #self.sc3.axes.errorbar(speed_values_1,yerr=0,"o",label= "SPEED ROTOR 1", picker=5)
         #self.sc3.axes.errorbar(speed_values_2,yerr=0,"o",label= "SPEED ROTOR 2", picker=5)
         #saving_files_summary_list.main(self,"/Users/anagtv/Desktop",0)
@@ -372,22 +425,23 @@ class window(QMainWindow):
             self.styleChoice.setFont(font)
 
     def tab1_layout(self):
-        self.widget_tab2 = QtWidgets.QWidget(self.tab2)
+        self.widget_tab2 = QtWidgets.QWidget(self.tab1)
         self.widget_tab2.setGeometry(QtCore.QRect(20, 20, 280, 230))
         self.widget_tab2.setObjectName("widget")
-        self.textEdit_files = QtWidgets.QTextEdit(self.tab2)
+        self.textEdit_files = QtWidgets.QTextEdit(self.tab1)
         self.textEdit_files.setGeometry(QtCore.QRect(340, 10, 450, 600))
-        self.textEdit_files_2 = QtWidgets.QTextEdit(self.tab2)
+        self.textEdit_files_2 = QtWidgets.QTextEdit(self.tab1)
         self.textEdit_files_2.setGeometry(QtCore.QRect(800, 10, 450, 600))
 
+
     def tab1_buttons(self):
-        self.tablefiles_tab2 = QtWidgets.QTableWidget(self.tab2)
+        self.tablefiles_tab2 = QtWidgets.QTableWidget(self.tab1)
         self.tablefiles_tab2.setGeometry(QtCore.QRect(20, 10, 310, 350))
         self.tablefiles_tab2.setObjectName("tableWidget")
         self.tablefiles_tab2.setRowCount(100)
         self.tablefiles_tab2.setColumnCount(3)
         self.tablefiles_tab2.setHorizontalHeaderLabels(["Day","Hour","Scan"])
-        self.tablestatistic_tab2 = QtWidgets.QTableWidget(self.tab2)
+        self.tablestatistic_tab2 = QtWidgets.QTableWidget(self.tab1)
         self.tablestatistic_tab2.setGeometry(QtCore.QRect(20, 370, 221, 100))
         self.tablestatistic_tab2.setRowCount(5)
         self.tablestatistic_tab2.setColumnCount(1)
@@ -399,10 +453,10 @@ class window(QMainWindow):
         self.tablestatistic_tab2.setItem(3,0, QTableWidgetItem(str())) 
 
     def tab1_activities(self):
-        self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab2)
+        self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab1)
         self.pushButton_analyze.setGeometry(QtCore.QRect(20, 490, 221, 30))
         #
-        self.pushButton_analyze_second = QtWidgets.QPushButton('Analyze on second screen', self.tab2)
+        self.pushButton_analyze_second = QtWidgets.QPushButton('Analyze on second screen', self.tab1)
         self.pushButton_analyze_second.setGeometry(QtCore.QRect(20, 530, 221, 30))
         #
         self.pushButton_analyze.clicked.connect(self.analyze_selected_files)
@@ -414,43 +468,55 @@ class window(QMainWindow):
         self.selection_logfile.selectionChanged.connect(self.handleSelectionChanged_component)
 
     def tab2_layout(self):
-        self.plot_central = Canvas_tab2(width=8, height=20, dpi=100, parent=self.tab1) 
+        self.plot_central = Canvas_tab2(width=8, height=20, dpi=100, parent=self.tab2) 
         self.plot_central.setGeometry(QtCore.QRect(10, 10, 500, 500))
-        self.textEdit_files_selection_rotor = QtWidgets.QTextEdit(self.tab1)
+        self.textEdit_files_selection_rotor = QtWidgets.QTextEdit(self.tab2)
         self.textEdit_files_selection_rotor.setGeometry(QtCore.QRect(520, 10, 350, 430))
-        self.textEdit_files_selection_2_rotor = QtWidgets.QTextEdit(self.tab1)
+        self.textEdit_files_selection_2_rotor = QtWidgets.QTextEdit(self.tab2)
         self.textEdit_files_selection_2_rotor.setGeometry(QtCore.QRect(880, 10, 350, 430))
-        self.pushButton_analyze_rotor = QtWidgets.QPushButton('Summarize Rotor', self.tab1)
+        self.pushButton_analyze_rotor = QtWidgets.QPushButton('Summarize Rotor', self.tab2)
         self.pushButton_analyze_rotor.setGeometry(QtCore.QRect(20, 490, 221, 30))
-        self.pushButton_analyze_rotor.clicked.connect(self.filter_output_scan)
+        self.pushButton_analyze_rotor.clicked.connect(self.filter_output_scan_rotor)
 
     def tab3_layout(self):
-        self.label_best_pendant = QLabel("Best Search Pendant:",self.tab3)
+        self.plot_central = Canvas_tab2(width=8, height=20, dpi=100, parent=self.tab3) 
+        self.plot_central.setGeometry(QtCore.QRect(10, 10, 500, 500))
+        self.textEdit_files_selection_gimbal = QtWidgets.QTextEdit(self.tab3)
+        self.textEdit_files_selection_gimbal.setGeometry(QtCore.QRect(520, 10, 350, 430))
+        self.textEdit_files_selection_2_gimbal = QtWidgets.QTextEdit(self.tab3)
+        self.textEdit_files_selection_2_gimbal.setGeometry(QtCore.QRect(880, 10, 350, 430))
+        self.pushButton_analyze_rotor = QtWidgets.QPushButton('Summarize Gimbal', self.tab3)
+        self.pushButton_analyze_rotor.setGeometry(QtCore.QRect(20, 490, 221, 30))
+        self.pushButton_analyze_rotor.clicked.connect(self.filter_output_scan_gimbal)
+
+    def tab4_layout(self):
+        self.label_best_pendant = QLabel("Best Search Pendant:",self.tab4)
         self.label_best_pendant.setGeometry(QtCore.QRect(10, 5, 200, 30))
-        self.textEdit_files_selection_system = QtWidgets.QTextEdit(self.tab3)
+        self.textEdit_files_selection_system = QtWidgets.QTextEdit(self.tab4)
         self.textEdit_files_selection_system.setGeometry(QtCore.QRect(10, 50, 400, 430))
-        self.label_best_pendant = QLabel("Best Search System:",self.tab3)
+        self.label_best_pendant = QLabel("Best Search System:",self.tab4)
         self.label_best_pendant.setGeometry(QtCore.QRect(450, 5, 200, 30))
-        self.textEdit_files_selection_system = QtWidgets.QTextEdit(self.tab3)
+        self.textEdit_files_selection_system = QtWidgets.QTextEdit(self.tab4)
         self.textEdit_files_selection_system.setGeometry(QtCore.QRect(450, 50, 400, 430))
-        self.label_best_pendant = QLabel("Summary Scan Pendant:",self.tab3)
+        self.label_best_pendant = QLabel("Summary Scan Pendant:",self.tab4)
         self.label_best_pendant.setGeometry(QtCore.QRect(880, 5, 200, 30))
-        self.textEdit_files_selection_2_system = QtWidgets.QTextEdit(self.tab3)
+        self.textEdit_files_selection_2_system = QtWidgets.QTextEdit(self.tab4)
         self.textEdit_files_selection_2_system.setGeometry(QtCore.QRect(880, 50, 400, 430))
-        self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab3)
+        self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab4)
         self.pushButton_analyze.setGeometry(QtCore.QRect(20, 490, 221, 30))
 
     def home(self, main_layout):
         self.tabs = QtWidgets.QTabWidget()
-        self.tab2 = QtWidgets.QWidget()
         self.tab1 = QtWidgets.QWidget()
+        self.tab2 = QtWidgets.QWidget()
         self.tab3 = QtWidgets.QWidget()
         self.tab4 = QtWidgets.QWidget()
         self.tabs.resize(300,200)
         # Add tabs
-        self.tabs.addTab(self.tab2,"Overview")
-        self.tabs.addTab(self.tab1,"Rotor")
-        self.tabs.addTab(self.tab3,"SystemManager/Pendant")
+        self.tabs.addTab(self.tab1,"Overview")
+        self.tabs.addTab(self.tab2,"Rotor")
+        self.tabs.addTab(self.tab3,"Gimbal")
+        self.tabs.addTab(self.tab4,"SystemManager/Pendant")
         self.tab2.main_layout = QtWidgets.QVBoxLayout(self)
         self.tab2.setLayout(self.tab2.main_layout)
         # TAB 1        
@@ -461,6 +527,8 @@ class window(QMainWindow):
         self.tab2_layout()
         # TAB 3
         self.tab3_layout()
+        # TAB 4
+        self.tab4_layout()
         self.show()
         # Add tabs to widget
         main_layout.addWidget(self.tabs)
