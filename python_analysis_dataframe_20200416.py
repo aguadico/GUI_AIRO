@@ -52,8 +52,6 @@ def _check_scan(line,scan_type):
     return test
 
 
-
-
 def _check_general(line,search):
     results = []
     results_true = []
@@ -67,96 +65,6 @@ def _check_general(line,search):
        result = False 
     return result
 
-def _check_rotor_scan(line):
-    best_1 = "ReconstructionManager received scan protocol: ScanProtocol:" in line
-    best_2 = "Category=" in line
-    best_3 = "DICOMName=" in line
-    best_4 = "FrameGrabber Started" in line
-    best_5 = "Completed ScoutScan" in line
-    best_6 = "#xxm Y" in line
-    best_7 = "New Status From X-Ray Control Board: Ymr" in line
-    best_8 = "New Status From X-Ray Control Board: Yaw" in line
-    best_9 = "New Status From X-Ray Control Board: Yxq" in line
-    best_10 = "ScoutScanConsumer Finish method completed" in line
-    best_11 = "New Status From X-Ray Control Board: YKY" in line
-    best_12 = "New Status From X-Ray Control Board: NN" in line
-    best_13 = "New Status From X-Ray Control Board:" in line
-    best_14 = "ReconstructionManager.TransitionStates" in line
-    best_15 = "ReconstructionManager: transitioning to Completed" in line
-    result = (best_1 or best_2 or best_3 or best_4 or best_5 or best_6 or best_7 or best_8 or best_9 or best_10 or best_11 or best_12 or best_13 or best_14)
-    return result
-
-
-def _check_rotor_best(line): 
-    best_1 = "AirQualifyClass is unable to Load Candidate Scan" in line
-    best_2 = "Too many bad detectors found!" in line
-    best_3 = "Pleora Device Open Failed" in line
-    best_4 = "NoGPUAvailable" in line
-    best_5 = "New Mode From X-Ray Control Board:" in line
-    best_6 = "Stopping Rotor Control Application" in line
-    best_7 = "Starting Rotor Control Application" in line
-    best_8 = "ConfigStore.Set: History/MaintenanceScans ->" in line
-    result = (best_1 or best_2 or best_3 or best_4 or best_5 or best_6 or best_7 or best_8)
-    return result
-
-def _check_rotor_motion(line):
-    rotor_motion = "MotorController.LogRotorData" in line
-    return rotor_motion
-
-def _check_system_scan(line):
-    best_1 = "-- Start PrepareForScan Script --" in line
-    best_2 = "-- PrepareForScan Script Succeeded --"  in line  
-    best_3 = "CsScriptEngine.RunScript, script=StartScan, args=" in line
-    best_4 = "SystemManager.OnScriptCompleted SUCCESS" in line
-    best_5 = "Undocking" in line
-    best_6 = "Moving" in line
-    best_7 = "Accelerating" in line
-    best_8 = "XRaying" in line
-    best_9 = "ScanComplete" in line
-    best_10 = "CompleteScan script dock LAN connected!" in line
-    best_11 = "MaintenanceManager recording WarmUp" in line
-    best_12 = "SystemManager.OnScriptCompleted SUCCESS, id=H" in line
-    result = (best_1 or best_2 or best_3 or best_4 or best_5 or best_6 or best_7 or best_8 or best_9 or best_10 or best_11 or best_12)
-    return result
-
-
-def _check_system_best(line):
-    best_1 = "MaintenanceManager recording WarmUp at" in line
-    best_2 = "MaintenanceManager recording GainCal" in line
-    best_3 = "MaintenanceManager recording EstopTest" in line
-    best_4 = "MaintenanceManager recording QCSAB" in line
-    best_5 = "MaintenanceManager recording QCSTB"
-    best_6 = "ConfigStore.Set: Primary ->" in line
-    best_7 = "ConfigStore.Set: User ->" in line
-    best_8 = "ConfigStore.Set: System ->" in line
-    best_9 = "ConfigStore.Set: History ->" in line
-    best_10 = "MaintenanceManager recording WarmUp at" in line
-    best_11 = "MaintenanceManager recording GainCal" in line
-    best_12 = "MaintenanceManager recording EstopTest" in line
-    best_13 = "MaintenanceManager recording QCSAB" in line
-    best_14 = "MaintenanceManager recording QCSTB" in line
-    best_15 = "System address n not registered with queue manager" in line
-    best_16 = "System address x not registered with queue manager" in line
-    best_17 = "System address g not registered with queue manager" in line
-    best_18 = "System address r not registered with queue manager" in line
-    best_19 = "System address f not registered with queue manager" in line
-    best_20 = "PrepareForScan Script Failed" in line
-    best_21 = "Error loading Config file" in line
-    best_22 = "MIGimbal n"
-    best_23 = "MIGimbal p"
-    best_24 = "MIGimbal z"
-    best_25 = "MIGimbal t"
-    best_26 = "MIRotor n"
-    best_27 = "MIRotor x"
-    best_28 = "MIRotor g"
-    best_29 = "MIRotor r"
-    return (best_1 or best_2 or best_3 or best_4 or best_5 or best_6 or best_7 or best_8 or best_9 or best_10 or best_11 or best_12)
-
-def _check_pendant_best(line):
-    best_1 = "Failed DB Integrity Check: DB Corruption Found"
-    best_2 = "UI: StateMachine: Fire"
-    best = (best_1 or best_2)
-    return best
 
 def _combinig_different_files(rotor_file,gimbal_file):
     set_c = set_a + set_c 
