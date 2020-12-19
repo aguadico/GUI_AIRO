@@ -26,13 +26,13 @@ class Selection_axial:
    def __init__(self):
         self.verification = False
         self.verification_delay = False
-   def check_line(self,line,scan_type,hours,day,initial,final):
+   def check_line(self,line,hours,verification):
     #print (initial)
     #print (final)
-    if initial in line and hours in line:
+    if verification[0] in line and hours in line:
          self.verification = True
          self.verification_delay = True 
-    elif (final[0] in line or final[1] in line) and self.verification_delay == True:
+    elif (verification[1][0] in line or verification[1][1] in line) and self.verification_delay == True:
          self.verification_delay = False
          self.verification = True
     else:
@@ -128,13 +128,13 @@ def summarising_file(self,file_input,file_scan,search):
 
 
 def generate_output_file(self,output_path,column_names):
-    hour = (getattr(self.data_df_all_subsystems,column_names[2])).dropna().iloc[self.index_scan]
-    name = (getattr(self.data_df_all_subsystems,column_names[3])).dropna().iloc[self.index_scan]
-    scan = (getattr(self.data_df_all_subsystems,column_names[0])).dropna().iloc[self.index_scan]
-    day = (getattr(self.data_df_all_subsystems,column_names[1])).dropna().iloc[self.index_scan]
-    # DEFINTION: SAVING DAYS ASSOCIATED TO EACH FILE IN DATA FRAME
-    #df_dates[all_scan_different_components_names[j]] = (days)       
-    # DEFINITION: READING FILES AND WRITING THE SELECTED LINES INTO FILE
+    complete_date = []
+    for i in range(4):
+        complete_date.append((getattr(self.data_df_all_subsystems,column_names[i])).dropna().iloc[self.index_scan])
+    scan = complete_date[0]
+    day = complete_date[1]
+    hour = complete_date[2]
+    name = complete_date[3]
     open_files = str(os.path.join(self.dir_,self.fileName))
     file_path_name = os.path.join(self.output_path,str(name))
     self.list_files = ["RotorControlApp.log","GimbalControlApp.log","SystemManagerApp.log","PendantUIApp.log"]
@@ -142,8 +142,9 @@ def generate_output_file(self,output_path,column_names):
     self.end_verification = [["ReconstructionManager: transitioning to Completed","aaaaaaaa"],["New Status From Power Control Board: ZZ","New Mode From Power Control Board: ZZ"], ["$s00 Completed OK ", "WaitFor3DScan:ScanTerminatedEarly"],["SuccessfulScan","aaaaa"]]
     sel = Selection_axial()
     index = self.list_files.index(self.fileName)
-    with open(str(open_files), "r") as reader, open(file_path_name, "w") as writer:        
-          writer.writelines(line for line in reader if sel.check_line(line,scan,hour.replace("_", ":"),day,self.initial_verification[index],self.end_verification[index]))
+    with open(str(open_files), "r") as reader, open(file_path_name, "w") as writer:   
+          verification = self.initial_verification[index],self.end_verification[index]     
+          writer.writelines(line for line in reader if sel.check_line(line,hour.replace("_", ":"),verification))
 
    
 
