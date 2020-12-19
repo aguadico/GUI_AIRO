@@ -218,36 +218,33 @@ class window(QMainWindow):
         self.classify_display_file(self.file_to_display)
         file = open(str(self.file_to_display), "r")
         return file
+
+    #def logfile_writing(self):
+    #    with 
         
     def file_output(self):
         file_first_window = self.file_output_filtering()
         with file_first_window:
             text = file_first_window.read()
             self.textEdit_files.setText(text)
-            #elif number == "Second":
-            #   self.textEdit_files_2.setText(text)
+
     def file_output_second(self):
         file_second_window = self.file_output_filtering()
         with file_second_window:
             text = file_second_window.read()
             self.textEdit_files_2.setText(text)
 
-
-
-    def filter_general_file(self,path_scan,path_best,file_input,notebook,notebook_2,filter_scan,filter_best):
-        python_analysis_dataframe_20200416.summarising_file(self,file_input,path_scan,filter_scan)
-        python_analysis_dataframe_20200416.summarising_file(self,file_input,path_best,filter_best)      
-        file_scan = open(str(path_scan), "r")
-        file_best = open(str(path_best), "r")
-        print (filter_scan)
-        print (filter_best)
+    def filter_general_file(self,file_summary,notebook,filters):
+        python_analysis_dataframe_20200416.summarising_file(self,file_summary[2],file_summary[0],filters[0])
+        python_analysis_dataframe_20200416.summarising_file(self,file_summary[2],file_summary[1],filters[1])      
+        file_scan = open(str(file_summary[0]), "r")
+        file_best = open(str(file_summary[1]), "r")
         with file_scan:
-            print ("HEREEE")
             text_scan = file_scan.read()
-            notebook.setText(text_scan)
+            notebook[0].setText(text_scan)
         with file_best:
             text_best = file_best.read()
-            notebook_2.setText(text_best)
+            notebook[1].setText(text_best)
 
     def filter_rotor_speed(self,path_motion):
         file_motion = open(str(path_motion), "r")
@@ -263,13 +260,19 @@ class window(QMainWindow):
         rotor_control_app_path_scan = os.path.join(self.output_path,"motion_rotor_scan")
         rotor_control_app_path_best = os.path.join(self.output_path,"motion_rotor_best")
         rotor_control_motion = os.path.join(self.output_path,"motion_rotor_summary")
-        self.filter_general_file(rotor_control_app_path_scan,rotor_control_app_path_best,self.file_to_display_rotor,self.textEdit_files_selection_rotor,self.textEdit_files_selection_2_rotor,ROTOR_SCAN,ROTOR_BEST)
+        file_summary =  [rotor_control_app_path_scan,rotor_control_app_path_best,self.file_to_display_rotor]
+        notebooks = [self.textEdit_files_selection_rotor,self.textEdit_files_selection_2_rotor]  
+        filters = [ROTOR_SCAN,ROTOR_BEST]    
+        self.filter_general_file(file_summary,notebooks,filters)
         self.filter_rotor_speed(rotor_control_motion)
         
     def filter_output_scan_gimbal(self):
         rotor_gimbal_app_path_scan = os.path.join(self.output_path,"motion_gimbal_scan")
         rotor_gimbal_app_path_best = os.path.join(self.output_path,"motion_gimbal_best")
-        self.filter_general_file(rotor_gimbal_app_path_scan,rotor_gimbal_app_path_best,self.file_to_display_gimbal,self.textEdit_files_selection_gimbal,self.textEdit_files_selection_2_gimbal,GIMBAL_SCAN,GIMBAL_BEST)
+        file_summary = [rotor_gimbal_app_path_scan,rotor_gimbal_app_path_best,self.file_to_display_gimbal]
+        notebooks = [self.textEdit_files_selection_gimbal,self.textEdit_files_selection_2_gimbal]
+        filters = [GIMBAL_SCAN,GIMBAL_BEST]
+        self.filter_general_file(file_summary,notebooks,filters)
         
         #self.sc3.axes.errorbar(speed_values_1,yerr=0,"o",label= "SPEED ROTOR 1", picker=5)
         #self.sc3.axes.errorbar(speed_values_2,yerr=0,"o",label= "SPEED ROTOR 2", picker=5)
@@ -370,7 +373,7 @@ class window(QMainWindow):
         self.question.setGeometry(QtCore.QRect(200, 300, 100, 50)) 
         self.question.setStandardButtons(QMessageBox.Save)
         self.location = "First"
-        self.question.buttonClicked.connect(self.file_output)
+        self.question.buttonClicked.connect(self.file_output(self.textEdit_files))
         self.question.show()
 
     def fileQuit(self):
@@ -455,9 +458,9 @@ class window(QMainWindow):
         self.textEdit_files_selection_gimbal.setGeometry(QtCore.QRect(520, 10, 350, 430))
         self.textEdit_files_selection_2_gimbal = QtWidgets.QTextEdit(self.tab3)
         self.textEdit_files_selection_2_gimbal.setGeometry(QtCore.QRect(880, 10, 350, 430))
-        self.pushButton_analyze_rotor = QtWidgets.QPushButton('Summarize Gimbal', self.tab3)
-        self.pushButton_analyze_rotor.setGeometry(QtCore.QRect(20, 490, 221, 30))
-        self.pushButton_analyze_rotor.clicked.connect(self.filter_output_scan_gimbal)
+        self.pushButton_analyze_gimbal = QtWidgets.QPushButton('Summarize Gimbal', self.tab3)
+        self.pushButton_analyze_gimbal.setGeometry(QtCore.QRect(20, 490, 221, 30))
+        self.pushButton_analyze_gimbal.clicked.connect(self.filter_output_scan_gimbal)
 
     def tab4_layout(self):
         self.label_best_pendant = QLabel("Best Search Pendant:",self.tab4)
@@ -512,32 +515,6 @@ class window(QMainWindow):
         self.ui.widget_3.canvas.draw()
         self.ui.widget_4.canvas.ax.clear()
         self.ui.widget_4.canvas.draw()
-
-    def on_click(self):
-        self.textboxValue_file = self.textbox_file.text()
-        self.textboxValue_time = self.textbox_time.text()
-        self.textboxValue_action = self.textbox_action.text()
-        self.textboxValue_type = self.textbox_type.text()
-        print ("HEREEEEEEE")
-        print (self.textboxValue_file)
-        print (self.textboxValue_time)
-        print (self.textboxValue_action)
-        print (self.data_to_verify_4)
-        self.data_to_verify_a = (self.data_to_verify_4[self.data_to_verify_4["ACTION"].str.contains(self.textboxValue_action)])
-        print (self.data_to_verify_a)
-        self.data_to_verify_a = (self.data_to_verify_a[self.data_to_verify_a["FILE_TYPE"].str.contains(self.textboxValue_file)])
-        print (self.data_to_verify_a)
-        self.data_to_verify_a = (self.data_to_verify_a[self.data_to_verify_a["TIME_STAMP"].str.contains(self.textboxValue_time)])
-        print (self.data_to_verify_a)
-        self.data_to_verify_a = (self.data_to_verify_a[self.data_to_verify_a["TYPE"].str.contains(self.textboxValue_type)])    
-        tfs.write("test", self.data_to_verify_a) 
-        file = open(str("test"), "r")
-        #self.textEdit_files.setPlainText() 
-        with file:
-            text = file.read()
-            self.textEdit_files.setPlainText(text)
-            self.show()
-        #self.textEdit_files.setText(self.data_to_verify_a)              
 
 
 
