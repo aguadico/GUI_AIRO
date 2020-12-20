@@ -125,45 +125,6 @@ class window(QMainWindow):
         elif self.fileName == "GimbalControlApp.log":
            self.logfile_type = "GIMBAL"
 
-    def classify_display_file(self,file_to_display):
-        if "ROTOR" in self.file_to_display:
-            self.file_to_display_rotor = file_to_display
-        elif "GIMBAL" in self.file_to_display:
-            self.file_to_display_gimbal = file_to_display
-        elif "SYSTEM" in self.file_to_display:
-            self.file_to_display_system = file_to_display
-        elif "PENDANT" in self.file_to_display:
-            self.file_to_display_pendant = file_to_display
-
-
-    def file_output_filtering(self):
-        options = QFileDialog.Options()
-        options |= QFileDialog.DontUseNativeDialog
-        self.output_path = QFileDialog.getExistingDirectory(self, 'Select a folder:', 'C:\\', QFileDialog.ShowDirsOnly)
-        column_file_names = "FILE_NAME_" + str(self.logfile_type) 
-        column_day = "DAY_" + str(self.logfile_type)
-        scan_day = "SCAN_" + str(self.logfile_type)
-        hour_day = "HOUR_" + str(self.logfile_type)
-        column_names  = [scan_day,column_day ,hour_day,column_file_names]
-        checking_values = []
-        #date_values = list((getattr(self.data_df_all_subsystems,column_day)))
-        date_format = "%Y-%m-%d"
-        date_stamp = datetime.datetime.strptime(self.day_selected,date_format).date()
-        condition_1 = (getattr(self.data_df_all_subsystems,column_day) == date_stamp) 
-        condition_2 = (getattr(self.data_df_all_subsystems,scan_day) == self.scan_selected) 
-        condition_3 = (getattr(self.data_df_all_subsystems,hour_day).str.contains(self.hour_selected[0:4]))
-        self.index_scan = np.array((self.data_df_all_subsystems[condition_1 & condition_2 & condition_3].index))[0]
-        #self.index_scan = index_alternative[0]
-        python_analysis_dataframe_20200416.generate_output_file(self,"/Users/anagtv/Desktop/Visitas_Airo/File_analysis",column_names )
-        print (self.index_scan)
-        name = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[self.index_scan]
-        #name_2 = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[index_alternative[1]]
-        self.file_to_display = (os.path.join(self.output_path,name))
-        self.classify_display_file(self.file_to_display)
-        file = open(str(self.file_to_display), "r")
-        return file
-
-
     def file_output(self):
         file_first_window = opening_files.file_output_filtering(self)
         with file_first_window:
@@ -256,7 +217,9 @@ class window(QMainWindow):
             day_column = "DAY_" + str(self.names_components[i])
             scan_column = "SCAN_" + str(self.names_components[i])
             hour_column = "HOUR_" + str(self.names_components[i])
-            index_hour_i = opening_files.checking_functions(self,hour_column,day_column,scan_column,date_stamp,self.hour_selected,self.scan_selected)
+            checking_functions = [hour_column,day_column,scan_column,date_stamp]
+            selection = [self.hour_selected,self.scan_selected]
+            index_hour_i = opening_files.checking_functions(self,checking_functions,selection)
             len_index_i = len(index_hour_i)
             self.index_hour_all.append(index_hour_i)
             self.len_index_hour_all.append(len_index_i)
