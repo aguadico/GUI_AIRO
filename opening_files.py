@@ -101,7 +101,7 @@ def file_output_filtering(self):
     name = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[self.index_scan]
     #name_2 = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[index_alternative[1]]
     self.file_to_display = (os.path.join(self.output_path,name))
-    self.classify_display_file(self.file_to_display)
+    classify_display_file(self,self.file_to_display)
     file = open(str(self.file_to_display), "r")
     return file
 
@@ -133,12 +133,12 @@ def filter_rotor_speed(self,path_motion):
                 speed_values_1.append(float(line.split()[5][:-1]))
                 speed_values_2.append(line.split()[-1])
 
-def checking_functions(self,hour_column,day_column,scan_column,date_stamp,hour_selected,scan_selected):
-        if len(getattr(self.data_df_all_subsystems,hour_column).dropna()) != 0:
-           condition_day = getattr(self.data_df_all_subsystems,day_column) == date_stamp
-           condition_hour = getattr(self.data_df_all_subsystems,hour_column).str.contains(self.hour_selected[0:4]) 
-           condition_rotor = getattr(self.data_df_all_subsystems,scan_column).str.contains(self.scan_selected)
-           index_hour = getattr(self.data_df_all_subsystems,hour_column)[(condition_day) & (condition_hour) & (condition_rotor)]
+def checking_functions(self,columns,selection):
+        if len(getattr(self.data_df_all_subsystems,columns[0]).dropna()) != 0:
+           condition_day = getattr(self.data_df_all_subsystems,columns[1]) == columns[3]
+           condition_hour = getattr(self.data_df_all_subsystems,columns[0]).str.contains(selection[0][0:4]) 
+           condition_rotor = getattr(self.data_df_all_subsystems,columns[2]).str.contains(selection[1])
+           index_hour = getattr(self.data_df_all_subsystems,columns[0])[(condition_day) & (condition_hour) & (condition_rotor)]
         else:
            index_hour = []
         return index_hour
