@@ -13,16 +13,11 @@ from numpy import arange, sin, pi
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg, NavigationToolbar2QT as NavigationToolbar
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
-sys.path.append("/Users/anagtv/Desktop/Cyclotron_python/")
 import matplotlib.pyplot as plt
-#import saving_files_summary
-#import saving_files_summary_list
-#import plotting_summary_files_one_target
 import numpy as np
 import os
 import tfs
 import sys
-sys.path.append("/Users/anagtv/Desktop/Visitas_Airo/File_analysis/")
 import python_analysis_dataframe_20200416
 import opening_files 
 import searches
@@ -35,7 +30,6 @@ class window(QMainWindow):
 
     def __init__(self):
         super(window, self).__init__()
-
         self.setGeometry(50, 50, 1500, 1000)
         self.setWindowTitle('pyqt5 Tut')
         self.setWindowIcon(QIcon('pic.png'))
@@ -50,7 +44,6 @@ class window(QMainWindow):
         self.df_scans = pd.DataFrame(zero_data,columns=["SCAN_ROTOR","DAY_ROTOR","HOUR_ROTOR","FILE_NAME_ROTOR"])
         self.index_scan = 0
         self.logfile_type = "ROTOR"
-
         openFile = QAction('Open File', self)
         openFolder = QAction('Open Folder', self)
         openFile.setShortcut('Ctrl+O')
@@ -58,15 +51,11 @@ class window(QMainWindow):
         openFile.triggered.connect(self.file_open)
         openFolder.triggered.connect(self.file_folder)
         self.statusBar()
-
         mainMenu = self.menuBar()
         fileMenu = mainMenu.addMenu('&File')
         fileMenu.addAction(openFile)
         fileMenu.addAction(openFolder)
-
- 
         self.setWindowTitle("AIRO logfile Analysis")
-
         self.fileMenu = QtWidgets.QMenu('&File', self)
         self.fileMenu.addAction('&Quit', self.fileQuit,
                                  QtCore.Qt.CTRL + QtCore.Qt.Key_Q)
@@ -76,21 +65,17 @@ class window(QMainWindow):
         self.menuBar().addMenu(self.help_menu)
         self.main_widget = QtWidgets.QWidget(self)
         self.plot_widget = QWidget(self.main_widget)
-        self.plot_widget.setGeometry(250,180,500,600)
-        
+        self.plot_widget.setGeometry(250,180,500,600)      
         l = QtWidgets.QVBoxLayout(self.main_widget)
         m = QtWidgets.QVBoxLayout(self.plot_widget)
         self.main_widget.setFocus()
         self.setCentralWidget(self.main_widget)
-
         self.home(l)
         self.setMinimumSize(1000, 800)
-
-       
+      
     def editor(self):
         self.textEdit = QTextEdit()
         self.setCentralWidget(self.textEdit)
-
 
     def file_open(self):
         options = QFileDialog.Options()
@@ -140,12 +125,12 @@ class window(QMainWindow):
     def filter_output_scan_rotor(self):
         rotor_control_app_path_scan = os.path.join(self.output_path,"motion_rotor_scan")
         rotor_control_app_path_best = os.path.join(self.output_path,"motion_rotor_best")
-        rotor_control_motion = os.path.join(self.output_path,"motion_rotor_summary")
+        #rotor_control_motion = os.path.join(self.output_path,"motion_rotor_summary")
         file_summary =  [rotor_control_app_path_scan,rotor_control_app_path_best,self.file_to_display_rotor]
         notebooks = [self.textEdit_files_selection_rotor,self.textEdit_files_selection_2_rotor]  
         filters = [searches.ROTOR_SCAN,searches.ROTOR_BEST]    
         opening_files.filter_general_file(self,file_summary,notebooks,filters)
-        opening_files.filter_rotor_speed(self,rotor_control_motion)
+        #opening_files.filter_rotor_speed(self,rotor_control_motion)
         
     def filter_output_scan_gimbal(self):
         rotor_gimbal_app_path_scan = os.path.join(self.output_path,"motion_gimbal_scan")
@@ -154,9 +139,7 @@ class window(QMainWindow):
         notebooks = [self.textEdit_files_selection_gimbal,self.textEdit_files_selection_2_gimbal]
         filters = [searches.GIMBAL_SCAN,searches.GIMBAL_BEST]
         opening_files.filter_general_file(self,file_summary,notebooks,filters)
-        #self.sc3.axes.errorbar(speed_values_1,yerr=0,"o",label= "SPEED ROTOR 1", picker=5)
-        #self.sc3.axes.errorbar(speed_values_2,yerr=0,"o",label= "SPEED ROTOR 2", picker=5)
-        #saving_files_summary_list.main(self,"/Users/anagtv/Desktop",0)
+
 
     def question_output(self,number):
         self.question =  QMessageBox()
@@ -172,26 +155,10 @@ class window(QMainWindow):
 
     def analyze_selected_files(self,values):
         self.question_output("1")
-        
 
     def analyze_selected_files_second(self,values):
         self.question_output("2")
         
-    
-
-
-    #def set_analysis_output_file(self,values):
-    #    self.question =  QMessageBox()
-    #    self.question.setText("Select an output folder")
-    #    self.question.setGeometry(QtCore.QRect(200, 300, 100, 50)) 
-    #    self.question.setStandardButtons(QMessageBox.Save)
-
-
-    #def set_output_path(self):
-    #    options = QFileDialog.Options()
-    #    options |= QFileDialog.DontUseNativeDialog
-    #    self.fileanalysis_outputpath, _ = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","All Files (*);;Python Files (*.py)", options=options)
-  
     def handleSelectionChanged_scan(self, selected, deselected):
         self.indexs =(self.tablefiles_tab2.selectionModel().currentIndex())
         self.index_scan = self.indexs.row()
@@ -203,13 +170,13 @@ class window(QMainWindow):
         self.names_components = ["ROTOR","PENDANT","SYSTEM","GIMBAL"]
         self.columns_names_components = ["FILE_NAME_ROTOR","FILE_NAME_PENDANT","FILE_NAME_SYSTEM","FILE_NAME_GIMBAL"]
         #selection of the scan in the dataframen
-        df_day = (self.data_df_all_subsystems[self.data_df_all_subsystems["DAY_ROTOR"] == date_stamp])
-        df_day_scan = (df_day[df_day["SCAN_ROTOR"] == self.scan_selected])
-        self.df_day_scan_hour = (df_day_scan[df_day_scan["HOUR_ROTOR"] == self.hour_selected])
-        index_hour_rotor = ((df_day_scan.HOUR_ROTOR[df_day_scan["HOUR_ROTOR"] == self.hour_selected]).dropna())
-        condition_day = getattr(self.data_df_all_subsystems,"DAY_ROTOR") == date_stamp
-        condition_hour = getattr(self.data_df_all_subsystems,"HOUR_ROTOR").str.contains(self.hour_selected[0:4]) 
-        condition_rotor = getattr(self.data_df_all_subsystems,"SCAN_ROTOR").str.contains(self.scan_selected)
+        df_day = (self.data_df_all_subsystems[self.data_df_all_subsystems["DAY_GIMBAL"] == date_stamp])
+        df_day_scan = (df_day[df_day["SCAN_GIMBAL"] == self.scan_selected])
+        self.df_day_scan_hour = (df_day_scan[df_day_scan["HOUR_GIMBAL"] == self.hour_selected])
+        index_hour_rotor = ((df_day_scan.HOUR_ROTOR[df_day_scan["HOUR_GIMBAL"] == self.hour_selected]).dropna())
+        condition_day = getattr(self.data_df_all_subsystems,"DAY_GIMBAL") == date_stamp
+        condition_hour = getattr(self.data_df_all_subsystems,"HOUR_GIMBAL").str.contains(self.hour_selected[0:4]) 
+        condition_rotor = getattr(self.data_df_all_subsystems,"SCAN_GIMBAL").str.contains(self.scan_selected)
         index_hour_rotor_all = self.data_df_all_subsystems.HOUR_ROTOR[(condition_day) & (condition_hour) & (condition_rotor)]
         self.index_hour_all = []
         self.len_index_hour_all = []
@@ -238,36 +205,12 @@ class window(QMainWindow):
            self.current_row_logfiles += 1
         self.current_row_logfiles = 0
 
-    #def folder_analyze(self,values):
-    #    print (self.lis_files_names)
-    #    self.question =  QMessageBox()
-    #    self.question.setText("Select an output folder")
-    #    self.question.setGeometry(QtCore.QRect(200, 300, 100, 50)) 
-    #    self.question.setStandardButtons(QMessageBox.Save)
-    #   self.location = "First"
-    #    self.question.buttonClicked.connect(self.file_output(self.textEdit_files))
-    #    self.question.show()
-
     def fileQuit(self):
         self.close()
 
     def closeEvent(self, ce):
         self.fileQuit()
-
-    #def createTable(self):
-       # Create table
-    #    self.tableWidget = QTableWidget()
-    #    self.tableWidget.setRowCount(4)
-    #    self.tableWidget.setColumnCount(2)
-
-    #def color_picker(self):
-    #    color = QColorDialog.getColor()
-    #    self.styleChoice.setStyleSheet('QWidget{background-color: %s}' % color.name())
-
-    #def font_choice(self):
-    #    font, valid = QFontDialog.getFont()
-    #    if valid:
-    #        self.styleChoice.setFont(font)
+        self.styleChoice.setFont(font)
 
     def tab1_layout(self):
         self.widget_tab2 = QtWidgets.QWidget(self.tab1)
@@ -283,7 +226,7 @@ class window(QMainWindow):
         self.tablefiles_tab2 = QtWidgets.QTableWidget(self.tab1)
         self.tablefiles_tab2.setGeometry(QtCore.QRect(20, 10, 310, 350))
         self.tablefiles_tab2.setObjectName("tableWidget")
-        self.tablefiles_tab2.setRowCount(100)
+        self.tablefiles_tab2.setRowCount(400)
         self.tablefiles_tab2.setColumnCount(3)
         self.tablefiles_tab2.setHorizontalHeaderLabels(["Day","Hour","Scan"])
         self.tablestatistic_tab2 = QtWidgets.QTableWidget(self.tab1)
@@ -300,13 +243,10 @@ class window(QMainWindow):
     def tab1_activities(self):
         self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab1)
         self.pushButton_analyze.setGeometry(QtCore.QRect(20, 490, 221, 30))
-        #
         self.pushButton_analyze_second = QtWidgets.QPushButton('Analyze on second screen', self.tab1)
         self.pushButton_analyze_second.setGeometry(QtCore.QRect(20, 530, 221, 30))
-        #
         self.pushButton_analyze.clicked.connect(self.analyze_selected_files)
         self.pushButton_analyze_second.clicked.connect(self.analyze_selected_files_second)
-        #
         self.selection_scan_tpye = self.tablefiles_tab2.selectionModel()
         self.selection_scan_tpye.selectionChanged.connect(self.handleSelectionChanged_scan)
         self.selection_logfile = self.tablestatistic_tab2.selectionModel()
@@ -379,18 +319,6 @@ class window(QMainWindow):
         # Add tabs to widget
         main_layout.addWidget(self.tabs)
 
-    #def Clear(self):
-    #    self.ui.widget.canvas.ax.clear()
-    #    self.ui.widget.canvas.draw()
-    #    self.axes_1.clear()
-    #    self.ui.widget_2.canvas.draw()
-    #    self.ui.widget_3.canvas.ax.clear()
-    #    self.ui.widget_3.canvas.draw()
-    #    self.ui.widget_4.canvas.ax.clear()
-    #    self.ui.widget_4.canvas.draw()
-
-
-
 class Canvas(FigureCanvas):
     def __init__(self, width = 5, height = 5, dpi = 100, parent = None):
         self.fig, self.axes = plt.subplots(3, sharex=True)
@@ -410,8 +338,6 @@ class Canvas_tab2(FigureCanvas):
         plt.gcf().autofmt_xdate()
         self.axes.tick_params(labelsize=10)
         plt.xticks(rotation=90)
-        #self.axes[1].tick_params(labelsize=10)
-        #self.axes[2].tick_params(labelsize=10)
         FigureCanvas.__init__(self, self.fig)
         self.setParent(parent)
 
