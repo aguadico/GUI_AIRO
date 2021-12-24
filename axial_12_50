@@ -1,0 +1,893 @@
+[2021-07-05T12:50:31.6594953Z Application Info] [#ixr] Received 1 X-Ray Summaries:
+[2021-07-05T12:50:31.6604954Z Application Info] UI: StateMachine: Fire: WaitForXRaySummary:NextPressed
+[2021-07-05T12:50:31.6614955Z Application Info] UI: StateMachine: Fire: VerifyDoseNotificationDLP:NextPressed
+[2021-07-05T12:50:31.6624955Z Application Info] UI: Page: Switch: PerformScanPage
+[2021-07-05T12:50:31.6794965Z Messaging Info] Handling Client Message: @T#igt
+[2021-07-05T12:50:32.1255220Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:32.1595239Z Messaging Info] Handling Client Message: $s00 Started Waiting AxialScan 25429016 0 1 0
+[2021-07-05T12:50:32.1655243Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:32.1655243Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:34.1886400Z Messaging Info] Handling Client Message: $s00 Started Waiting AxialScan 25429016 0 1 0
+[2021-07-05T12:50:34.1916402Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:34.1916402Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:34.2496435Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:34.7636729Z Messaging Info] Handling Client Message: @T#idc
+[2021-07-05T12:50:34.8696790Z Messaging Info] Handling Client Message: @T$gvg 120
+[2021-07-05T12:50:34.8946804Z Messaging Info] Handling Client Message: @T$gig 155.5
+[2021-07-05T12:50:34.9456833Z Messaging Info] Handling Client Message: @T#isv
+[2021-07-05T12:50:34.9456833Z Application Info] [#isv] Received Scan Verification:
+[2021-07-05T12:50:34.9466834Z Messaging Info] Handling Client Message: @c$sra 1
+[2021-07-05T12:50:34.9466834Z Messaging Info] SystemCommanderBase received response = @c$sra 1
+[2021-07-05T12:50:34.9466834Z Application Info] UIClientQueueManager Requesting State=Prepared, Mode=AxialScan
+[2021-07-05T12:50:34.9476834Z Messaging Info] Handling Client Message: @U#igt
+[2021-07-05T12:50:34.9476834Z Messaging Info] Handling Client Message: #i11 Prepared AxialScan
+[2021-07-05T12:50:34.9486835Z Messaging Info] Handling Client Message: #a11 Prepared AxialScan
+[2021-07-05T12:50:34.9496835Z Application Info] [DicomManager] New State: Active-Prepared
+[2021-07-05T12:50:34.9496835Z Messaging Info] Handling Client Message: @c$s11 1
+[2021-07-05T12:50:34.9496835Z Messaging Info] SystemCommanderBase received response = @c$s11 1
+[2021-07-05T12:50:35.0716905Z Messaging Info] Handling Client Message: #&22 History/MaintenanceScans <Entries><KeysAndValues><Key>WarmUp</Key><Value>2021-07-05T08:24:07.9868683Z</Value></KeysAndValues><KeysAndValues><Key>EstopTest</Key><Value>2021-07-05T07:05:50.5146015Z</Value></KeysAndValues><KeysAndValues><Key>GainCal</Key><Value>2021-07-05T07:22:43.0588111Z</Value></KeysAndValues><KeysAndValues><Key>HelicalDailyQC</Key><Value>2021-04-14T10:12:36.1979696Z</Value></KeysAndValues><KeysAndValues><Key>HelicalFullQC</Key><Value>2021-03-12T15:53:33.0106000Z</Value></KeysAndValues><KeysAndValues><Key>AxialDailyQC</Key><Value>2021-04-14T10:17:34.0070033Z</Value></KeysAndValues><KeysAndValues><Key>AxialFullQC</Key><Value>2021-04-14T10:17:34.0070033Z</Value></KeysAndValues></Entries>
+[2021-07-05T12:50:35.0716905Z Application Info] ConfigStore.Set: History/MaintenanceScans -> <Entries><KeysAndValues><Key>WarmUp</Key><Value>2021-07-05T08:24:07.9868683Z</Value></KeysAndValues><KeysAndValues><Key>EstopTest</Key><Value>2021-07-05T07:05:50.5146015Z</Value></KeysAndValues><KeysAndValues><Key>GainCal</Key><Value>2021-07-05T07:22:43.0588111Z</Value></KeysAndValues><KeysAndValues><Key>HelicalDailyQC</Key><Value>2021-04-14T10:12:36.1979696Z</Value></KeysAndValues><KeysAndValues><Key>HelicalFullQC</Key><Value>2021-03-12T15:53:33.0106000Z</Value></KeysAndValues><KeysAndValues><Key>AxialDailyQC</Key><Value>2021-04-14T10:17:34.0070033Z</Value></KeysAndValues><KeysAndValues><Key>AxialFullQC</Key><Value>2021-04-14T10:17:34.0070033Z</Value></KeysAndValues></Entries>
+[2021-07-05T12:50:35.2286995Z Messaging Info] Handling Client Message: #&22 History/Generator <Scans><ScanReport><kV>120</kV><mA>155.46666</mA><Duration>11.52</Duration><TimeStamp>2021-07-05T10:24:07.9788679+02:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>155.46666</mA><Duration>11.52</Duration><TimeStamp>2021-07-05T14:50:34.0742202+02:00</TimeStamp></ScanReport></Scans>
+[2021-07-05T12:50:35.2296995Z Application Info] ConfigStore.Set: History/Generator -> <Scans><ScanReport><kV>120</kV><mA>155.46666</mA><Duration>11.52</Duration><TimeStamp>2021-07-05T10:24:07.9788679+02:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>155.46666</mA><Duration>11.52</Duration><TimeStamp>2021-07-05T14:50:34.0742202+02:00</TimeStamp></ScanReport></Scans>
+[2021-07-05T12:50:36.1567526Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:36.2177561Z Messaging Info] Handling Client Message: $s00 Started Waiting AxialScan 25429016 0 1 0
+[2021-07-05T12:50:36.2197562Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:36.2197562Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:38.2448720Z Messaging Info] Handling Client Message: $s00 Started Waiting AxialScan 25429016 0 1 0
+[2021-07-05T12:50:38.2468721Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:38.2468721Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:38.2598729Z Messaging Info] Handling Client Message: @U#idc
+[2021-07-05T12:50:38.2618730Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:38.5478893Z Messaging Info] Handling Client Message: @U$gvg 120
+[2021-07-05T12:50:38.5728908Z Messaging Info] Handling Client Message: @U$gig 155.5
+[2021-07-05T12:50:38.6208935Z Messaging Info] Handling Client Message: @U#isv
+[2021-07-05T12:50:38.6208935Z Application Info] [#isv] Received Scan Verification:
+[2021-07-05T12:50:38.8519067Z Messaging Info] Handling Client Message: $s00 Configured Transitioning AxialScan 25429016 0 1 0
+[2021-07-05T12:50:38.8649075Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:38.8649075Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:40.3669934Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:40.9000239Z Messaging Info] Handling Client Message: $s00 Prepared OK AxialScan 25429016 0 1 0
+[2021-07-05T12:50:40.9010239Z Application Info] UIClientQueueManager Requesting State=Completed, Mode=AxialScan
+[2021-07-05T12:50:40.9020240Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:40.9020240Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:40.9040241Z Messaging Info] Handling Client Message: #i11 Completed AxialScan
+[2021-07-05T12:50:40.9050242Z Messaging Info] Handling Client Message: #a11 Completed AxialScan
+[2021-07-05T12:50:40.9050242Z Application Info] [DicomManager] New State: Active-Executing
+[2021-07-05T12:50:40.9050242Z Application Info] [DicomManager] New State: Active-Completed
+[2021-07-05T12:50:40.9060242Z Messaging Info] Handling Client Message: @c$s11 1
+[2021-07-05T12:50:40.9060242Z Messaging Info] SystemCommanderBase received response = @c$s11 1
+[2021-07-05T12:50:41.5080586Z Messaging Info] Handling Client Message: $s00 Executing OK AxialScan 25429016 0 1 0
+[2021-07-05T12:50:41.5100588Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:41.5100588Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:41.5310600Z Application Info] UI: StateMachine: State: Verify3DScan
+[2021-07-05T12:50:41.5310600Z Application Info] Previous Entry Repeats 1 Time(s)
+[2021-07-05T12:50:41.9030812Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:50:41.9040813Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:41.9040813Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:42.4731138Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:43.9872004Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:50:44.0122019Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:44.0122019Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:44.5932351Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:46.0433181Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:50:46.0513185Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:46.0513185Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:46.6993556Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:48.0744342Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:50:48.0994357Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:48.0994357Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:48.7934754Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:50.1315519Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:50:50.1565533Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:50.1565533Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:51.0136023Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:52.1916697Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:50:52.2126709Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:52.2126709Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:53.0197171Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:54.2497874Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:50:54.2527876Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:54.2527876Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:55.1278377Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:56.2809036Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:50:56.2839038Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:56.2839038Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:57.2439587Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:50:58.3070195Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:50:58.3080196Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:50:58.3080196Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:50:59.3690802Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:00.3371356Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:51:00.3611370Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:00.3611370Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:01.4762008Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:02.4222549Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:51:02.4462562Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:02.4462562Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:03.5843213Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:04.5003737Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:51:04.5253752Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:04.5253752Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:05.6944420Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:06.5724923Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:51:06.5964936Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:06.5964936Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:07.8665663Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:08.0075743Z Messaging Info] Handling Client Message: @c$slf 1
+[2021-07-05T12:51:08.0085744Z Messaging Info] SystemCommanderBase received response = @c$slf 1
+[2021-07-05T12:51:08.6256097Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:08.6356103Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:08.6356103Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:08.9936307Z Messaging Info] Handling Client Message: @c$sln 1
+[2021-07-05T12:51:08.9936307Z Messaging Info] SystemCommanderBase received response = @c$sln 1
+[2021-07-05T12:51:09.6436679Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429016 0 31 0
+[2021-07-05T12:51:09.6696694Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:09.6696694Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:10.0446909Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:11.1297529Z Messaging Info] Handling Client Message: @c$slf 1
+[2021-07-05T12:51:11.1297529Z Messaging Info] SystemCommanderBase received response = @c$slf 1
+[2021-07-05T12:51:11.4967739Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:11.4997741Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:11.4997741Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:12.0398050Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:13.5268900Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:13.5518915Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:13.5528915Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:14.1469255Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:15.5870079Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:15.6110092Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:15.6110092Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:16.2180439Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:17.6291247Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:17.6531260Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:17.6531260Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:18.3251645Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:19.6812420Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:19.7012432Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:19.7012432Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:20.4422856Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:21.7303592Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:21.7553607Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:21.7553607Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:22.5364053Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:23.8144784Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:23.8244790Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:23.8244790Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:24.6445259Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:25.8575953Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:25.8605955Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:25.8605955Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:26.7496463Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:26.9876599Z Messaging Info] Handling Client Message: #&22 History/RotorPC/LastKnownOnTime 2021-07-05T12:51:25.9231858Z
+[2021-07-05T12:51:26.9876599Z Application Info] ConfigStore.Set: History/RotorPC/LastKnownOnTime -> 2021-07-05T12:51:25.9231858Z
+[2021-07-05T12:51:27.0206618Z Messaging Info] Handling Client Message: #&22 History/RotorPC/DetectorOnTimeSeconds 21447.787413
+[2021-07-05T12:51:27.0206618Z Application Info] ConfigStore.Set: History/RotorPC/DetectorOnTimeSeconds -> 21447.787413
+[2021-07-05T12:51:27.8837112Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:27.8897115Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:27.8897115Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:28.8557668Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:29.9128272Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 31 0
+[2021-07-05T12:51:29.9378287Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:29.9378287Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:30.9618872Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:30.9798883Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 8651816 0 31 0
+[2021-07-05T12:51:30.9808883Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:30.9808883Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:31.5939234Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 8651816 0 18 0
+[2021-07-05T12:51:31.5969236Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:31.5969236Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:33.0670077Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:33.6230395Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 8651816 0 18 0
+[2021-07-05T12:51:33.6260396Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:33.6260396Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:35.1731281Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:35.6961580Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 8651816 0 18 0
+[2021-07-05T12:51:35.6991582Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:35.6991582Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:37.2792486Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:37.7252741Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 8651816 0 18 0
+[2021-07-05T12:51:37.7262741Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:37.7262741Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:39.4013700Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:39.7543901Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 8651816 0 18 0
+[2021-07-05T12:51:39.7883921Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:39.7883921Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:41.5064904Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:41.8085076Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 8651816 0 18 0
+[2021-07-05T12:51:41.8345091Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:41.8345091Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:42.4355435Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 18 0
+[2021-07-05T12:51:42.4385437Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:42.4385437Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:43.5976100Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:44.4646596Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 18 0
+[2021-07-05T12:51:44.4656596Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:44.4656596Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:44.8736830Z Messaging Info] Handling Client Message: @V#icd
+[2021-07-05T12:51:44.9236858Z Messaging Info] Handling Client Message: @V#igo
+[2021-07-05T12:51:44.9246859Z Application Info] UI: StateMachine: Fire: Verify3DScan:GreenButtonPressed
+[2021-07-05T12:51:45.0736944Z Messaging Info] Handling Client Message: $s00 Executing OK AxialScan 25429032 0 6 0
+[2021-07-05T12:51:45.0746945Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:45.0746945Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:45.4747173Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 6 0
+[2021-07-05T12:51:45.4837178Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:45.4837178Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:46.3737688Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:47.5068336Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 6 0
+[2021-07-05T12:51:47.5108338Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:47.5108338Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:47.8568536Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:49.5409499Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 6 0
+[2021-07-05T12:51:49.5419500Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:49.5419500Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:49.9719746Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:51.5670658Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 6 0
+[2021-07-05T12:51:51.5690659Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:51.5690659Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:52.0690945Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:53.5891815Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 6 0
+[2021-07-05T12:51:53.5901815Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:53.5911816Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:54.1762150Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:55.6162974Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 6 0
+[2021-07-05T12:51:55.6172975Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:55.6172975Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:56.4833470Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:57.6424133Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25429032 0 6 0
+[2021-07-05T12:51:57.6454135Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:57.6454135Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:51:58.5904675Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:51:58.6594715Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 6 0
+[2021-07-05T12:51:58.6674719Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:51:58.6674719Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:00.6595859Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:52:00.6935878Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 6 0
+[2021-07-05T12:52:00.6945879Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:00.6945879Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:02.6867018Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:52:02.7137033Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 6 0
+[2021-07-05T12:52:02.7157035Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:02.7157035Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:04.7148178Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:52:04.7398192Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 6 0
+[2021-07-05T12:52:04.7408193Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:04.7408193Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:06.7719355Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 6 0
+[2021-07-05T12:52:06.7729355Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:06.7729355Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:06.8139379Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:52:08.8010515Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 6 0
+[2021-07-05T12:52:08.8100520Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:08.8100520Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:08.9450598Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:52:10.8241672Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 6 0
+[2021-07-05T12:52:10.8291675Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:10.8291675Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:11.2141895Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:52:12.8552834Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 6 0
+[2021-07-05T12:52:12.8562835Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:12.8562835Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:13.1883025Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:52:14.8793992Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 6 0
+[2021-07-05T12:52:14.8934000Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:14.8934000Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:15.4054293Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:52:16.9175158Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 25166888 0 6 0
+[2021-07-05T12:52:16.9185158Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:16.9185158Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:17.4325452Z Messaging Info] Handling Client Message: $ghg 0
+[2021-07-05T12:52:17.4865483Z Messaging Info] Handling Client Message: #&22 History/Generator <Scans><ScanReport><kV>120</kV><mA>155.46666</mA><Duration>11.52</Duration><TimeStamp>2021-07-05T14:52:16.4110735+02:00</TimeStamp></ScanReport></Scans>
+[2021-07-05T12:52:17.4865483Z Application Info] ConfigStore.Set: History/Generator -> <Scans><ScanReport><kV>120</kV><mA>155.46666</mA><Duration>11.52</Duration><TimeStamp>2021-07-05T14:52:16.4110735+02:00</TimeStamp></ScanReport></Scans>
+[2021-07-05T12:52:17.5375512Z Messaging Info] Handling Client Message: #&22 History/MaintenanceScans <Entries><KeysAndValues><Key>WarmUp</Key><Value>2021-07-05T12:52:16.4120736Z</Value></KeysAndValues><KeysAndValues><Key>EstopTest</Key><Value>2021-07-05T07:05:50.5146015Z</Value></KeysAndValues><KeysAndValues><Key>GainCal</Key><Value>2021-07-05T07:22:43.0588111Z</Value></KeysAndValues><KeysAndValues><Key>HelicalDailyQC</Key><Value>2021-04-14T10:12:36.1979696Z</Value></KeysAndValues><KeysAndValues><Key>HelicalFullQC</Key><Value>2021-03-12T15:53:33.0106000Z</Value></KeysAndValues><KeysAndValues><Key>AxialDailyQC</Key><Value>2021-04-14T10:17:34.0070033Z</Value></KeysAndValues><KeysAndValues><Key>AxialFullQC</Key><Value>2021-04-14T10:17:34.0070033Z</Value></KeysAndValues></Entries>
+[2021-07-05T12:52:17.5375512Z Application Info] ConfigStore.Set: History/MaintenanceScans -> <Entries><KeysAndValues><Key>WarmUp</Key><Value>2021-07-05T12:52:16.4120736Z</Value></KeysAndValues><KeysAndValues><Key>EstopTest</Key><Value>2021-07-05T07:05:50.5146015Z</Value></KeysAndValues><KeysAndValues><Key>GainCal</Key><Value>2021-07-05T07:22:43.0588111Z</Value></KeysAndValues><KeysAndValues><Key>HelicalDailyQC</Key><Value>2021-04-14T10:12:36.1979696Z</Value></KeysAndValues><KeysAndValues><Key>HelicalFullQC</Key><Value>2021-03-12T15:53:33.0106000Z</Value></KeysAndValues><KeysAndValues><Key>AxialDailyQC</Key><Value>2021-04-14T10:17:34.0070033Z</Value></KeysAndValues><KeysAndValues><Key>AxialFullQC</Key><Value>2021-04-14T10:17:34.0070033Z</Value></KeysAndValues></Entries>
+[2021-07-05T12:52:17.7215617Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 27264040 0 6 0
+[2021-07-05T12:52:17.7225618Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:17.7225618Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:17.8855711Z Messaging Info] Handling Client Message: $ghg 0.3291327
+[2021-07-05T12:52:18.4036008Z Messaging Info] Handling Client Message: $ghg 0.3288376
+[2021-07-05T12:52:18.8216247Z Messaging Info] Handling Client Message: #&22 History/DoseCheckReport <DoseNotification /><DoseAlert />
+[2021-07-05T12:52:18.8216247Z Application Info] ConfigStore.Set: History/DoseCheckReport -> <DoseNotification /><DoseAlert />
+[2021-07-05T12:52:18.9206303Z Messaging Info] Handling Client Message: $ghg 0.328551
+[2021-07-05T12:52:19.5366656Z Messaging Info] Handling Client Message: $ghg 0.3282571
+[2021-07-05T12:52:19.7516779Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 27264040 0 6 0
+[2021-07-05T12:52:19.7576782Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:19.7576782Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:20.0866970Z Messaging Info] Handling Client Message: $ghg 0.3279626
+[2021-07-05T12:52:20.5147215Z Messaging Info] Handling Client Message: $ghg 0.3276654
+[2021-07-05T12:52:20.5697247Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 27264040 0 8 0
+[2021-07-05T12:52:20.5717248Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:20.5717248Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:20.9717476Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:20.9757479Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:20.9757479Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:21.0267508Z Messaging Info] Handling Client Message: $ghg 0.3273809
+[2021-07-05T12:52:21.6177846Z Messaging Info] Handling Client Message: $ghg 0.327087
+[2021-07-05T12:52:22.2528209Z Messaging Info] Handling Client Message: $ghg 0.326792
+[2021-07-05T12:52:22.6448433Z Messaging Info] Handling Client Message: $ghg 0.3264975
+[2021-07-05T12:52:22.9998636Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:23.0008637Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:23.0018638Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:23.1348714Z Messaging Info] Handling Client Message: $ghg 0.3262097
+[2021-07-05T12:52:23.6699020Z Messaging Info] Handling Client Message: $ghg 0.3259169
+[2021-07-05T12:52:24.3009381Z Messaging Info] Handling Client Message: $ghg 0.3256225
+[2021-07-05T12:52:24.7219621Z Messaging Info] Handling Client Message: $ghg 0.325328
+[2021-07-05T12:52:25.0199792Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:25.0239794Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:25.0239794Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:25.2409918Z Messaging Info] Handling Client Message: $ghg 0.3250397
+[2021-07-05T12:52:25.8340258Z Messaging Info] Handling Client Message: $ghg 0.3247469
+[2021-07-05T12:52:26.4220594Z Messaging Info] Handling Client Message: $ghg 0.3244518
+[2021-07-05T12:52:26.8320828Z Messaging Info] Handling Client Message: $ghg 0.324158
+[2021-07-05T12:52:27.0590958Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:27.1040984Z Messaging Info] Handling Client Message: #&22 History/RotorPC/LastKnownOnTime 2021-07-05T12:52:25.9836211Z
+[2021-07-05T12:52:27.1040984Z Application Info] ConfigStore.Set: History/RotorPC/LastKnownOnTime -> 2021-07-05T12:52:25.9836211Z
+[2021-07-05T12:52:27.1601016Z Messaging Info] Handling Client Message: #&22 History/RotorPC/DetectorOnTimeSeconds 21507.8448481
+[2021-07-05T12:52:27.1601016Z Application Info] ConfigStore.Set: History/RotorPC/DetectorOnTimeSeconds -> 21507.8448481
+[2021-07-05T12:52:27.1611017Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:27.1611017Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:27.4021154Z Messaging Info] Handling Client Message: $ghg 0.3238629
+[2021-07-05T12:52:28.1251568Z Messaging Info] Handling Client Message: $ghg 0.3235685
+[2021-07-05T12:52:28.7951951Z Messaging Info] Handling Client Message: $ghg 0.3232823
+[2021-07-05T12:52:28.9922064Z Messaging Info] Handling Client Message: $ghg 0.3229879
+[2021-07-05T12:52:29.0752111Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:29.0772113Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:29.0772113Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:29.5892405Z Messaging Info] Handling Client Message: $ghg 0.3226929
+[2021-07-05T12:52:30.0062644Z Messaging Info] Handling Client Message: $ghg 0.3223984
+[2021-07-05T12:52:30.7403064Z Messaging Info] Handling Client Message: $ghg 0.3221123
+[2021-07-05T12:52:31.0413236Z Messaging Info] Handling Client Message: $ghg 0.3218172
+[2021-07-05T12:52:31.1033271Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:31.1113276Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:31.1113276Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:31.7433637Z Messaging Info] Handling Client Message: $ghg 0.3215183
+[2021-07-05T12:52:32.2243913Z Messaging Info] Handling Client Message: $ghg 0.32122
+[2021-07-05T12:52:32.7414208Z Messaging Info] Handling Client Message: $ghg 0.3209244
+[2021-07-05T12:52:33.1424438Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:33.1534444Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:33.1534444Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:33.1674452Z Messaging Info] Handling Client Message: $ghg 0.3206361
+[2021-07-05T12:52:33.9354891Z Messaging Info] Handling Client Message: $ghg 0.3203438
+[2021-07-05T12:52:34.5475241Z Messaging Info] Handling Client Message: $ghg 0.3200499
+[2021-07-05T12:52:35.0655538Z Messaging Info] Handling Client Message: $ghg 0.3197544
+[2021-07-05T12:52:35.1795603Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:35.1825605Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:35.1825605Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:35.3145680Z Messaging Info] Handling Client Message: $ghg 0.3194688
+[2021-07-05T12:52:35.9896066Z Messaging Info] Handling Client Message: $ghg 0.3191743
+[2021-07-05T12:52:36.4526331Z Messaging Info] Handling Client Message: $ghg 0.3188793
+[2021-07-05T12:52:36.9056590Z Messaging Info] Handling Client Message: $ghg 0.3185848
+[2021-07-05T12:52:37.2146767Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:37.2276774Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:37.2276774Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:37.4276889Z Messaging Info] Handling Client Message: $ghg 0.3182982
+[2021-07-05T12:52:38.2997388Z Messaging Info] Handling Client Message: $ghg 0.3180043
+[2021-07-05T12:52:38.6057563Z Messaging Info] Handling Client Message: $ghg 0.3177092
+[2021-07-05T12:52:39.0577821Z Messaging Info] Handling Client Message: $ghg 0.3174153
+[2021-07-05T12:52:39.2587936Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:39.2597937Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:39.2597937Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:39.5668112Z Messaging Info] Handling Client Message: $ghg 0.3171259
+[2021-07-05T12:52:40.1058421Z Messaging Info] Handling Client Message: $ghg 0.3168342
+[2021-07-05T12:52:40.5458672Z Messaging Info] Handling Client Message: $ghg 0.3165397
+[2021-07-05T12:52:41.2859095Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:41.2959101Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:41.2959101Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:41.3009104Z Messaging Info] Handling Client Message: $ghg 0.3162453
+[2021-07-05T12:52:41.6769319Z Messaging Info] Handling Client Message: $ghg 0.3159592
+[2021-07-05T12:52:42.1179571Z Messaging Info] Handling Client Message: $ghg 0.3156641
+[2021-07-05T12:52:42.7589938Z Messaging Info] Handling Client Message: $ghg 0.3153697
+[2021-07-05T12:52:43.3240261Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:43.3260262Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:43.3260262Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:45.3551423Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:45.3561424Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:45.3561424Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:47.4022594Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:47.4222605Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:47.4222605Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:49.0493536Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 27264040 0 8 0
+[2021-07-05T12:52:49.0513537Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:49.0513537Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:51.0824699Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 27264040 0 8 0
+[2021-07-05T12:52:51.1004709Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:51.1014710Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:51.4994937Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:51.5044940Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:51.5044940Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:53.5256096Z Messaging Info] Handling Client Message: $s00 Executing Transitioning AxialScan 10486824 0 8 0
+[2021-07-05T12:52:53.5296098Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:53.5296098Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:53.6446164Z Messaging Info] Handling Client Message: $ghg 0.3150741
+[2021-07-05T12:52:53.6446164Z Messaging Info] Handling Client Message: $ghg 0.3147841
+[2021-07-05T12:52:53.6516168Z Messaging Info] Handling Client Message: $ghg 0.3144941
+[2021-07-05T12:52:53.6516168Z Messaging Info] Handling Client Message: $ghg 0.3141996
+[2021-07-05T12:52:53.6596173Z Messaging Info] Handling Client Message: $ghg 0.3139051
+[2021-07-05T12:52:53.6596173Z Messaging Info] Handling Client Message: $ghg 0.3136173
+[2021-07-05T12:52:53.6716180Z Messaging Info] Handling Client Message: $ghg 0.3133245
+[2021-07-05T12:52:53.6756182Z Messaging Info] Handling Client Message: $ghg 0.3130295
+[2021-07-05T12:52:53.6966194Z Messaging Info] Handling Client Message: $ghg 0.3127345
+[2021-07-05T12:52:53.6986195Z Messaging Info] Handling Client Message: $ghg 0.3124484
+[2021-07-05T12:52:53.6996196Z Messaging Info] Handling Client Message: $ghg 0.3121545
+[2021-07-05T12:52:53.6996196Z Messaging Info] Handling Client Message: $ghg 0.3118595
+[2021-07-05T12:52:53.7136204Z Messaging Info] Handling Client Message: $ghg 0.3115644
+[2021-07-05T12:52:53.7176206Z Messaging Info] Handling Client Message: $ghg 0.3112777
+[2021-07-05T12:52:53.7266211Z Messaging Info] Handling Client Message: $ghg 0.3109844
+[2021-07-05T12:52:53.7426220Z Messaging Info] Handling Client Message: $ixd 59.3416266666667 1174.964208 1.2.826.0.1.3680043.9.1958.11.168.20210705102839.3884.1.393
+[2021-07-05T12:52:53.7436221Z Application Info] #ixd received dose message: 1.2.826.0.1.3680043.9.1958.11.168.20210705102839.3884.1.393 59.341625213623 1174.96423339844
+[2021-07-05T12:52:53.8996310Z Messaging Info] Handling Client Message: $ghg 0.31069
+[2021-07-05T12:52:53.9006311Z Messaging Info] Handling Client Message: $ghg 0.3103949
+[2021-07-05T12:52:53.9006311Z Messaging Info] Handling Client Message: $ghg 0.3101077
+[2021-07-05T12:52:53.9006311Z Messaging Info] Handling Client Message: $ghg 0.3098143
+[2021-07-05T12:52:53.9016311Z Messaging Info] Handling Client Message: $ghg 0.3095199
+[2021-07-05T12:52:53.9016311Z Messaging Info] Handling Client Message: $ghg 0.3092243
+[2021-07-05T12:52:54.1336444Z Messaging Info] Handling Client Message: $s00 Executing OK AxialScan 8389672 0 8 0
+[2021-07-05T12:52:54.1356445Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:54.1356445Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:54.2856531Z Messaging Info] Handling Client Message: $ghg 0.308936
+[2021-07-05T12:52:54.5346673Z Messaging Info] Handling Client Message: $s00 Executing OK AxialScan 8389672 0 1 0
+[2021-07-05T12:52:54.5356674Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:54.5356674Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:54.7926821Z Messaging Info] Handling Client Message: $ghg 0.3086443
+[2021-07-05T12:52:55.2997111Z Messaging Info] Handling Client Message: $ghg 0.3083498
+[2021-07-05T12:52:55.3497140Z Messaging Info] Handling Client Message: $s00 Completed OK AxialScan 8389672 0 1 0
+[2021-07-05T12:52:55.3507140Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:55.3507140Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:55.3627147Z Application Info] UI: StateMachine: Fire: WaitFor3DScan:CompletedScan
+[2021-07-05T12:52:55.3637148Z Application Info] UI: Page: Switch: VolumeViewerPage
+[2021-07-05T12:52:55.5507255Z Application Info] [DicomImageSet] Loading 186 files from D:\AiroData\Airo_PatientDB\Patient_41\1.2.826.0.1.3680043.9.1958.11.168.20210705095443.3884.1.391\1.2.826.0.1.3680043.9.1958.11.168.20210705102839.3884.1.393
+[2021-07-05T12:52:55.5557257Z Application Info] [DicomImageSet] Read 0 of 186 files.
+[2021-07-05T12:52:55.5667264Z Application Info] [DicomImageSet] Read 1 of 186 files.
+[2021-07-05T12:52:55.5847274Z Application Info] [DicomImageSet] Read 2 of 186 files.
+[2021-07-05T12:52:55.5927279Z Application Info] [DicomImageSet] Read 3 of 186 files.
+[2021-07-05T12:52:55.5987282Z Application Info] [DicomImageSet] Read 4 of 186 files.
+[2021-07-05T12:52:55.6057286Z Application Info] [DicomImageSet] Read 5 of 186 files.
+[2021-07-05T12:52:55.6127290Z Application Info] [DicomImageSet] Read 6 of 186 files.
+[2021-07-05T12:52:55.6197294Z Application Info] [DicomImageSet] Read 7 of 186 files.
+[2021-07-05T12:52:55.6257297Z Application Info] [DicomImageSet] Read 8 of 186 files.
+[2021-07-05T12:52:55.6417307Z Application Info] [DicomImageSet] Read 9 of 186 files.
+[2021-07-05T12:52:55.6487311Z Application Info] [DicomImageSet] Read 10 of 186 files.
+[2021-07-05T12:52:55.6557315Z Application Info] [DicomImageSet] Read 11 of 186 files.
+[2021-07-05T12:52:55.6637319Z Application Info] [DicomImageSet] Read 12 of 186 files.
+[2021-07-05T12:52:55.6697323Z Application Info] [DicomImageSet] Read 13 of 186 files.
+[2021-07-05T12:52:55.6777327Z Application Info] [DicomImageSet] Read 14 of 186 files.
+[2021-07-05T12:52:55.6987339Z Application Info] [DicomImageSet] Read 15 of 186 files.
+[2021-07-05T12:52:55.7047343Z Application Info] [DicomImageSet] Read 16 of 186 files.
+[2021-07-05T12:52:55.7137348Z Application Info] [DicomImageSet] Read 17 of 186 files.
+[2021-07-05T12:52:55.7197351Z Application Info] [DicomImageSet] Read 18 of 186 files.
+[2021-07-05T12:52:55.7257355Z Application Info] [DicomImageSet] Read 19 of 186 files.
+[2021-07-05T12:52:55.7317358Z Application Info] [DicomImageSet] Read 20 of 186 files.
+[2021-07-05T12:52:55.7457366Z Application Info] [DicomImageSet] Read 21 of 186 files.
+[2021-07-05T12:52:55.7527370Z Application Info] [DicomImageSet] Read 22 of 186 files.
+[2021-07-05T12:52:55.7597374Z Application Info] [DicomImageSet] Read 23 of 186 files.
+[2021-07-05T12:52:55.7657377Z Application Info] [DicomImageSet] Read 24 of 186 files.
+[2021-07-05T12:52:55.7717381Z Application Info] [DicomImageSet] Read 25 of 186 files.
+[2021-07-05T12:52:55.7777384Z Application Info] [DicomImageSet] Read 26 of 186 files.
+[2021-07-05T12:52:55.7877390Z Application Info] [DicomImageSet] Read 27 of 186 files.
+[2021-07-05T12:52:55.7937393Z Application Info] [DicomImageSet] Read 28 of 186 files.
+[2021-07-05T12:52:55.8057400Z Application Info] [DicomImageSet] Read 29 of 186 files.
+[2021-07-05T12:52:55.8117404Z Application Info] [DicomImageSet] Read 30 of 186 files.
+[2021-07-05T12:52:55.8177407Z Application Info] [DicomImageSet] Read 31 of 186 files.
+[2021-07-05T12:52:55.8227410Z Application Info] [DicomImageSet] Read 32 of 186 files.
+[2021-07-05T12:52:55.8277413Z Application Info] [DicomImageSet] Read 33 of 186 files.
+[2021-07-05T12:52:55.8367418Z Application Info] [DicomImageSet] Read 34 of 186 files.
+[2021-07-05T12:52:55.8407420Z Application Info] [DicomImageSet] Read 35 of 186 files.
+[2021-07-05T12:52:55.8457423Z Application Info] [DicomImageSet] Read 36 of 186 files.
+[2021-07-05T12:52:55.8567430Z Application Info] [DicomImageSet] Read 37 of 186 files.
+[2021-07-05T12:52:55.8617432Z Application Info] [DicomImageSet] Read 38 of 186 files.
+[2021-07-05T12:52:55.8667435Z Application Info] [DicomImageSet] Read 39 of 186 files.
+[2021-07-05T12:52:55.8717438Z Application Info] [DicomImageSet] Read 40 of 186 files.
+[2021-07-05T12:52:55.8767441Z Application Info] [DicomImageSet] Read 41 of 186 files.
+[2021-07-05T12:52:55.8817444Z Application Info] [DicomImageSet] Read 42 of 186 files.
+[2021-07-05T12:52:55.8857446Z Application Info] [DicomImageSet] Read 43 of 186 files.
+[2021-07-05T12:52:55.8967452Z Application Info] [DicomImageSet] Read 44 of 186 files.
+[2021-07-05T12:52:55.9017455Z Application Info] [DicomImageSet] Read 45 of 186 files.
+[2021-07-05T12:52:55.9057458Z Application Info] [DicomImageSet] Read 46 of 186 files.
+[2021-07-05T12:52:55.9147463Z Application Info] [DicomImageSet] Read 47 of 186 files.
+[2021-07-05T12:52:55.9207466Z Application Info] [DicomImageSet] Read 48 of 186 files.
+[2021-07-05T12:52:55.9247468Z Application Info] [DicomImageSet] Read 49 of 186 files.
+[2021-07-05T12:52:55.9297471Z Application Info] [DicomImageSet] Read 50 of 186 files.
+[2021-07-05T12:52:55.9337474Z Application Info] [DicomImageSet] Read 51 of 186 files.
+[2021-07-05T12:52:55.9427479Z Application Info] [DicomImageSet] Read 52 of 186 files.
+[2021-07-05T12:52:55.9477482Z Application Info] [DicomImageSet] Read 53 of 186 files.
+[2021-07-05T12:52:55.9527484Z Application Info] [DicomImageSet] Read 54 of 186 files.
+[2021-07-05T12:52:55.9567487Z Application Info] [DicomImageSet] Read 55 of 186 files.
+[2021-07-05T12:52:55.9607489Z Application Info] [DicomImageSet] Read 56 of 186 files.
+[2021-07-05T12:52:55.9657492Z Application Info] [DicomImageSet] Read 57 of 186 files.
+[2021-07-05T12:52:55.9697494Z Application Info] [DicomImageSet] Read 58 of 186 files.
+[2021-07-05T12:52:55.9737496Z Application Info] [DicomImageSet] Read 59 of 186 files.
+[2021-07-05T12:52:55.9787499Z Application Info] [DicomImageSet] Read 60 of 186 files.
+[2021-07-05T12:52:55.9847503Z Application Info] [DicomImageSet] Read 61 of 186 files.
+[2021-07-05T12:52:55.9887505Z Application Info] [DicomImageSet] Read 62 of 186 files.
+[2021-07-05T12:52:55.9937508Z Application Info] [DicomImageSet] Read 63 of 186 files.
+[2021-07-05T12:52:55.9977510Z Application Info] [DicomImageSet] Read 64 of 186 files.
+[2021-07-05T12:52:56.0017512Z Application Info] [DicomImageSet] Read 65 of 186 files.
+[2021-07-05T12:52:56.0087516Z Application Info] [DicomImageSet] Read 66 of 186 files.
+[2021-07-05T12:52:56.0137519Z Application Info] [DicomImageSet] Read 67 of 186 files.
+[2021-07-05T12:52:56.0187522Z Application Info] [DicomImageSet] Read 68 of 186 files.
+[2021-07-05T12:52:56.0227524Z Messaging Info] Handling Client Message: $ghg 0.3080548
+[2021-07-05T12:52:56.0227524Z Application Info] [DicomImageSet] Read 69 of 186 files.
+[2021-07-05T12:52:56.0287528Z Application Info] [DicomImageSet] Read 70 of 186 files.
+[2021-07-05T12:52:56.0337531Z Application Info] [DicomImageSet] Read 71 of 186 files.
+[2021-07-05T12:52:56.0417535Z Application Info] [DicomImageSet] Read 72 of 186 files.
+[2021-07-05T12:52:56.0527542Z Application Info] [DicomImageSet] Read 73 of 186 files.
+[2021-07-05T12:52:56.0557543Z Application Info] [DicomImageSet] Read 74 of 186 files.
+[2021-07-05T12:52:56.0627547Z Application Info] [DicomImageSet] Read 75 of 186 files.
+[2021-07-05T12:52:56.0667550Z Application Info] [DicomImageSet] Read 76 of 186 files.
+[2021-07-05T12:52:56.0707552Z Application Info] [DicomImageSet] Read 77 of 186 files.
+[2021-07-05T12:52:56.0747554Z Application Info] [DicomImageSet] Read 78 of 186 files.
+[2021-07-05T12:52:56.0777556Z Application Info] [DicomImageSet] Read 79 of 186 files.
+[2021-07-05T12:52:56.0877562Z Application Info] [DicomImageSet] Read 80 of 186 files.
+[2021-07-05T12:52:56.0917564Z Application Info] [DicomImageSet] Read 81 of 186 files.
+[2021-07-05T12:52:56.0957566Z Application Info] [DicomImageSet] Read 82 of 186 files.
+[2021-07-05T12:52:56.0997569Z Application Info] [DicomImageSet] Read 83 of 186 files.
+[2021-07-05T12:52:56.1037571Z Application Info] [DicomImageSet] Read 84 of 186 files.
+[2021-07-05T12:52:56.1067573Z Application Info] [DicomImageSet] Read 85 of 186 files.
+[2021-07-05T12:52:56.1107575Z Application Info] [DicomImageSet] Read 86 of 186 files.
+[2021-07-05T12:52:56.1297586Z Application Info] [DicomImageSet] Read 87 of 186 files.
+[2021-07-05T12:52:56.1347589Z Application Info] [DicomImageSet] Read 88 of 186 files.
+[2021-07-05T12:52:56.1407592Z Application Info] [DicomImageSet] Read 89 of 186 files.
+[2021-07-05T12:52:56.1457595Z Application Info] [DicomImageSet] Read 90 of 186 files.
+[2021-07-05T12:52:56.1487597Z Application Info] [DicomImageSet] Read 91 of 186 files.
+[2021-07-05T12:52:56.1517598Z Application Info] [DicomImageSet] Read 92 of 186 files.
+[2021-07-05T12:52:56.1567601Z Application Info] [DicomImageSet] Read 93 of 186 files.
+[2021-07-05T12:52:56.1637605Z Application Info] [DicomImageSet] Read 94 of 186 files.
+[2021-07-05T12:52:56.1667607Z Application Info] [DicomImageSet] Read 95 of 186 files.
+[2021-07-05T12:52:56.1707609Z Application Info] [DicomImageSet] Read 96 of 186 files.
+[2021-07-05T12:52:56.1747611Z Application Info] [DicomImageSet] Read 97 of 186 files.
+[2021-07-05T12:52:56.1777613Z Application Info] [DicomImageSet] Read 98 of 186 files.
+[2021-07-05T12:52:56.1807615Z Application Info] [DicomImageSet] Read 99 of 186 files.
+[2021-07-05T12:52:56.1857618Z Application Info] [DicomImageSet] Read 100 of 186 files.
+[2021-07-05T12:52:56.1927622Z Application Info] [DicomImageSet] Read 101 of 186 files.
+[2021-07-05T12:52:56.1957623Z Application Info] [DicomImageSet] Read 102 of 186 files.
+[2021-07-05T12:52:56.1987625Z Application Info] [DicomImageSet] Read 103 of 186 files.
+[2021-07-05T12:52:56.2027627Z Application Info] [DicomImageSet] Read 104 of 186 files.
+[2021-07-05T12:52:56.2057629Z Application Info] [DicomImageSet] Read 105 of 186 files.
+[2021-07-05T12:52:56.2087631Z Application Info] [DicomImageSet] Read 106 of 186 files.
+[2021-07-05T12:52:56.2137634Z Application Info] [DicomImageSet] Read 107 of 186 files.
+[2021-07-05T12:52:56.2167635Z Application Info] [DicomImageSet] Read 108 of 186 files.
+[2021-07-05T12:52:56.2207638Z Application Info] [DicomImageSet] Read 109 of 186 files.
+[2021-07-05T12:52:56.2227639Z Application Info] [DicomImageSet] Read 110 of 186 files.
+[2021-07-05T12:52:56.2267641Z Application Info] [DicomImageSet] Read 111 of 186 files.
+[2021-07-05T12:52:56.2297643Z Application Info] [DicomImageSet] Read 112 of 186 files.
+[2021-07-05T12:52:56.2327645Z Application Info] [DicomImageSet] Read 113 of 186 files.
+[2021-07-05T12:52:56.2397649Z Application Info] [DicomImageSet] Read 114 of 186 files.
+[2021-07-05T12:52:56.2427650Z Application Info] [DicomImageSet] Read 115 of 186 files.
+[2021-07-05T12:52:56.2457652Z Application Info] [DicomImageSet] Read 116 of 186 files.
+[2021-07-05T12:52:56.2507655Z Application Info] [DicomImageSet] Read 117 of 186 files.
+[2021-07-05T12:52:56.2537657Z Application Info] [DicomImageSet] Read 118 of 186 files.
+[2021-07-05T12:52:56.2577659Z Application Info] [DicomImageSet] Read 119 of 186 files.
+[2021-07-05T12:52:56.2607661Z Application Info] [DicomImageSet] Read 120 of 186 files.
+[2021-07-05T12:52:56.2677665Z Application Info] [DicomImageSet] Read 121 of 186 files.
+[2021-07-05T12:52:56.2727667Z Application Info] [DicomImageSet] Read 122 of 186 files.
+[2021-07-05T12:52:56.2757669Z Application Info] [DicomImageSet] Read 123 of 186 files.
+[2021-07-05T12:52:56.2787671Z Application Info] [DicomImageSet] Read 124 of 186 files.
+[2021-07-05T12:52:56.2827673Z Application Info] [DicomImageSet] Read 125 of 186 files.
+[2021-07-05T12:52:56.2857675Z Application Info] [DicomImageSet] Read 126 of 186 files.
+[2021-07-05T12:52:56.2887677Z Application Info] [DicomImageSet] Read 127 of 186 files.
+[2021-07-05T12:52:56.2917678Z Application Info] [DicomImageSet] Read 128 of 186 files.
+[2021-07-05T12:52:56.3037685Z Application Info] [DicomImageSet] Read 129 of 186 files.
+[2021-07-05T12:52:56.3077688Z Application Info] [DicomImageSet] Read 130 of 186 files.
+[2021-07-05T12:52:56.3107689Z Application Info] [DicomImageSet] Read 131 of 186 files.
+[2021-07-05T12:52:56.3137691Z Application Info] [DicomImageSet] Read 132 of 186 files.
+[2021-07-05T12:52:56.3167693Z Application Info] [DicomImageSet] Read 133 of 186 files.
+[2021-07-05T12:52:56.3207695Z Application Info] [DicomImageSet] Read 134 of 186 files.
+[2021-07-05T12:52:56.3227696Z Application Info] [DicomImageSet] Read 135 of 186 files.
+[2021-07-05T12:52:56.3257698Z Application Info] [DicomImageSet] Read 136 of 186 files.
+[2021-07-05T12:52:56.3307701Z Messaging Info] Handling Client Message: $ghg 0.3077687
+[2021-07-05T12:52:56.3347703Z Application Info] [DicomImageSet] Read 137 of 186 files.
+[2021-07-05T12:52:56.3377705Z Application Info] [DicomImageSet] Read 138 of 186 files.
+[2021-07-05T12:52:56.3417707Z Application Info] [DicomImageSet] Read 139 of 186 files.
+[2021-07-05T12:52:56.3447709Z Application Info] [DicomImageSet] Read 140 of 186 files.
+[2021-07-05T12:52:56.3477710Z Application Info] [DicomImageSet] Read 141 of 186 files.
+[2021-07-05T12:52:56.3507712Z Application Info] [DicomImageSet] Read 142 of 186 files.
+[2021-07-05T12:52:56.3547714Z Application Info] [DicomImageSet] Read 143 of 186 files.
+[2021-07-05T12:52:56.3627719Z Application Info] [DicomImageSet] Read 144 of 186 files.
+[2021-07-05T12:52:56.3647720Z Application Info] [DicomImageSet] Read 145 of 186 files.
+[2021-07-05T12:52:56.3677722Z Application Info] [DicomImageSet] Read 146 of 186 files.
+[2021-07-05T12:52:56.3717724Z Application Info] [DicomImageSet] Read 147 of 186 files.
+[2021-07-05T12:52:56.3737725Z Application Info] [DicomImageSet] Read 148 of 186 files.
+[2021-07-05T12:52:56.3767727Z Application Info] [DicomImageSet] Read 149 of 186 files.
+[2021-07-05T12:52:56.3837731Z Application Info] [DicomImageSet] Read 150 of 186 files.
+[2021-07-05T12:52:56.3867733Z Application Info] [DicomImageSet] Read 151 of 186 files.
+[2021-07-05T12:52:56.3897734Z Application Info] [DicomImageSet] Read 152 of 186 files.
+[2021-07-05T12:52:56.3917736Z Application Info] [DicomImageSet] Read 153 of 186 files.
+[2021-07-05T12:52:56.3937737Z Application Info] [DicomImageSet] Read 154 of 186 files.
+[2021-07-05T12:52:56.3967738Z Application Info] [DicomImageSet] Read 155 of 186 files.
+[2021-07-05T12:52:56.3997740Z Application Info] [DicomImageSet] Read 156 of 186 files.
+[2021-07-05T12:52:56.4027742Z Application Info] [DicomImageSet] Read 157 of 186 files.
+[2021-07-05T12:52:56.4057744Z Application Info] [DicomImageSet] Read 158 of 186 files.
+[2021-07-05T12:52:56.4077745Z Application Info] [DicomImageSet] Read 159 of 186 files.
+[2021-07-05T12:52:56.4107746Z Application Info] [DicomImageSet] Read 160 of 186 files.
+[2021-07-05T12:52:56.4137748Z Application Info] [DicomImageSet] Read 161 of 186 files.
+[2021-07-05T12:52:56.4157749Z Application Info] [DicomImageSet] Read 162 of 186 files.
+[2021-07-05T12:52:56.4187751Z Application Info] [DicomImageSet] Read 163 of 186 files.
+[2021-07-05T12:52:56.4217753Z Application Info] [DicomImageSet] Read 164 of 186 files.
+[2021-07-05T12:52:56.4237754Z Application Info] [DicomImageSet] Read 165 of 186 files.
+[2021-07-05T12:52:56.4267756Z Application Info] [DicomImageSet] Read 166 of 186 files.
+[2021-07-05T12:52:56.4317758Z Application Info] [DicomImageSet] Read 167 of 186 files.
+[2021-07-05T12:52:56.4337760Z Application Info] [DicomImageSet] Read 168 of 186 files.
+[2021-07-05T12:52:56.4367761Z Application Info] [DicomImageSet] Read 169 of 186 files.
+[2021-07-05T12:52:56.4397763Z Application Info] [DicomImageSet] Read 170 of 186 files.
+[2021-07-05T12:52:56.4417764Z Application Info] [DicomImageSet] Read 171 of 186 files.
+[2021-07-05T12:52:56.4517770Z Application Info] [DicomImageSet] Read 172 of 186 files.
+[2021-07-05T12:52:56.4537771Z Application Info] [DicomImageSet] Read 173 of 186 files.
+[2021-07-05T12:52:56.4567773Z Application Info] [DicomImageSet] Read 174 of 186 files.
+[2021-07-05T12:52:56.4597774Z Application Info] [DicomImageSet] Read 175 of 186 files.
+[2021-07-05T12:52:56.4617776Z Application Info] [DicomImageSet] Read 176 of 186 files.
+[2021-07-05T12:52:56.4647777Z Application Info] [DicomImageSet] Read 177 of 186 files.
+[2021-07-05T12:52:56.4667778Z Application Info] [DicomImageSet] Read 178 of 186 files.
+[2021-07-05T12:52:56.4697780Z Application Info] [DicomImageSet] Read 179 of 186 files.
+[2021-07-05T12:52:56.4717781Z Application Info] [DicomImageSet] Read 180 of 186 files.
+[2021-07-05T12:52:56.4737782Z Application Info] [DicomImageSet] Read 181 of 186 files.
+[2021-07-05T12:52:56.4767784Z Application Info] [DicomImageSet] Read 182 of 186 files.
+[2021-07-05T12:52:56.4787785Z Application Info] [DicomImageSet] Read 183 of 186 files.
+[2021-07-05T12:52:56.4817787Z Application Info] [DicomImageSet] Read 184 of 186 files.
+[2021-07-05T12:52:56.4847789Z Application Info] [DicomImageSet] Read 185 of 186 files.
+[2021-07-05T12:52:56.4867790Z Application Info] [DicomImageSet] Read 186 of 186 files.
+[2021-07-05T12:52:56.8598003Z Messaging Info] Handling Client Message: $ghg 0.3074742
+[2021-07-05T12:52:57.2918250Z Application Info] UIClientQueueManager Requesting State=Prepared, Mode=Z
+[2021-07-05T12:52:57.2918250Z Application Info] UI: StateMachine: State: VolumeViewer
+[2021-07-05T12:52:57.2918250Z Application Info] UIClientQueueManager Requesting State=Prepared, Mode=Z
+[2021-07-05T12:52:57.2918250Z Messaging Info] Handling Client Message: #i11 Prepared Z
+[2021-07-05T12:52:57.2918250Z Application Info] UI: StateMachine: State: VolumeViewer
+[2021-07-05T12:52:57.2928251Z Messaging Info] Handling Client Message: #a11 Prepared Z
+[2021-07-05T12:52:57.2928251Z Application Info] [DicomManager] New State: Active-Executing
+[2021-07-05T12:52:57.2928251Z Application Info] [DicomManager] New State: Active-Prepared
+[2021-07-05T12:52:57.2928251Z Application Info] [DicomManager] New State: Active-Configured
+[2021-07-05T12:52:57.2928251Z Application Info] [DicomManager] New State: Active-Started
+[2021-07-05T12:52:57.2928251Z Application Info] [DicomManager] New State: Inactive-Prepared
+[2021-07-05T12:52:57.2928251Z Messaging Info] Handling Client Message: @c$s11 1
+[2021-07-05T12:52:57.2928251Z Messaging Info] SystemCommanderBase received response = @c$s11 1
+[2021-07-05T12:52:57.2928251Z Messaging Info] Handling Client Message: #i11 Prepared Z
+[2021-07-05T12:52:57.2938251Z Messaging Info] Handling Client Message: #a11 Prepared Z
+[2021-07-05T12:52:57.2938251Z Application Info] [DicomManager] New State: Inactive-Prepared
+[2021-07-05T12:52:57.2938251Z Messaging Info] Handling Client Message: @c$s11 1
+[2021-07-05T12:52:57.2938251Z Messaging Info] SystemCommanderBase received response = @c$s11 1
+[2021-07-05T12:52:57.3988312Z Messaging Info] Handling Client Message: $ghg 0.3071792
+[2021-07-05T12:52:57.4008313Z Messaging Info] Handling Client Message: $s00 Prepared OK Unknown 8389672 0 1 0
+[2021-07-05T12:52:57.4018313Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:57.4018313Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:57.6018428Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 8389672 0 7 0
+[2021-07-05T12:52:57.6028428Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:57.6028428Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:58.0378677Z Messaging Info] Handling Client Message: $ghg 0.3068847
+[2021-07-05T12:52:58.4448910Z Messaging Info] Handling Client Message: $ghg 0.3065942
+[2021-07-05T12:52:58.9589204Z Messaging Info] Handling Client Message: $ghg 0.306308
+[2021-07-05T12:52:59.2419366Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 25166888 0 7 0
+[2021-07-05T12:52:59.2479369Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:52:59.2479369Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:52:59.6959625Z Messaging Info] Handling Client Message: $ghg 0.3060097
+[2021-07-05T12:53:00.0959854Z Messaging Info] Handling Client Message: $ghg 0.3057152
+[2021-07-05T12:53:00.5570118Z Messaging Info] Handling Client Message: $ghg 0.3054202
+[2021-07-05T12:53:01.0870421Z Messaging Info] Handling Client Message: $ghg 0.3051257
+[2021-07-05T12:53:01.2750529Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 92275752 0 7 0
+[2021-07-05T12:53:01.2810532Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:01.2810532Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:01.8040831Z Messaging Info] Handling Client Message: $ghg 0.304839
+[2021-07-05T12:53:02.2181068Z Messaging Info] Handling Client Message: $ghg 0.3045451
+[2021-07-05T12:53:02.6671325Z Messaging Info] Handling Client Message: $ghg 0.3042502
+[2021-07-05T12:53:03.1931626Z Messaging Info] Handling Client Message: $ghg 0.3039557
+[2021-07-05T12:53:03.3081692Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 92275752 0 7 0
+[2021-07-05T12:53:03.3101693Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:03.3101693Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:03.9102036Z Messaging Info] Handling Client Message: $ghg 0.303669
+[2021-07-05T12:53:03.9472057Z Application Info] UI: StateMachine: Fire: VolumeViewer:NextPressed
+[2021-07-05T12:53:03.9472057Z Application Info] UI: Page: Switch: SendImagesPage
+[2021-07-05T12:53:04.0352107Z Application Info] UIClientQueueManager Requesting State=Prepared, Mode=Z
+[2021-07-05T12:53:04.0352107Z Application Info] UI: StateMachine: State: SelectImageDestination
+[2021-07-05T12:53:04.0362108Z Messaging Info] Handling Client Message: #i11 Prepared Z
+[2021-07-05T12:53:04.0372108Z Messaging Info] Handling Client Message: #a11 Prepared Z
+[2021-07-05T12:53:04.0372108Z Application Info] [DicomManager] New State: Inactive-Prepared
+[2021-07-05T12:53:04.0382109Z Messaging Info] Handling Client Message: @c$s11 1
+[2021-07-05T12:53:04.0382109Z Messaging Info] SystemCommanderBase received response = @c$s11 1
+[2021-07-05T12:53:04.2402225Z Messaging Info] Handling Client Message: $ghg 0.3033751
+[2021-07-05T12:53:04.3232272Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:04.3282275Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:04.3282275Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:04.9602636Z Messaging Info] Handling Client Message: $ghg 0.3030801
+[2021-07-05T12:53:05.3002831Z Messaging Info] Handling Client Message: $ghg 0.3027856
+[2021-07-05T12:53:05.9673212Z Messaging Info] Handling Client Message: $ghg 0.3024984
+[2021-07-05T12:53:06.3443428Z Messaging Info] Handling Client Message: $ghg 0.302205
+[2021-07-05T12:53:06.3493431Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:06.3503432Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:06.3503432Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:06.8743731Z Messaging Info] Handling Client Message: $ghg 0.3019105
+[2021-07-05T12:53:07.4444057Z Messaging Info] Handling Client Message: $ghg 0.3016155
+[2021-07-05T12:53:07.9934371Z Messaging Info] Handling Client Message: $ghg 0.3013294
+[2021-07-05T12:53:08.3764590Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:08.3784592Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:08.3784592Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:08.4514633Z Messaging Info] Handling Client Message: $ghg 0.301035
+[2021-07-05T12:53:08.9814936Z Messaging Info] Handling Client Message: $ghg 0.3007405
+[2021-07-05T12:53:09.5125240Z Messaging Info] Handling Client Message: $ghg 0.3004455
+[2021-07-05T12:53:10.1155585Z Messaging Info] Handling Client Message: $ghg 0.3001577
+[2021-07-05T12:53:10.4095753Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:10.4115754Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:10.4115754Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:10.5565837Z Messaging Info] Handling Client Message: $ghg 0.2998649
+[2021-07-05T12:53:11.0876141Z Messaging Info] Handling Client Message: $ghg 0.2995704
+[2021-07-05T12:53:11.6186445Z Messaging Info] Handling Client Message: $ghg 0.2992754
+[2021-07-05T12:53:12.2506806Z Messaging Info] Handling Client Message: $ghg 0.2989893
+[2021-07-05T12:53:12.4346912Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:12.4356912Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:12.4356912Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:12.6637043Z Messaging Info] Handling Client Message: $ghg 0.2986948
+[2021-07-05T12:53:13.1937346Z Messaging Info] Handling Client Message: $ghg 0.2984004
+[2021-07-05T12:53:13.7257650Z Messaging Info] Handling Client Message: $ghg 0.2981053
+[2021-07-05T12:53:14.3257993Z Messaging Info] Handling Client Message: $ghg 0.2978142
+[2021-07-05T12:53:14.4628072Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:14.4638072Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:14.4638072Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:14.9028323Z Messaging Info] Handling Client Message: $ghg 0.2975248
+[2021-07-05T12:53:15.2998550Z Messaging Info] Handling Client Message: $ghg 0.2972303
+[2021-07-05T12:53:15.8298854Z Messaging Info] Handling Client Message: $ghg 0.2969358
+[2021-07-05T12:53:16.4379201Z Messaging Info] Handling Client Message: $ghg 0.2966447
+[2021-07-05T12:53:16.4889230Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:16.4899231Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:16.4899231Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:16.8759452Z Messaging Info] Handling Client Message: $ghg 0.2963547
+[2021-07-05T12:53:17.4059755Z Messaging Info] Handling Client Message: $ghg 0.2960602
+[2021-07-05T12:53:17.9370059Z Messaging Info] Handling Client Message: $ghg 0.2957658
+[2021-07-05T12:53:18.5150389Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:18.5160390Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:18.5160390Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:18.6610473Z Messaging Info] Handling Client Message: $ghg 0.2954735
+[2021-07-05T12:53:19.0130674Z Messaging Info] Handling Client Message: $ghg 0.2951763
+[2021-07-05T12:53:19.5270968Z Messaging Info] Handling Client Message: $ghg 0.2948818
+[2021-07-05T12:53:20.2041355Z Messaging Info] Handling Client Message: $ghg 0.2945868
+[2021-07-05T12:53:20.5431549Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:20.5441550Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:20.5441550Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:20.7881689Z Messaging Info] Handling Client Message: $ghg 0.2942918
+[2021-07-05T12:53:21.1051871Z Messaging Info] Handling Client Message: $ghg 0.2940057
+[2021-07-05T12:53:21.6332173Z Messaging Info] Handling Client Message: $ghg 0.2937118
+[2021-07-05T12:53:22.2292514Z Messaging Info] Handling Client Message: $ghg 0.2934167
+[2021-07-05T12:53:22.5732711Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:22.5802715Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:22.5802715Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:22.8942894Z Messaging Info] Handling Client Message: $ghg 0.2931217
+[2021-07-05T12:53:23.2103075Z Messaging Info] Handling Client Message: $ghg 0.2928356
+[2021-07-05T12:53:23.7393377Z Messaging Info] Handling Client Message: $ghg 0.2925417
+[2021-07-05T12:53:24.4493784Z Messaging Info] Handling Client Message: $ghg 0.2922467
+[2021-07-05T12:53:24.6033872Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:24.6123877Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:24.6133877Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:24.8554016Z Messaging Info] Handling Client Message: $ghg 0.2919522
+[2021-07-05T12:53:25.3174280Z Messaging Info] Handling Client Message: $ghg 0.291665
+[2021-07-05T12:53:25.8474583Z Messaging Info] Handling Client Message: $ghg 0.2913716
+[2021-07-05T12:53:26.4754942Z Messaging Info] Handling Client Message: $ghg 0.2910772
+[2021-07-05T12:53:26.6485041Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:26.6495042Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:26.6505043Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:27.1065303Z Messaging Info] Handling Client Message: $ghg 0.2907821
+[2021-07-05T12:53:27.3425438Z Messaging Info] Handling Client Message: #&22 History/RotorPC/LastKnownOnTime 2021-07-05T12:53:26.1840643Z
+[2021-07-05T12:53:27.3425438Z Application Info] ConfigStore.Set: History/RotorPC/LastKnownOnTime -> 2021-07-05T12:53:26.1840643Z
+[2021-07-05T12:53:27.3835462Z Messaging Info] Handling Client Message: #&22 History/RotorPC/DetectorOnTimeSeconds 21568.0452913
+[2021-07-05T12:53:27.3835462Z Application Info] ConfigStore.Set: History/RotorPC/DetectorOnTimeSeconds -> 21568.0452913
+[2021-07-05T12:53:27.4215484Z Messaging Info] Handling Client Message: $ghg 0.290496
+[2021-07-05T12:53:28.1345891Z Messaging Info] Handling Client Message: $ghg 0.290201
+[2021-07-05T12:53:28.5336120Z Messaging Info] Handling Client Message: $ghg 0.2899071
+[2021-07-05T12:53:28.6786203Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:28.6796203Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:28.6806204Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:29.2146509Z Messaging Info] Handling Client Message: $ghg 0.2896115
+[2021-07-05T12:53:29.5436697Z Messaging Info] Handling Client Message: $ghg 0.2893176
+[2021-07-05T12:53:30.0747001Z Messaging Info] Handling Client Message: $ghg 0.2890226
+[2021-07-05T12:53:30.6007302Z Messaging Info] Handling Client Message: $ghg 0.2887304
+[2021-07-05T12:53:30.7037361Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:30.7057362Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:30.7057362Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:31.3347722Z Messaging Info] Handling Client Message: $ghg 0.2884337
+[2021-07-05T12:53:31.6657911Z Messaging Info] Handling Client Message: $ghg 0.2881387
+[2021-07-05T12:53:32.2548248Z Messaging Info] Handling Client Message: $ghg 0.2878442
+[2021-07-05T12:53:32.7258517Z Messaging Info] Handling Client Message: $ghg 0.2875497
+[2021-07-05T12:53:32.7278519Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:32.7328521Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:32.7328521Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:33.4548934Z Messaging Info] Handling Client Message: $ghg 0.2872558
+[2021-07-05T12:53:33.7869124Z Messaging Info] Handling Client Message: $ghg 0.2869602
+[2021-07-05T12:53:34.4469502Z Messaging Info] Handling Client Message: $ghg 0.2866658
+[2021-07-05T12:53:34.7599681Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:34.7639683Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:34.7639683Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:34.8479731Z Messaging Info] Handling Client Message: $ghg 0.2863708
+[2021-07-05T12:53:35.5780149Z Messaging Info] Handling Client Message: $ghg 0.2860763
+[2021-07-05T12:53:35.8940330Z Messaging Info] Handling Client Message: $ghg 0.2857896
+[2021-07-05T12:53:36.4780664Z Messaging Info] Handling Client Message: $ghg 0.2854957
+[2021-07-05T12:53:36.8010848Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:36.8020849Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:36.8020849Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:36.9540936Z Messaging Info] Handling Client Message: $ghg 0.2852007
+[2021-07-05T12:53:37.6941359Z Messaging Info] Handling Client Message: $ghg 0.2849057
+[2021-07-05T12:53:38.0091539Z Messaging Info] Handling Client Message: $ghg 0.2846146
+[2021-07-05T12:53:38.7021936Z Messaging Info] Handling Client Message: $ghg 0.2843167
+[2021-07-05T12:53:38.8242006Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:38.8332011Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:38.8332011Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:39.0752149Z Messaging Info] Handling Client Message: $ghg 0.2840223
+[2021-07-05T12:53:39.6692489Z Messaging Info] Handling Client Message: $ghg 0.2837273
+[2021-07-05T12:53:40.1362756Z Messaging Info] Handling Client Message: $ghg 0.2834328
+[2021-07-05T12:53:40.7363099Z Messaging Info] Handling Client Message: $ghg 0.2831417
+[2021-07-05T12:53:40.8613171Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:40.8653173Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:40.8653173Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:41.1983363Z Messaging Info] Handling Client Message: $ghg 0.2828434
+[2021-07-05T12:53:41.9283781Z Messaging Info] Handling Client Message: $ghg 0.2825483
+[2021-07-05T12:53:42.3284010Z Messaging Info] Handling Client Message: $ghg 0.2822544
+[2021-07-05T12:53:42.7884273Z Messaging Info] Handling Client Message: $ghg 0.2819594
+[2021-07-05T12:53:42.8834327Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:42.8844328Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:42.8844328Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:43.3034568Z Messaging Info] Handling Client Message: $ghg 0.2816733
+[2021-07-05T12:53:44.0234979Z Messaging Info] Handling Client Message: $ghg 0.2813783
+[2021-07-05T12:53:44.3635174Z Messaging Info] Handling Client Message: $ghg 0.2810844
+[2021-07-05T12:53:44.8945478Z Messaging Info] Handling Client Message: $ghg 0.2807893
+[2021-07-05T12:53:44.9105487Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:44.9185491Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:44.9185491Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:45.4995824Z Messaging Info] Handling Client Message: $ghg 0.2804982
+[2021-07-05T12:53:46.1396190Z Messaging Info] Handling Client Message: $ghg 0.2802088
+[2021-07-05T12:53:46.6516483Z Messaging Info] Handling Client Message: $ghg 0.2799143
+[2021-07-05T12:53:46.9346644Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:46.9356645Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:46.9356645Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:47.0696722Z Messaging Info] Handling Client Message: $ghg 0.2796193
+[2021-07-05T12:53:47.5396990Z Messaging Info] Handling Client Message: $ghg 0.2793331
+[2021-07-05T12:53:48.2467395Z Messaging Info] Handling Client Message: $ghg 0.2790381
+[2021-07-05T12:53:48.6807643Z Messaging Info] Handling Client Message: $ghg 0.2787442
+[2021-07-05T12:53:48.9747811Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:48.9767812Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:48.9767812Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:49.1077887Z Messaging Info] Handling Client Message: $ghg 0.2784492
+[2021-07-05T12:53:49.6218181Z Messaging Info] Handling Client Message: $ghg 0.2781631
+[2021-07-05T12:53:50.3518599Z Messaging Info] Handling Client Message: $ghg 0.2778686
+[2021-07-05T12:53:50.7528828Z Messaging Info] Handling Client Message: $ghg 0.2775742
+[2021-07-05T12:53:50.9928966Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:50.9938966Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:50.9938966Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:51.2129091Z Messaging Info] Handling Client Message: $ghg 0.2772797
+[2021-07-05T12:53:51.7289387Z Messaging Info] Handling Client Message: $ghg 0.276993
+[2021-07-05T12:53:52.4589804Z Messaging Info] Handling Client Message: $ghg 0.276698
+[2021-07-05T12:53:52.7579975Z Application Info] UI: StateMachine: Fire: SelectImageDestination:NextPressed
+[2021-07-05T12:53:52.7579975Z Application Info] UI: Page: Switch: ContinueWithPatientPage
+[2021-07-05T12:53:52.7649979Z Application Info] UIClientQueueManager Requesting State=Prepared, Mode=Z
+[2021-07-05T12:53:52.7649979Z Application Info] UI: StateMachine: State: ContinueWithPatient
+[2021-07-05T12:53:52.7659980Z Messaging Info] Handling Client Message: #i11 Prepared Z
+[2021-07-05T12:53:52.7699982Z Messaging Info] Handling Client Message: #a11 Prepared Z
+[2021-07-05T12:53:52.7709983Z Application Info] [DicomManager] New State: Inactive-Prepared
+[2021-07-05T12:53:52.7709983Z Messaging Info] Handling Client Message: @c$s11 1
+[2021-07-05T12:53:52.7709983Z Messaging Info] SystemCommanderBase received response = @c$s11 1
+[2021-07-05T12:53:52.9790102Z Messaging Info] Handling Client Message: $ghg 0.2764035
+[2021-07-05T12:53:53.0230127Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:53.0240127Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:53.0240127Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:53.4660380Z Messaging Info] Handling Client Message: $ghg 0.2761096
+[2021-07-05T12:53:53.8430596Z Messaging Info] Handling Client Message: $ghg 0.2758185
+[2021-07-05T12:53:54.6261044Z Messaging Info] Handling Client Message: $ghg 0.2755291
+[2021-07-05T12:53:54.9281216Z Messaging Info] Handling Client Message: $ghg 0.275234
+[2021-07-05T12:53:55.0491286Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:55.0671296Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:55.0671296Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:55.4251501Z Messaging Info] Handling Client Message: $ghg 0.2749396
+[2021-07-05T12:53:55.9521802Z Messaging Info] Handling Client Message: $ghg 0.2746485
+[2021-07-05T12:53:56.6852221Z Messaging Info] Handling Client Message: $ghg 0.2743495
+[2021-07-05T12:53:57.0262416Z Application Info] UI: StateMachine: Fire: ContinueWithPatient:YesPressed
+[2021-07-05T12:53:57.0262416Z Application Context] Continue with Patient
+[2021-07-05T12:53:57.0272417Z Application Info] UI: StateMachine: Fire: SelectWorklistSeries:NextPressed
+[2021-07-05T12:53:57.0272417Z Application Info] UI: Page: Switch: ImagingModeInstructionsPage
+[2021-07-05T12:53:57.0292418Z Application Info] UI: StateMachine: State: ImagingInstructionalScreens
+[2021-07-05T12:53:57.0292418Z Application Info] Previous Entry Repeats 1 Time(s)
+[2021-07-05T12:53:57.0292418Z Messaging Info] Handling Client Message: @c$s1x 1
+[2021-07-05T12:53:57.0292418Z Messaging Info] SystemCommanderBase received response = @c$s1x 1
+[2021-07-05T12:53:57.0292418Z Messaging Info] Handling Client Message: @c$s1x 1
+[2021-07-05T12:53:57.0292418Z Messaging Info] SystemCommanderBase received response = @c$s1x 1
+[2021-07-05T12:53:57.0862451Z Messaging Info] Handling Client Message: $ghg 0.2740556
+[2021-07-05T12:53:57.1292475Z Messaging Info] Handling Client Message: $s00 Prepared OK Z 75498536 0 7 0
+[2021-07-05T12:53:57.1302476Z Messaging Info] Handling Client Message: @c$sgm 0 40
+[2021-07-05T12:53:57.1302476Z Messaging Info] SystemCommanderBase received response = @c$sgm 0 40
+[2021-07-05T12:53:57.5472714Z Messaging Info] Handling Client Message: $ghg 0.2737606
+[2021-07-05T12:53:58.0773018Z Messaging Info] Handling Client Message: $ghg 0.2734661
+[2021-07-05T12:53:58.8133439Z Messaging Info] Handling Client Message: $ghg 0.273175
+[2021-07-05T12:53:58.9543519Z Application Info] UI: StateMachine: Fire: ImagingInstructionalScreens:BackPressed
+[2021-07-05T12:53:58.9543519Z Application Info] UI: StateMachine: Fire: SelectWorklistSeries:BackPressed
+[2021-07-05T12:53:58.9543519Z Application Context] Imaging Mode

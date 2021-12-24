@@ -1,0 +1,934 @@
+[2020-11-20T11:10:19.8795755Z Messaging Info] Handling Client Message: #f11 Prepared AxialScan
+[2020-11-20T11:10:19.8805756Z Messaging Info] Handling Client Message: #r11 Prepared AxialScan
+[2020-11-20T11:10:19.8825757Z Messaging Info] Handling Client Message: #g11 Prepared AxialScan
+[2020-11-20T11:10:19.9065771Z Messaging Info] Handling Client Message: #x11 Prepared AxialScan
+[2020-11-20T11:10:19.9145775Z Messaging Info] Handling Client Message: #n11 Prepared AxialScan
+[2020-11-20T11:10:19.9705807Z Messaging Info] Handling Client Message: @T#dsf
+[2020-11-20T11:10:19.9705807Z Application Info] SetFCalValue: Skipping setting FCal. The gain is already set to = 64
+[2020-11-20T11:10:19.9705807Z Application Info] #dsf completed setting FCal gain for kV level 120
+[2020-11-20T11:10:20.1705922Z Messaging Info] Handling Client Message: @T#dsr 2
+[2020-11-20T11:10:20.1705922Z Application Info] Skipped setting Reference detector gain. It is already set to 2
+[2020-11-20T11:10:20.1705922Z Application Info] #dsr completed setting Reference detector gain to 2
+[2020-11-20T11:10:20.1775926Z Messaging Info] Handling Client Message: @T#gvs 120
+[2020-11-20T11:10:20.3656033Z Application Warning] XRayGenerator case >Started warning: planned scan has no values
+[2020-11-20T11:10:20.3676034Z Messaging Info] Handling Client Message: @T#gis 169.6
+[2020-11-20T11:10:20.3946050Z Messaging Info] Handling Client Message: @T#gfs 3.5
+[2020-11-20T11:10:20.4196064Z Messaging Info] Handling Client Message: @T#gvg
+[2020-11-20T11:10:20.4446078Z Messaging Info] Handling Client Message: @T#gig
+[2020-11-20T11:10:20.4696093Z Messaging Info] Handling Client Message: @T#gfg
+[2020-11-20T11:10:20.4896104Z Messaging Info] Handling Client Message: @T#xad
+[2020-11-20T11:10:20.4926106Z Messaging Info] Handling Client Message: @T#gme 0
+[2020-11-20T11:10:20.5166120Z Messaging Info] Handling Client Message: @T#fme 0
+[2020-11-20T11:10:20.5196121Z Messaging Info] Handling Client Message: @T#fxr
+[2020-11-20T11:10:20.5196121Z Application Info] XRaySummary is: Modulation: None
+>kV: 120
+>mA: 169.6
+>scanTimeS: 11.5200005471706
+>effectiveMas: 325.632
+>ctdiVol: 64.73632
+>dlp: 1240.43142193548
+>scanLengthCM: 18
+>phantomType: Ludlum L-007N PMMA CT dosimetry Phantom, 16 cm
+>Dose Check:
+>  Notification CTDIvol = False
+>  Notification CTDIvol Reason = <null>
+>  Notification DLP = False
+>  Notification DLP Reason = <null>
+>  Alert CTDIvol = False
+>  Alert CTDIvol Operator = <null>
+>  Alert CTDIvol Reason = <null>
+>  Alert CTDIvol Total = 0
+>  Alert DLP = False
+>  Alert DLP Operator = <null>
+>  Alert DLP Reason = <null>
+>  Alert DLP Total = 0
+[2020-11-20T11:10:20.7036227Z Application Info] ReconstructionInitializer.ChangeNotify, change=HelicalAir, reinit=False
+[2020-11-20T11:10:20.7036227Z Application Info] ReconstructionInitializer.FullSetup Initializing: HelicalAir, Motion
+[2020-11-20T11:10:20.7746267Z Application Info] ReconstructionInitializer.GetGainCalFile loading file for 120kV
+[2020-11-20T11:10:20.7766268Z Application Info] ReconstructionInitializer.LoadAirData using gain cal file = D:\AiroData\airscan\120\0168-airscan-120kV-2020-11-20T10-05-58.araw
+[2020-11-20T11:10:20.9236352Z Application Info] ConfigStore.Set: History/Generator -> <Scans><ScanReport><kV>100</kV><mA>80</mA><Duration>10</Duration><TimeStamp>2020-11-20T10:02:47.1108622+01:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>10</mA><Duration>3.36000013</Duration><TimeStamp>2020-11-20T10:04:52.6470424+01:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>125</mA><Duration>5.76</Duration><TimeStamp>2020-11-20T10:05:58.9048322+01:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>169.6</mA><Duration>11.52</Duration><TimeStamp>2020-11-20T12:10:20.9226352+01:00</TimeStamp></ScanReport></Scans>
+[2020-11-20T11:10:20.9276355Z Messaging Info] Handling Client Message: #&22 History/MaintenanceScans <Entries><KeysAndValues><Key>WarmUp</Key><Value>2020-11-20T09:05:58.9058322Z</Value></KeysAndValues><KeysAndValues><Key>EstopTest</Key><Value>2020-11-20T09:05:30.2909892Z</Value></KeysAndValues><KeysAndValues><Key>GainCal</Key><Value>2020-11-20T09:05:58.9348339Z</Value></KeysAndValues><KeysAndValues><Key>HelicalDailyQC</Key><Value>2020-10-21T12:32:19.1124514Z</Value></KeysAndValues><KeysAndValues><Key>HelicalFullQC</Key><Value>2020-10-21T12:14:33.2994903Z</Value></KeysAndValues><KeysAndValues><Key>AxialDailyQC</Key><Value>2020-10-21T12:40:02.7889721Z</Value></KeysAndValues><KeysAndValues><Key>AxialFullQC</Key><Value>2020-10-21T12:24:22.6852013Z</Value></KeysAndValues></Entries>
+[2020-11-20T11:10:20.9276355Z Application Info] ConfigStore.Set: History/MaintenanceScans -> <Entries><KeysAndValues><Key>WarmUp</Key><Value>2020-11-20T09:05:58.9058322Z</Value></KeysAndValues><KeysAndValues><Key>EstopTest</Key><Value>2020-11-20T09:05:30.2909892Z</Value></KeysAndValues><KeysAndValues><Key>GainCal</Key><Value>2020-11-20T09:05:58.9348339Z</Value></KeysAndValues><KeysAndValues><Key>HelicalDailyQC</Key><Value>2020-10-21T12:32:19.1124514Z</Value></KeysAndValues><KeysAndValues><Key>HelicalFullQC</Key><Value>2020-10-21T12:14:33.2994903Z</Value></KeysAndValues><KeysAndValues><Key>AxialDailyQC</Key><Value>2020-10-21T12:40:02.7889721Z</Value></KeysAndValues><KeysAndValues><Key>AxialFullQC</Key><Value>2020-10-21T12:24:22.6852013Z</Value></KeysAndValues></Entries>
+[2020-11-20T11:10:20.9396361Z Messaging Info] Handling Client Message: #&22 History/Generator <Scans><ScanReport><kV>100</kV><mA>80</mA><Duration>10</Duration><TimeStamp>2020-11-20T10:02:47.1108622+01:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>10</mA><Duration>3.36000013</Duration><TimeStamp>2020-11-20T10:04:52.6470424+01:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>125</mA><Duration>5.76</Duration><TimeStamp>2020-11-20T10:05:58.9048322+01:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>169.6</mA><Duration>11.52</Duration><TimeStamp>2020-11-20T12:10:20.9226352+01:00</TimeStamp></ScanReport></Scans>
+[2020-11-20T11:10:20.9396361Z Application Info] ConfigStore.Set: History/Generator -> <Scans><ScanReport><kV>100</kV><mA>80</mA><Duration>10</Duration><TimeStamp>2020-11-20T10:02:47.1108622+01:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>10</mA><Duration>3.36000013</Duration><TimeStamp>2020-11-20T10:04:52.6470424+01:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>125</mA><Duration>5.76</Duration><TimeStamp>2020-11-20T10:05:58.9048322+01:00</TimeStamp></ScanReport><ScanReport><kV>120</kV><mA>169.6</mA><Duration>11.52</Duration><TimeStamp>2020-11-20T12:10:20.9226352+01:00</TimeStamp></ScanReport></Scans>
+[2020-11-20T11:10:20.9406362Z Messaging Info] Handling Client Message: @d$ssc 1
+[2020-11-20T11:10:20.9406362Z Messaging Info] SystemCommander received response to dispatched command, response=@d$ssc 1
+[2020-11-20T11:10:21.2076515Z Application Info] RefDetectorValidator Init.  Air mA = 125
+[2020-11-20T11:10:21.6166749Z Application Info] ReconstructionInitializer.MotionProfileSetup using DeltaZ = 0
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=3, col=476
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=4, col=10
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=5, col=126
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=5, col=295
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=9, col=448
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=12, col=2
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=14, col=421
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=5, col=21
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=10, col=252
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=21, col=247
+[2020-11-20T11:10:26.6849648Z Application Info] ReconstructionInitializer.FinalizeSetup setup marked bad pixel at row=7, col=27
+[2020-11-20T11:10:26.6849648Z Application Info] RefDetectorValidator scan started.  max_bad_per_dropout = 6, max_bad_per_rev = 60, percent_tolerance_below = 25, percent_tolerance_above = 100
+[2020-11-20T11:10:26.6849648Z Application Warning] SaveRawProjectionSingleFileConsumer Finish method skipped because it was already called
+[2020-11-20T11:10:26.6999656Z Application Info] AxialReconConsumer - ReconConsumerInitialize - SetupFrequencyResponse (filterkernalsigma) = 0.92
+[2020-11-20T11:10:27.3020001Z Application Info] ReconstructionManager.TransitionStates: Starting FrameGrabber
+[2020-11-20T11:10:27.4260071Z Application Info] ReconstructionManager.TransitionStates: FrameGrabber Started
+[2020-11-20T11:10:27.4560089Z Messaging Info] Handling Client Message: #d11 Completed AxialScan
+[2020-11-20T11:10:27.4590090Z Messaging Info] Handling Client Message: #f11 Completed AxialScan
+[2020-11-20T11:10:27.4610092Z Messaging Info] Handling Client Message: #r11 Completed AxialScan
+[2020-11-20T11:10:27.4620092Z Messaging Info] Handling Client Message: #g11 Completed AxialScan
+[2020-11-20T11:10:27.4620092Z Messaging Info] Handling Client Message: #x11 Completed AxialScan
+[2020-11-20T11:10:27.4700097Z Messaging Info] Handling Client Message: #n11 Completed AxialScan
+[2020-11-20T11:10:35.1754504Z Messaging Info] Handling Client Message: @U#flw
+[2020-11-20T11:10:35.1924514Z Messaging Info] Handling Client Message: @U#xxm Y
+[2020-11-20T11:10:35.2114525Z Application Info] New Status From X-Ray Control Board: YN-
+[2020-11-20T11:10:35.7084809Z Application Info] New Status From X-Ray Control Board: Ymr
+[2020-11-20T11:10:40.4887543Z Application Info] Detector gains are 1: 64 64 64 64  2: 64 64 64 64  3: 64 64 64 64  4: 64 64 64 64  5: 64 64 64 64  6: 64 64 64 64  7: 64 64 64 64  8: 64 64 64 64  9: 64 64 64 64  10: 64 64 64 64  11: 64 64 64 64  12: 64 64 64 64  13: 64 64 64 64  14: 64 64 64 64  15: 64 64 64 64  16: 64 64 64 64  17: 64 64 64 64  18: 64 64 64 64  19: 64 64 64 64  20: 64 64 64 64  21: 64 64 64 64  22: 64 64 64 64  23: 64 64 64 64  24: 64 64 64 64  25: 64 64 64 64  26: 64 64 64 64  27: 64 64 64 64  28: 64 64 64 64  29: 64 64 64 64  30: 64 64 64 64  31: 64 64 64 64
+[2020-11-20T11:10:40.4887543Z Application Info] ADAS1128: New detector gains verified. Expected gain: 64 Observed: 64
+[2020-11-20T11:10:40.6427631Z Application Info] New Status From X-Ray Control Board: Yag
+[2020-11-20T11:10:40.6617642Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 88
+>  Triggered Frames = 84
+>  Detected Frames  = 86
+>  Exposed Frames   = 0
+[2020-11-20T11:10:43.1349056Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 1324
+>  Triggered Frames = 1321
+>  Detected Frames  = 1322
+>  Exposed Frames   = 0
+[2020-11-20T11:10:43.6069326Z Application Info] New Status From X-Ray Control Board: Yxq
+[2020-11-20T11:10:43.6259337Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 1569
+>  Triggered Frames = 1567
+>  Detected Frames  = 1568
+>  Exposed Frames   = 0
+[2020-11-20T11:10:46.0760739Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 2794
+>  Triggered Frames = 2792
+>  Detected Frames  = 2793
+>  Exposed Frames   = 0
+[2020-11-20T11:10:46.5691021Z Application Info] AxialReconConsumer starting scan at index = 3040
+[2020-11-20T11:10:46.5691021Z Application Info] AxialReconConsumer num projections = 1
+[2020-11-20T11:10:46.5691021Z Application Info] AxialReconConsumer num exposed = 0
+[2020-11-20T11:10:46.5691021Z Application Info] AxialReconConsumer add projection
+[2020-11-20T11:10:46.7771140Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:46.7771140Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:47.3071443Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:47.3071443Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:47.8371746Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:47.8371746Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:48.0491867Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 3781
+>  Triggered Frames = 3778
+>  Detected Frames  = 3780
+>  Exposed Frames   = 741
+[2020-11-20T11:10:48.3682050Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:48.3682050Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:48.4862117Z Application Info] AxialReconConsumer finishing rev at index = 3999
+[2020-11-20T11:10:48.4862117Z Application Info] AxialReconConsumer getting recon output
+[2020-11-20T11:10:48.5552157Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 4034
+>  Triggered Frames = 4031
+>  Detected Frames  = 4033
+>  Exposed Frames   = 960
+[2020-11-20T11:10:49.8912921Z Application Info] AxialReconConsumer ReconDataBufferSize =32505856
+[2020-11-20T11:10:50.0383005Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 4776
+>  Triggered Frames = 4773
+>  Detected Frames  = 4774
+>  Exposed Frames   = 960
+[2020-11-20T11:10:50.4083217Z Application Info] AxialReconConsumer starting scan at index = 4960
+[2020-11-20T11:10:50.4083217Z Application Info] AxialReconConsumer num projections = 1921
+[2020-11-20T11:10:50.4083217Z Application Info] AxialReconConsumer num exposed = 960
+[2020-11-20T11:10:50.4083217Z Application Info] AxialReconConsumer add projection
+[2020-11-20T11:10:50.4743254Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:50.4743254Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:50.7803429Z Application Info] ConfigStore.Set: History/RotorPC/LastKnownOnTime -> 2020-11-20T11:10:50.7803429Z
+[2020-11-20T11:10:50.7803429Z Application Info] ConfigStore.Set: History/RotorPC/DetectorOnTimeSeconds -> 67318.4968273
+[2020-11-20T11:10:50.7923436Z Messaging Info] Handling Client Message: #&22 History/RotorPC/LastKnownOnTime 2020-11-20T11:10:50.7803429Z
+[2020-11-20T11:10:50.7923436Z Application Info] ConfigStore.Set: History/RotorPC/LastKnownOnTime -> 2020-11-20T11:10:50.7803429Z
+[2020-11-20T11:10:50.7943437Z Messaging Info] Handling Client Message: @d$ssc 1
+[2020-11-20T11:10:50.7943437Z Messaging Info] SystemCommander received response to dispatched command, response=@d$ssc 1
+[2020-11-20T11:10:50.8033443Z Messaging Info] Handling Client Message: #&22 History/RotorPC/DetectorOnTimeSeconds 67318.4968273
+[2020-11-20T11:10:50.8033443Z Application Info] ConfigStore.Set: History/RotorPC/DetectorOnTimeSeconds -> 67318.4968273
+[2020-11-20T11:10:50.8053444Z Messaging Info] Handling Client Message: @d$ssc 1
+[2020-11-20T11:10:50.8053444Z Messaging Info] SystemCommander received response to dispatched command, response=@d$ssc 1
+[2020-11-20T11:10:50.9893549Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:50.9893549Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:51.5193852Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:51.5193852Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:52.0104133Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 5762
+>  Triggered Frames = 5759
+>  Detected Frames  = 5760
+>  Exposed Frames   = 1761
+[2020-11-20T11:10:52.0494155Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:52.0494155Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:52.3264314Z Application Info] AxialReconConsumer finishing rev at index = 5919
+[2020-11-20T11:10:52.3264314Z Application Info] AxialReconConsumer getting recon output
+[2020-11-20T11:10:52.5034415Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 6008
+>  Triggered Frames = 6005
+>  Detected Frames  = 6007
+>  Exposed Frames   = 1920
+[2020-11-20T11:10:53.7285116Z Application Info] AxialReconConsumer ReconDataBufferSize =65011712
+[2020-11-20T11:10:53.9855263Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 6749
+>  Triggered Frames = 6745
+>  Detected Frames  = 6748
+>  Exposed Frames   = 1920
+[2020-11-20T11:10:54.1555360Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:54.1555360Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:54.2485413Z Application Info] AxialReconConsumer starting scan at index = 6880
+[2020-11-20T11:10:54.2485413Z Application Info] AxialReconConsumer num projections = 3841
+[2020-11-20T11:10:54.2485413Z Application Info] AxialReconConsumer num exposed = 1920
+[2020-11-20T11:10:54.2485413Z Application Info] AxialReconConsumer add projection
+[2020-11-20T11:10:54.6855663Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:54.6855663Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:55.2025959Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:55.2025959Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:55.7316261Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:55.7316261Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:55.9586391Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 7736
+>  Triggered Frames = 7733
+>  Detected Frames  = 7734
+>  Exposed Frames   = 2775
+[2020-11-20T11:10:56.1656510Z Application Info] AxialReconConsumer finishing rev at index = 7839
+[2020-11-20T11:10:56.1656510Z Application Info] AxialReconConsumer getting recon output
+[2020-11-20T11:10:56.4576677Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 7985
+>  Triggered Frames = 7983
+>  Detected Frames  = 7984
+>  Exposed Frames   = 2880
+[2020-11-20T11:10:57.4407239Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 8477
+>  Triggered Frames = 8474
+>  Detected Frames  = 8475
+>  Exposed Frames   = 2880
+[2020-11-20T11:10:57.5697313Z Application Info] AxialReconConsumer ReconDataBufferSize =97517568
+[2020-11-20T11:10:58.0877609Z Application Info] AxialReconConsumer starting scan at index = 8800
+[2020-11-20T11:10:58.0877609Z Application Info] AxialReconConsumer num projections = 5761
+[2020-11-20T11:10:58.0877609Z Application Info] AxialReconConsumer num exposed = 2880
+[2020-11-20T11:10:58.0877609Z Application Info] AxialReconConsumer add projection
+[2020-11-20T11:10:58.3517760Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:58.3517760Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:58.8828064Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:58.8828064Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:59.3968358Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 9455
+>  Triggered Frames = 9452
+>  Detected Frames  = 9454
+>  Exposed Frames   = 3535
+[2020-11-20T11:10:59.4128367Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:59.4128367Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:10:59.9298663Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:10:59.9298663Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:11:00.0058706Z Application Info] AxialReconConsumer finishing rev at index = 9759
+[2020-11-20T11:11:00.0058706Z Application Info] AxialReconConsumer getting recon output
+[2020-11-20T11:11:00.3798920Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 9946
+>  Triggered Frames = 9944
+>  Detected Frames  = 9945
+>  Exposed Frames   = 3840
+[2020-11-20T11:11:01.3629482Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 10438
+>  Triggered Frames = 10435
+>  Detected Frames  = 10436
+>  Exposed Frames   = 3840
+[2020-11-20T11:11:01.4109510Z Application Info] AxialReconConsumer ReconDataBufferSize =130023424
+[2020-11-20T11:11:01.9279805Z Application Info] AxialReconConsumer starting scan at index = 10720
+[2020-11-20T11:11:01.9279805Z Application Info] AxialReconConsumer num projections = 7681
+[2020-11-20T11:11:01.9279805Z Application Info] AxialReconConsumer num exposed = 3840
+[2020-11-20T11:11:01.9279805Z Application Info] AxialReconConsumer add projection
+[2020-11-20T11:11:02.0359867Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:11:02.0359867Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:11:02.5640169Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:11:02.5640169Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:11:03.0940472Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:11:03.0940472Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:11:03.3280606Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 11421
+>  Triggered Frames = 11418
+>  Detected Frames  = 11419
+>  Exposed Frames   = 4540
+[2020-11-20T11:11:03.6250776Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:11:03.6250776Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:11:03.8460903Z Application Info] AxialReconConsumer finishing rev at index = 11679
+[2020-11-20T11:11:03.8460903Z Application Info] AxialReconConsumer getting recon output
+[2020-11-20T11:11:04.3111169Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 11912
+>  Triggered Frames = 11910
+>  Detected Frames  = 11911
+>  Exposed Frames   = 4800
+[2020-11-20T11:11:05.2491705Z Application Info] AxialReconConsumer ReconDataBufferSize =162529280
+[2020-11-20T11:11:05.3021735Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 12408
+>  Triggered Frames = 12405
+>  Detected Frames  = 12406
+>  Exposed Frames   = 4800
+[2020-11-20T11:11:05.7311981Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:11:05.7311981Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:11:05.7682002Z Application Info] AxialReconConsumer starting scan at index = 12640
+[2020-11-20T11:11:05.7682002Z Application Info] AxialReconConsumer num projections = 9601
+[2020-11-20T11:11:05.7682002Z Application Info] AxialReconConsumer num exposed = 4800
+[2020-11-20T11:11:05.7682002Z Application Info] AxialReconConsumer add projection
+[2020-11-20T11:11:06.2512278Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:11:06.2512278Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:11:06.7762579Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:11:06.7762579Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:11:07.2682860Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 13391
+>  Triggered Frames = 13388
+>  Detected Frames  = 13390
+>  Exposed Frames   = 5550
+[2020-11-20T11:11:07.3062882Z Application Warning] GetXRayResponseArgs: computed checksum 'F' does not match response checksum 'E'
+[2020-11-20T11:11:07.3062882Z Application Error] XRayGenerator.GetSystemResponse bad args:  ?;E
+[2020-11-20T11:11:07.6863099Z Application Info] AxialReconConsumer finishing rev at index = 13599
+[2020-11-20T11:11:07.6863099Z Application Info] AxialReconConsumer getting recon output
+[2020-11-20T11:11:07.6863099Z Application Info] SaveRawProjectionSingleFileConsumer reached allocated buffer count of 13600
+[2020-11-20T11:11:07.6863099Z Application Info] SaveRawProjectionSingleFileConsumer calling Finish method
+[2020-11-20T11:11:07.6863099Z Application Info] SaveRawProjectionSingleFileConsumer Finish method completed
+[2020-11-20T11:11:07.7453133Z Application Info] New Status From X-Ray Control Board: YKY
+[2020-11-20T11:11:07.7633143Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 13600
+>  Triggered Frames = 13600
+>  Detected Frames  = 13600
+>  Exposed Frames   = 5760
+[2020-11-20T11:11:07.7633143Z Application Info] TubeCoolDownTimer Logged Scan: kV=120, mA=169.6, Duration=11.52, TimeStamp=11/20/2020 12:11:07 PM
+[2020-11-20T11:11:07.7643144Z Application Info] ConfigStore.Set: History/Generator -> <Scans><ScanReport><kV>120</kV><mA>169.6</mA><Duration>11.52</Duration><TimeStamp>2020-11-20T12:11:07.7633143+01:00</TimeStamp></ScanReport></Scans>
+[2020-11-20T11:11:07.7643144Z Application Info] RotorManager notifying ReconstructionManager of scan finish
+[2020-11-20T11:11:07.7773151Z Messaging Info] Handling Client Message: #&22 History/Generator <Scans><ScanReport><kV>120</kV><mA>169.6</mA><Duration>11.52</Duration><TimeStamp>2020-11-20T12:11:07.7633143+01:00</TimeStamp></ScanReport></Scans>
+[2020-11-20T11:11:07.7773151Z Application Info] ConfigStore.Set: History/Generator -> <Scans><ScanReport><kV>120</kV><mA>169.6</mA><Duration>11.52</Duration><TimeStamp>2020-11-20T12:11:07.7633143+01:00</TimeStamp></ScanReport></Scans>
+[2020-11-20T11:11:07.7783152Z Messaging Info] Handling Client Message: @d$ssc 1
+[2020-11-20T11:11:07.7783152Z Messaging Info] SystemCommander received response to dispatched command, response=@d$ssc 1
+[2020-11-20T11:11:07.8393187Z Messaging Info] Handling Client Message: #&22 History/MaintenanceScans <Entries><KeysAndValues><Key>WarmUp</Key><Value>2020-11-20T11:11:07.7643144Z</Value></KeysAndValues><KeysAndValues><Key>EstopTest</Key><Value>2020-11-20T09:05:30.2909892Z</Value></KeysAndValues><KeysAndValues><Key>GainCal</Key><Value>2020-11-20T09:05:58.9348339Z</Value></KeysAndValues><KeysAndValues><Key>HelicalDailyQC</Key><Value>2020-10-21T12:32:19.1124514Z</Value></KeysAndValues><KeysAndValues><Key>HelicalFullQC</Key><Value>2020-10-21T12:14:33.2994903Z</Value></KeysAndValues><KeysAndValues><Key>AxialDailyQC</Key><Value>2020-10-21T12:40:02.7889721Z</Value></KeysAndValues><KeysAndValues><Key>AxialFullQC</Key><Value>2020-10-21T12:24:22.6852013Z</Value></KeysAndValues></Entries>
+[2020-11-20T11:11:07.8393187Z Application Info] ConfigStore.Set: History/MaintenanceScans -> <Entries><KeysAndValues><Key>WarmUp</Key><Value>2020-11-20T11:11:07.7643144Z</Value></KeysAndValues><KeysAndValues><Key>EstopTest</Key><Value>2020-11-20T09:05:30.2909892Z</Value></KeysAndValues><KeysAndValues><Key>GainCal</Key><Value>2020-11-20T09:05:58.9348339Z</Value></KeysAndValues><KeysAndValues><Key>HelicalDailyQC</Key><Value>2020-10-21T12:32:19.1124514Z</Value></KeysAndValues><KeysAndValues><Key>HelicalFullQC</Key><Value>2020-10-21T12:14:33.2994903Z</Value></KeysAndValues><KeysAndValues><Key>AxialDailyQC</Key><Value>2020-10-21T12:40:02.7889721Z</Value></KeysAndValues><KeysAndValues><Key>AxialFullQC</Key><Value>2020-10-21T12:24:22.6852013Z</Value></KeysAndValues></Entries>
+[2020-11-20T11:11:08.6863671Z Application Info] ReconstructionManager ignoring buffer timeouts because all expected frames have been acquired
+[2020-11-20T11:11:09.0873900Z Application Info] AxialReconConsumer ReconDataBufferSize =195035136
+[2020-11-20T11:11:09.0873900Z Application Info] AxialReconConsumer reached allocated buffer count of 13600
+[2020-11-20T11:11:09.0873900Z Application Info] AxialReconConsumer calling Finish method
+[2020-11-20T11:11:09.0903902Z Application Info] AxialReconConsumer finished reconstructing 10560 projections in 00:00:03.3221900
+[2020-11-20T11:11:09.1543939Z Application Info] ConfigStore.Set: History/DoseCheckReport -> <DoseNotification><DoseNotificationEntry><Date>2018-08-17T09:36:46.2154075+02:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4384.1534485846.371826</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20180817025326.3620.1.20</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2018-08-17T10:55:56.2320929+02:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4384.1534485846.371826</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20180817033900.3620.1.22</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-06T09:36:48.2992657+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.3920.1551859576.13375</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190306092516.3528.1.11</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-06T09:39:49.7026414+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.3920.1551859576.13375</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190306093801.3528.1.13</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-06T12:30:44.6541911+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.3920.1551859576.13375</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190306122723.3528.1.14</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-27T10:07:32.7273895+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4844.1553674321.384611</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190327093311.3640.1.17</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-27T11:17:15.8526506+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4844.1553674321.384611</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190327101021.3640.1.19</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry></DoseNotification><DoseAlert><DoseAlertEntry><Date>2020-10-09T13:18:56.7886671+02:00</Date><StudyInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009125335.3680.1.1572</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009131641.3680.1.1581</SeriesInstanceUID><Type>CTDIvol</Type><Reason>qc</Reason><Value>260.29395482014974</Value><Limit>200</Limit><ProtocolKey>AIRO-STD-ADULT-HEAD</ProtocolKey><Operator>rf</Operator></DoseAlertEntry><DoseAlertEntry><Date>2020-10-09T13:21:49.6935567+02:00</Date><StudyInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009125335.3680.1.1572</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009131954.3680.1.1582</SeriesInstanceUID><Type>CTDIvol</Type><Reason>qc</Reason><Value>325.03027531575515</Value><Limit>200</Limit><ProtocolKey>AIRO-STD-ADULT-HEAD</ProtocolKey><Operator>rf</Operator></DoseAlertEntry><DoseAlertEntry><Date>2020-10-09T13:24:36.2750846+02:00</Date><StudyInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009125335.3680.1.1572</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009132246.3680.1.1583</SeriesInstanceUID><Type>CTDIvol</Type><Reason>qc</Reason><Value>389.76659581136062</Value><Limit>200</Limit><ProtocolKey>AIRO-STD-ADULT-HEAD</ProtocolKey><Operator>rf</Operator></DoseAlertEntry></DoseAlert>
+[2020-11-20T11:11:09.1713948Z Messaging Info] Handling Client Message: #&22 History/DoseCheckReport <DoseNotification><DoseNotificationEntry><Date>2018-08-17T09:36:46.2154075+02:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4384.1534485846.371826</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20180817025326.3620.1.20</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2018-08-17T10:55:56.2320929+02:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4384.1534485846.371826</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20180817033900.3620.1.22</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-06T09:36:48.2992657+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.3920.1551859576.13375</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190306092516.3528.1.11</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-06T09:39:49.7026414+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.3920.1551859576.13375</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190306093801.3528.1.13</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-06T12:30:44.6541911+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.3920.1551859576.13375</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190306122723.3528.1.14</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-27T10:07:32.7273895+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4844.1553674321.384611</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190327093311.3640.1.17</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-27T11:17:15.8526506+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4844.1553674321.384611</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190327101021.3640.1.19</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry></DoseNotification><DoseAlert><DoseAlertEntry><Date>2020-10-09T13:18:56.7886671+02:00</Date><StudyInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009125335.3680.1.1572</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009131641.3680.1.1581</SeriesInstanceUID><Type>CTDIvol</Type><Reason>qc</Reason><Value>260.29395482014974</Value><Limit>200</Limit><ProtocolKey>AIRO-STD-ADULT-HEAD</ProtocolKey><Operator>rf</Operator></DoseAlertEntry><DoseAlertEntry><Date>2020-10-09T13:21:49.6935567+02:00</Date><StudyInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009125335.3680.1.1572</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009131954.3680.1.1582</SeriesInstanceUID><Type>CTDIvol</Type><Reason>qc</Reason><Value>325.03027531575515</Value><Limit>200</Limit><ProtocolKey>AIRO-STD-ADULT-HEAD</ProtocolKey><Operator>rf</Operator></DoseAlertEntry><DoseAlertEntry><Date>2020-10-09T13:24:36.2750846+02:00</Date><StudyInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009125335.3680.1.1572</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009132246.3680.1.1583</SeriesInstanceUID><Type>CTDIvol</Type><Reason>qc</Reason><Value>389.76659581136062</Value><Limit>200</Limit><ProtocolKey>AIRO-STD-ADULT-HEAD</ProtocolKey><Operator>rf</Operator></DoseAlertEntry></DoseAlert>
+[2020-11-20T11:11:09.1713948Z Application Info] ConfigStore.Set: History/DoseCheckReport -> <DoseNotification><DoseNotificationEntry><Date>2018-08-17T09:36:46.2154075+02:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4384.1534485846.371826</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20180817025326.3620.1.20</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2018-08-17T10:55:56.2320929+02:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4384.1534485846.371826</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20180817033900.3620.1.22</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-06T09:36:48.2992657+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.3920.1551859576.13375</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190306092516.3528.1.11</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-06T09:39:49.7026414+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.3920.1551859576.13375</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190306093801.3528.1.13</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-06T12:30:44.6541911+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.3920.1551859576.13375</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190306122723.3528.1.14</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-27T10:07:32.7273895+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4844.1553674321.384611</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190327093311.3640.1.17</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry><DoseNotificationEntry><Date>2019-03-27T11:17:15.8526506+01:00</Date><StudyInstanceUID>1.2.276.0.20.1.2.33.424853905972.4844.1553674321.384611</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20190327101021.3640.1.19</SeriesInstanceUID><Type>CTDIvol</Type><Reason /><Value>50.579666666666675</Value><Limit>50</Limit><ProtocolKey>AIRO-STD-ADULT-LUMBAR</ProtocolKey></DoseNotificationEntry></DoseNotification><DoseAlert><DoseAlertEntry><Date>2020-10-09T13:18:56.7886671+02:00</Date><StudyInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009125335.3680.1.1572</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009131641.3680.1.1581</SeriesInstanceUID><Type>CTDIvol</Type><Reason>qc</Reason><Value>260.29395482014974</Value><Limit>200</Limit><ProtocolKey>AIRO-STD-ADULT-HEAD</ProtocolKey><Operator>rf</Operator></DoseAlertEntry><DoseAlertEntry><Date>2020-10-09T13:21:49.6935567+02:00</Date><StudyInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009125335.3680.1.1572</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009131954.3680.1.1582</SeriesInstanceUID><Type>CTDIvol</Type><Reason>qc</Reason><Value>325.03027531575515</Value><Limit>200</Limit><ProtocolKey>AIRO-STD-ADULT-HEAD</ProtocolKey><Operator>rf</Operator></DoseAlertEntry><DoseAlertEntry><Date>2020-10-09T13:24:36.2750846+02:00</Date><StudyInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009125335.3680.1.1572</StudyInstanceUID><SeriesInstanceUID>1.2.826.0.1.3680043.9.1958.11.168.20201009132246.3680.1.1583</SeriesInstanceUID><Type>CTDIvol</Type><Reason>qc</Reason><Value>389.76659581136062</Value><Limit>200</Limit><ProtocolKey>AIRO-STD-ADULT-HEAD</ProtocolKey><Operator>rf</Operator></DoseAlertEntry></DoseAlert>
+[2020-11-20T11:11:09.1733950Z Messaging Info] Handling Client Message: @d$ssc 1
+[2020-11-20T11:11:09.1733950Z Messaging Info] SystemCommander received response to dispatched command, response=@d$ssc 1
+[2020-11-20T11:11:09.2263980Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 13600
+>  Triggered Frames = 13600
+>  Detected Frames  = 13600
+>  Exposed Frames   = 5760
+[2020-11-20T11:11:09.6504222Z Application Warning] SaveRawProjectionSingleFileConsumer Finish method skipped because it was already called
+[2020-11-20T11:11:09.6504222Z Application Warning] Previous Entry Repeats 1 Time(s)
+[2020-11-20T11:11:09.8614343Z IO Info] {COM2 SendLine - ReadLine first-chance timeout   } Timeout
+[2020-11-20T11:11:11.6855386Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 13600
+>  Triggered Frames = 13600
+>  Detected Frames  = 13600
+>  Exposed Frames   = 5760
+[2020-11-20T11:11:11.6865387Z Application Warning] SaveRawProjectionSingleFileConsumer Finish method skipped because it was already called
+[2020-11-20T11:11:11.6865387Z Application Warning] Previous Entry Repeats 2 Time(s)
+[2020-11-20T11:11:12.1935677Z Application Info] Sleeping for 2000 ms before looking for "\\AIRO-0168\AiroData\Airo_PatientDB\Patient_255\1.2.276.0.20.1.2.33.424853905972.3556.1605856881.187421\1.2.826.0.1.3680043.9.1958.11.168.20201120114922.3672.1.17"
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: P: 3.5, D: 0.4
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -389, time (ms): 4165
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -375, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -376, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -355, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -354, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -327, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -295, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -273, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -245, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -211, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -154, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -98, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -58, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -55, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -32, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -12, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -13, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 21, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 44, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 49, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 28, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 25, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 24, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -12, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] Previous Entry Repeats 1 Time(s)
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -10, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -14, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -13, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -22, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -16, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 14, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 22, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 19, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -19, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -10, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 18, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -28, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -25, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -14, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 13, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 24, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 14, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 20, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 13, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -18, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -19, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 13, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 14, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] Previous Entry Repeats 1 Time(s)
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -22, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -18, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -14, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 17, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 18, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 14, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -19, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -18, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 18, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] Previous Entry Repeats 1 Time(s)
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 11, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -12, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -13, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -13, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 19, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 11, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -10, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -30, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -23, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 24, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] Previous Entry Repeats 1 Time(s)
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 20, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 17, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 17, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -17, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -24, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -19, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -16, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 16, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 14, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -14, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -13, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 18, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -31, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -25, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -13, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 24, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 18, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 18, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -13, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -14, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 13, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] Previous Entry Repeats 1 Time(s)
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -18, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -19, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -18, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 24, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 18, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 18, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -14, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -26, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -24, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -15, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 19, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 24, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 17, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 13, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 14, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -17, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -13, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -17, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 19, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 17, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 14, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -13, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -4, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 11, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 14, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -13, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -31, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -22, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -15, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 19, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 23, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 24, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 17, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 1, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 9, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 15, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -26, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -24, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 10, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 19, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 16, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] Previous Entry Repeats 1 Time(s)
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -6, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 11, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -2, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 4, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 3, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -11, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 38
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 0, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -1, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 12, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -8, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -5, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: 7, time (ms): 40
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -9, time (ms): 39
+[2020-11-20T11:11:12.5885903Z Application Info] MotorController.LogRotorData: difference: -3, time (ms): 39
+[2020-11-20T11:11:14.1786812Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 13600
+>  Triggered Frames = 13600
+>  Detected Frames  = 13600
+>  Exposed Frames   = 5760
+[2020-11-20T11:11:14.2016826Z Application Info] Found "\\AIRO-0168\AiroData\Airo_PatientDB\Patient_255\1.2.276.0.20.1.2.33.424853905972.3556.1605856881.187421\1.2.826.0.1.3680043.9.1958.11.168.20201120114922.3672.1.17" immediately
+[2020-11-20T11:11:16.6608232Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 13600
+>  Triggered Frames = 13600
+>  Detected Frames  = 13600
+>  Exposed Frames   = 5760
+[2020-11-20T11:11:16.6608232Z Application Info] Previous Entry Repeats 7 Time(s)
+[2020-11-20T11:11:35.6199076Z Application Info] Notifying buffer consumers of dock connection
+[2020-11-20T11:11:36.3539496Z Application Info] ReconstructionManager Frame Count Update
+>  Captured Frames  = 13600
+>  Triggered Frames = 13600
+>  Detected Frames  = 13600
+>  Exposed Frames   = 5760
+[2020-11-20T11:11:36.8069755Z Messaging Info] Handling Client Message: @V#xxm N
+[2020-11-20T11:11:36.8109757Z Messaging Info] Handling Client Message: @V#xxs
+[2020-11-20T11:11:36.8379773Z Application Info] New Status From X-Ray Control Board: NN-
+[2020-11-20T11:11:37.8210335Z Messaging Info] Handling Client Message: @V#xxs
+[2020-11-20T11:11:40.3171763Z Application Info] AxialReconConsumer Finish method completed
+[2020-11-20T11:11:40.3181763Z Application Info] SendScanDose: SeriesID = 1.2.826.0.1.3680043.9.1958.11.168.20201120114922.3672.1.17 CTDIvol = 64.73632 DLP = 1240.43142193548
+[2020-11-20T11:11:44.3184051Z Application Warning] AxialReconConsumer Finish method skipped because it was already called
+[2020-11-20T11:11:44.4634134Z Application Info] Pleora Stream Statistics: LatencyLevel = 0, BitsCount = 5514854400, BytesCount = 689356800, BlockCount = 13600, SamplingTime = 27195, AcquisitionRate = 500.313477, AcquisitionRateAvg = 500.055145, Bandwidth = 202879120.000000, BandwidthAvg = 202774368.000000
+[2020-11-20T11:11:44.4634134Z Application Info] ReconstructionManager: transitioning to Completed
