@@ -115,6 +115,7 @@ def file_folder_opening(self):
     print (self.dates_df.HELICALDAILYQC.drop_duplicates() < self.df_scans_gimbal.DAY_GIMBAL.loc[0])
     print ("QC SCANS PERFORMED AFTER THE INITIAL DAY")
     print (self.dates_df.HELICALFULLQC.drop_duplicates()[self.dates_df.HELICALFULLQC.drop_duplicates() > self.df_scans_gimbal.DAY_GIMBAL.loc[0]])
+    
 def classify_display_file(self,file_to_display):
     if "ROTOR" in self.file_to_display:
         self.file_to_display_rotor = file_to_display
@@ -144,7 +145,7 @@ def file_output_filtering(self):
     condition_3 = (getattr(self.data_df_all_subsystems,hour_day).str.contains(self.hour_selected[0:4]))
     self.index_scan = np.array((self.data_df_all_subsystems[condition_1 & condition_2 & condition_3].index))[0]
     #self.index_scan = index_alternative[0]
-    python_analysis_dataframe_20200416.generate_output_file(self,"/Users/anagtv/Documents/OneDrive/046 - Medical Devices/Mobius Airo Tru CT/Ramón y Cajal/Intervenciones/20210707/AIRO-Logs-0168-2021-07-07T11-36-52",column_names )
+    python_analysis_dataframe_20200416.generate_output_file(self,"/Users/javia/OneDrive/Escritorio/AIROs/output de lo de Ana",column_names )
     print (self.index_scan)
     name = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[self.index_scan]
     #name_2 = (getattr(self.data_df_all_subsystems,column_file_names)).dropna().iloc[index_alternative[1]]

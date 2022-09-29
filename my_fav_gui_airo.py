@@ -1,4 +1,10 @@
+# required extensions for running:
+#   pip install PyQt5
+#   (pip install db-sqlite3)
+
+
 import sys
+import tfs
 from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtGui import QIcon, QColor,QStandardItemModel
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QAction, QMessageBox,QTableWidget,QTableWidgetItem,QTabWidget
@@ -16,7 +22,6 @@ import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-import tfs
 import sys
 import python_analysis_dataframe_20200416
 import opening_files 
@@ -24,8 +29,6 @@ import searches
 import datetime
 from datetime import timedelta
 import datetime
-
-
 
 class window(QMainWindow):
     def __init__(self):
@@ -38,6 +41,8 @@ class window(QMainWindow):
         self.current_row_files = 0
         self.current_row_logfiles = 0
         self.fileName = ""
+        self.file = ""                                  #añado esto
+        self.target_number = ""                         # y esto
         self.index_scan = 0
         self.logfile_type = "ROTOR"
         self.main_widget = QtWidgets.QWidget(self)
@@ -162,12 +167,12 @@ class window(QMainWindow):
         self.widget_tab2.setObjectName("widget")
         self.textEdit_files = QtWidgets.QTextEdit(self.tab1)
         self.textEdit_files.setGeometry(QtCore.QRect(780, 35, 450, 600))
-        #self.textEdit_files_2 = QtWidgets.QTextEdit(self.tab1)
-        #self.textEdit_files_2.setGeometry(QtCore.QRect(800, 10, 450, 600))
-        #self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab1)
-        #self.pushButton_analyze.setGeometry(QtCore.QRect(20, 590, 221, 30))
-        #self.pushButton_analyze_second = QtWidgets.QPushButton('Analyze on second screen', self.tab1)
-        #self.pushButton_analyze_second.setGeometry(QtCore.QRect(20, 530, 221, 30))
+#        self.textEdit_files_2 = QtWidgets.QTextEdit(self.tab1) 
+#        self.textEdit_files_2.setGeometry(QtCore.QRect(800, 10, 450, 600))
+#        self.pushButton_analyze = QtWidgets.QPushButton('Analyze', self.tab1)
+#        self.pushButton_analyze.setGeometry(QtCore.QRect(20, 590, 221, 30))
+#        self.pushButton_analyze_second = QtWidgets.QPushButton('Analyze on second screen', self.tab1)
+#        self.pushButton_analyze_second.setGeometry(QtCore.QRect(20, 530, 221, 30))
 
 #    def tab1_buttons(self):
 #        self.tablefiles_tab2 = QtWidgets.QTableWidget(self.tab1)
@@ -251,7 +256,7 @@ class menu(window):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         self.fileName, _ = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","All Files (*);;Python Files (*.py)", options=options)
-        python_analysis_dataframe_20200416.writing_files(self,file)
+        python_analysis_dataframe_20200416.writing_files(self,file)          
         self.tablefiles_tab2.setItem(self.current_row,0, QTableWidgetItem(self.fileName))
         self.tablefiles_tab2.setItem(self.current_row,1, QTableWidgetItem(str(target_number)))
         self.current_row += 1
@@ -263,17 +268,20 @@ class menu(window):
     def file_folder(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
-        self.dir_ = QFileDialog.getExistingDirectory(self, 'Select a folder:', '/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visitas_Airo/', QFileDialog.ShowDirsOnly)
+        self.dir_ = QFileDialog.getExistingDirectory(self, 'Select a folder:', '/Users/javia/OneDrive/Escritorio/AIROs', QFileDialog.ShowDirsOnly)      #cambiado directorio a mi carpeta Airo
         opening_files.file_folder_opening(self)
 
 
 class tables(menu):
     def __init__(self):
+        
+        sum_of_scans= 400                           #change 400 for total number of scans    
+
         super(tables, self).__init__()
         self.tablefiles_tab2 = QtWidgets.QTableWidget(self.tab1)
         self.tablefiles_tab2.setGeometry(QtCore.QRect(380, 35, 350, 380))
         self.tablefiles_tab2.setObjectName("tableWidget")
-        self.tablefiles_tab2.setRowCount(400)
+        self.tablefiles_tab2.setRowCount(sum_of_scans)                                                       
         self.tablefiles_tab2.setColumnCount(3)
         self.tablefiles_tab2.setHorizontalHeaderLabels(["Day","Hour","Scan"])
         self.tablestatistic_tab2 = QtWidgets.QTableWidget(self.tab1)
@@ -348,9 +356,9 @@ class tables(menu):
         self.textbox_total_gain_cal_fail_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_gain_cal_fail_value.setGeometry(QtCore.QRect(250, 595, 100, 30))
         self.label_reasons_gain_calfail = QLabel("Reasons Gaincal failed",self.tab1)
-        self.label_reasons_gain_calfail.setGeometry(QtCore.QRect(20, 635, 250, 30))
+        self.label_reasons_gain_calfail.setGeometry(QtCore.QRect(20, 650, 250, 30))
         self.textbox_reasos_gain_cal_fail = QtWidgets.QTextEdit(self.tab1)
-        self.textbox_reasos_gain_cal_fail.setGeometry(QtCore.QRect(250, 635, 100, 60))
+        self.textbox_reasos_gain_cal_fail.setGeometry(QtCore.QRect(250, 635, 480, 60))
         #self.label_helical_qc_daily_s = QLabel("Total Helical QC (Daily) (Successful)",self.tab1)
         #self.label_helical_qc_daily_s.setGeometry(QtCore.QRect(20, 635, 250, 30))
         #self.textbox_total_helical_qc_daily_s_value = QtWidgets.QTextEdit(self.tab1)

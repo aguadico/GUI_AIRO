@@ -24,16 +24,16 @@ import sqlite3
 
 
 def _check_scan(line,scan_type):
-    test_scout =scan_type + " Prepared ScoutScan" in line
-    test_axial_scan = scan_type + " Prepared AxialScan" in line 
-    test_helical_scan = scan_type + " Prepared HelicalScan" in line
-    test_warm_up_scan = scan_type + " Prepared WarmupScan" in line
-    test_gain_cal = scan_type + " Prepared GainCal" in line
-    test_QC = scan_type + " Prepared QCAxialFullScan" in line 
-    test_QC_full_helical = scan_type + " Prepared QCFullScan" in line 
-    test_QC_daily_helical = scan_type + " Prepared QCDailyScan" in line 
-    test_QC_daily = scan_type + " Prepared QCAxialDailyScan" in line 
-    test_emergency = scan_type + " Prepared EStopTest" in line
+    test_scout =scan_type + " Completed ScoutScan" in line
+    test_axial_scan = scan_type + " Completed AxialScan" in line 
+    test_helical_scan = scan_type + " Completed HelicalScan" in line
+    test_warm_up_scan = scan_type + " Completed WarmupScan" in line
+    test_gain_cal = scan_type + " Completed GainCal" in line
+    test_QC = scan_type + " Completed QCAxialFullScan" in line 
+    test_QC_full_helical = scan_type + " Completed QCFullScan" in line 
+    test_QC_daily_helical = scan_type + " Completed QCDailyScan" in line 
+    test_QC_daily = scan_type + " Completed QCAxialDailyScan" in line 
+    test_emergency = scan_type + " Completed EStopTest" in line
     testd_month = "202" in line
     test = ((test_scout or test_axial_scan or test_helical_scan or test_warm_up_scan or test_gain_cal or test_QC or test_QC_full_helical or test_QC_daily or test_QC_daily_helical or test_emergency) and testd_month)
     return test
@@ -175,11 +175,11 @@ def writing_files(self,input_path):
     for reason in maintenance_analysis.total_reasons[0]:
         self.total_reasons += reason
         self.total_reasons += " "
-    #print ("HEREEEEEEE")
+    print ("HEREEEEEEE")
     #print (self.dates_df)
     self.dates_gaincal = pd.DataFrame(maintenance_analysis.gaincal_fail_dates,columns=["GAINCALFAIL"])
-    #print ("GAIN CAL")
-    #print (self.dates_gaincal)
+    print ("GAIN CAL")
+    print (self.dates_gaincal)
     self.scan_parameters_df = pd.DataFrame(maintenance_analysis.scan_parameters,columns = ["CURRENT","TIME","DAY","HOUR"]).drop_duplicates()
     #dates_no_repeat = (self.scan_parameters_df.DAY.drop_duplicates())
     con = sqlite3.connect('scans_database.db')
@@ -244,7 +244,7 @@ def generate_output_file(self,output_path,column_names):
     open_files = str(os.path.join(self.dir_,self.fileName))
     file_path_name = os.path.join(self.output_path,str(name))
     self.list_files = ["RotorControlApp.log","GimbalControlApp.log","SystemManagerApp.log","PendantUIApp.log"]
-    self.initial_verification = ["#f11 Prepared " + str(scan),"#t11 Prepared " + str(scan),"#i11 Prepared " + str(scan), "#s11 Prepared " + str(scan)]
+    self.initial_verification = ["#f11 Completed " + str(scan),"#t11 Completed " + str(scan),"#i11 Completed " + str(scan), "#s11 Completed " + str(scan)]
     self.end_verification = [["ReconstructionManager: transitioning to Completed","aaaaaaaa"],["New Status From Power Control Board: ZZ","New Mode From Power Control Board: ZZ"], ["$s00 Completed OK ", "WaitFor3DScan:ScanTerminatedEarly"],["SuccessfulScan","aaaaa"]]
     #sel = Selection_axial()
     index = self.list_files.index(self.fileName)
