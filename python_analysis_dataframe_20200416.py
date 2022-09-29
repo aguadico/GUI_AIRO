@@ -24,16 +24,16 @@ import sqlite3
 
 
 def _check_scan(line,scan_type):
-    test_scout =scan_type + " Completed ScoutScan" in line
-    test_axial_scan = scan_type + " Completed AxialScan" in line 
-    test_helical_scan = scan_type + " Completed HelicalScan" in line
-    test_warm_up_scan = scan_type + " Completed WarmupScan" in line
-    test_gain_cal = scan_type + " Completed GainCal" in line
-    test_QC = scan_type + " Completed QCAxialFullScan" in line 
+    test_scout           = scan_type + " Completed ScoutScan" in line
+    test_axial_scan      = scan_type + " Completed AxialScan" in line 
+    test_helical_scan    = scan_type + " Completed HelicalScan" in line
+    test_warm_up_scan    = scan_type + " Completed WarmupScan" in line
+    test_gain_cal        = scan_type + " Completed GainCal" in line
+    test_QC              = scan_type + " Completed QCAxialFullScan" in line 
     test_QC_full_helical = scan_type + " Completed QCFullScan" in line 
-    test_QC_daily_helical = scan_type + " Completed QCDailyScan" in line 
-    test_QC_daily = scan_type + " Completed QCAxialDailyScan" in line 
-    test_emergency = scan_type + " Completed EStopTest" in line
+    test_QC_daily_helical= scan_type + " Completed QCDailyScan" in line 
+    test_QC_daily        = scan_type + " Completed QCAxialDailyScan" in line 
+    test_emergency       = scan_type + " Completed EStopTest" in line
     testd_month = "202" in line
     test = ((test_scout or test_axial_scan or test_helical_scan or test_warm_up_scan or test_gain_cal or test_QC or test_QC_full_helical or test_QC_daily or test_QC_daily_helical or test_emergency) and testd_month)
     return test
@@ -134,19 +134,19 @@ def selecting_entries(logfile,component):
 
 def writing_files(self,input_path):
     #INPUT FILES 
-    rotor_control_app_path = os.path.join(input_path,"RotorControlApp.log")
+    rotor_control_app_path  = os.path.join(input_path,"RotorControlApp.log")
     gimbal_control_app_path = os.path.join(input_path,"GimbalControlApp.log")
-    pendant_ui_app_path = os.path.join(input_path,"PendantUIApp.log")
-    system_manager_app_path =  os.path.join(input_path,"SystemManagerApp.log")
+    pendant_ui_app_path     = os.path.join(input_path,"PendantUIApp.log")
+    system_manager_app_path = os.path.join(input_path,"SystemManagerApp.log")
     #OUTPUT FILES
-    rotor_control_app_path_output = os.path.join(input_path,"all_scans_rotor")
-    gimbal_control_app_path_output = os.path.join(input_path,"all_scans_gimbal")
-    pendant_ui_app_path_output = os.path.join(input_path,"all_scans_pendant")
-    system_manager_app_path_output =  os.path.join(input_path,"all_scans_system")
-    xray_file = os.path.join(input_path,"xray_summary")
-    maintenace_file = os.path.join(input_path,"maintenance_summary")
-    gaincal_file = os.path.join(input_path,"gaincal_summary")
-    files_control_input = [rotor_control_app_path,gimbal_control_app_path,pendant_ui_app_path,system_manager_app_path]
+    rotor_control_app_path_output   = os.path.join(input_path,"all_scans_rotor")
+    gimbal_control_app_path_output  = os.path.join(input_path,"all_scans_gimbal")
+    pendant_ui_app_path_output      = os.path.join(input_path,"all_scans_pendant")
+    system_manager_app_path_output  = os.path.join(input_path,"all_scans_system")
+    xray_file                       = os.path.join(input_path,"xray_summary")
+    maintenace_file                 = os.path.join(input_path,"maintenance_summary")
+    gaincal_file                    = os.path.join(input_path,"gaincal_summary")
+    files_control_input  = [rotor_control_app_path,gimbal_control_app_path,pendant_ui_app_path,system_manager_app_path]
     files_control_output = [rotor_control_app_path_output,gimbal_control_app_path_output,pendant_ui_app_path_output,system_manager_app_path_output]
     codes_control = ["#f11","#z11","#i11","#s11"]
     maintenance_analysis = Maintenance()
@@ -190,7 +190,7 @@ def writing_files(self,input_path):
     except:
        print ("CONTINUE")
     for current,length,day,hour in zip(self.scan_parameters_df.CURRENT,self.scan_parameters_df.TIME,self.scan_parameters_df.DAY,self.scan_parameters_df.HOUR):
-        entities = (day.strftime('%Y-%m-%d') + "T"+ hour[0:2]+"C"+current[0:3]+"D"+length[0:3], day, current,hour, length)
+        entities           = (day.strftime('%Y-%m-%d') + "T"+ hour[0:2]+"C"+current[0:3]+"D"+length[0:3], day, current,hour, length)
         entities_no_filter = (day.strftime('%Y-%m-%d') + "T"+ hour, day, current,hour, length)
         try:
             cursorObj.execute('INSERT INTO scans_values(ID,DAY, CURRENT, HOUR, DURATION) VALUES(?,?, ?, ?, ?)', entities)
@@ -238,7 +238,7 @@ def generate_output_file(self,output_path,column_names):
     for i in range(4):
         complete_date.append((getattr(self.data_df_all_subsystems,column_names[i])).dropna().iloc[self.index_scan])
     scan = complete_date[0]
-    day = complete_date[1]
+    day  = complete_date[1]
     hour = complete_date[2]
     name = complete_date[3]
     open_files = str(os.path.join(self.dir_,self.fileName))

@@ -295,70 +295,87 @@ class tables(menu):
         self.tablestatistic_tab2.setItem(2,0, QTableWidgetItem(str())) 
         self.tablestatistic_tab2.setItem(3,0, QTableWidgetItem(str())) 
         self.tab1_activities()
+
         self.label_initial_date = QLabel("Initial day",self.tab1)
         self.label_initial_date.setGeometry(QtCore.QRect(20, 35, 150, 30))
         self.textbox_initial_date_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_initial_date_value.setGeometry(QtCore.QRect(250, 35, 100, 30))
+
         self.label_final_date = QLabel("Final day",self.tab1)
         self.label_final_date.setGeometry(QtCore.QRect(20, 75, 150, 30))
         self.textbox_final_date_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_final_date_value.setGeometry(QtCore.QRect(250, 75, 100, 30))
+
         self.label_total_axial = QLabel("Total Axial scans (~)",self.tab1)
         self.label_total_axial.setGeometry(QtCore.QRect(20, 115, 150, 30))
         self.textbox_total_axial_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_axial_value.setGeometry(QtCore.QRect(250, 115, 100, 30))
+
         self.label_total_helical = QLabel("Total Helical scans (~)",self.tab1)
         self.label_total_helical.setGeometry(QtCore.QRect(20, 155, 150, 30))
         self.textbox_total_helical_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_helical_value.setGeometry(QtCore.QRect(250, 155, 100, 30))
+
         self.label_total_socut = QLabel("Total Socut scans (~)",self.tab1)
         self.label_total_socut.setGeometry(QtCore.QRect(20, 195, 150, 30))
         self.textbox_total_socut_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_socut_value.setGeometry(QtCore.QRect(250, 195, 100, 30))
+
         self.label_total_wu = QLabel("Total Warm-up (~)",self.tab1)
         self.label_total_wu.setGeometry(QtCore.QRect(20, 235, 150, 30))
         self.textbox_total_wu_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_wu_value.setGeometry(QtCore.QRect(250, 235, 100, 30))
+
         self.label_gain_cal = QLabel("Total Gaincal",self.tab1)
         self.label_gain_cal.setGeometry(QtCore.QRect(20, 275, 250, 30))
         self.textbox_gain_cal_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_gain_cal_value.setGeometry(QtCore.QRect(250, 275, 100, 30))
+        
         self.label_emergency_daily = QLabel("Total Emergency",self.tab1)
         self.label_emergency_daily.setGeometry(QtCore.QRect(20, 315, 250, 30))
         self.textbox_emergency_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_emergency_value.setGeometry(QtCore.QRect(250, 315, 100, 30))
+
         self.label_total_axial_qc_full = QLabel("Total Axial QC (Full)",self.tab1)
         self.label_total_axial_qc_full.setGeometry(QtCore.QRect(20, 355, 150, 30))
         self.textbox_total_axial_qc_full_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_axial_qc_full_value.setGeometry(QtCore.QRect(250, 355, 100, 30))
+
         self.label_total_helical_qc_full = QLabel("Total Helical QC (Full)",self.tab1)
         self.label_total_helical_qc_full.setGeometry(QtCore.QRect(20, 395, 150, 30))
         self.textbox_total_helical_qc_full_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_helical_qc_full_value.setGeometry(QtCore.QRect(250, 395, 100, 30))
+
         self.label_total_axial_qc_daily = QLabel("Total Axial QC (Daily)",self.tab1)
         self.label_total_axial_qc_daily.setGeometry(QtCore.QRect(20, 435, 250, 30))
         self.textbox_total_axial_qc_daily_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_axial_qc_daily_value.setGeometry(QtCore.QRect(250, 435, 100, 30))
+
         self.label_helical_qc_daily = QLabel("Total Helical QC (Daily)",self.tab1)
         self.label_helical_qc_daily.setGeometry(QtCore.QRect(20, 475, 250, 30))
         self.textbox_helical_qc_daily_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_helical_qc_daily_value.setGeometry(QtCore.QRect(250, 475, 100, 30))
+
         self.label_total_axial_qc_full = QLabel("Total Axial QC (Full) (Successful)",self.tab1)
         self.label_total_axial_qc_full.setGeometry(QtCore.QRect(20, 515, 250, 30))
         self.textbox_total_axial_qc_full_s_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_axial_qc_full_s_value.setGeometry(QtCore.QRect(250, 515, 100, 30))
+
         self.label_total_helical_qc_full_s = QLabel("Total Helical QC (Full) (Successful)",self.tab1)
         self.label_total_helical_qc_full_s.setGeometry(QtCore.QRect(20, 555, 250, 30))
         self.textbox_total_helical_qc_full_s_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_helical_qc_full_s_value.setGeometry(QtCore.QRect(250, 555, 100, 30))
+
         self.label_gain_cal_fail = QLabel("Total Gaincal failed",self.tab1)
         self.label_gain_cal_fail.setGeometry(QtCore.QRect(20, 595, 250, 30))
         self.textbox_total_gain_cal_fail_value = QtWidgets.QTextEdit(self.tab1)
         self.textbox_total_gain_cal_fail_value.setGeometry(QtCore.QRect(250, 595, 100, 30))
+
         self.label_reasons_gain_calfail = QLabel("Reasons Gaincal failed",self.tab1)
         self.label_reasons_gain_calfail.setGeometry(QtCore.QRect(20, 650, 250, 30))
         self.textbox_reasos_gain_cal_fail = QtWidgets.QTextEdit(self.tab1)
         self.textbox_reasos_gain_cal_fail.setGeometry(QtCore.QRect(250, 635, 480, 60))
+
         #self.label_helical_qc_daily_s = QLabel("Total Helical QC (Daily) (Successful)",self.tab1)
         #self.label_helical_qc_daily_s.setGeometry(QtCore.QRect(20, 635, 250, 30))
         #self.textbox_total_helical_qc_daily_s_value = QtWidgets.QTextEdit(self.tab1)
@@ -394,12 +411,12 @@ class tables(menu):
     def handleSelectionChanged_scan(self, selected, deselected):
         self.indexs = (self.tablefiles_tab2.selectionModel().currentIndex())
         self.index_scan = self.indexs.row()
-        self.day_selected = self.indexs.sibling(self.index_scan,0).data()
+        self.day_selected  = self.indexs.sibling(self.index_scan,0).data()
         self.hour_selected = self.indexs.sibling(self.index_scan,1).data()
         self.scan_selected = self.indexs.sibling(self.index_scan,2).data()
         date_format = "%Y-%m-%d"
         date_stamp = datetime.datetime.strptime(self.day_selected,date_format).date()
-        self.names_components = ["ROTOR","PENDANT","SYSTEM","GIMBAL"]
+        self.names_components         = ["ROTOR","PENDANT","SYSTEM","GIMBAL"]
         self.columns_names_components = ["FILE_NAME_ROTOR","FILE_NAME_PENDANT","FILE_NAME_SYSTEM","FILE_NAME_GIMBAL"]
         #selection of the scan in the dataframen
         df_day = (self.data_df_all_subsystems[self.data_df_all_subsystems["DAY_GIMBAL"] == date_stamp])
@@ -408,11 +425,11 @@ class tables(menu):
         self.index_hour_all = []
         self.len_index_hour_all = []
         for i in range(len(self.names_components)):
-            day_column = "DAY_" + str(self.names_components[i])
+            day_column  = "DAY_"  + str(self.names_components[i])
             scan_column = "SCAN_" + str(self.names_components[i])
             hour_column = "HOUR_" + str(self.names_components[i])
             checking_functions = [hour_column,day_column,scan_column,date_stamp]
-            selection = [self.hour_selected,self.scan_selected]
+            selection          = [self.hour_selected,self.scan_selected]
             #Check if a scan is in a given logfile
             index_hour_i = opening_files.checking_functions(self,checking_functions,selection)
             len_index_i = len(index_hour_i)

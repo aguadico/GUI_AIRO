@@ -48,14 +48,14 @@ def file_folder_opening(self):
     #self.dir_ = QFileDialog.getExistingDirectory(self, 'Select a folder:', '/Users/anagtv/Documents/OneDrive/Ana_GTV_Compartida/Visitas_Airo/', QFileDialog.ShowDirsOnly)
     [self.rotor_control_app_path_output,self.gimbal_control_app_path_output,self.pendant_control_app_path_output,self.system_control_app_path_output] = python_analysis_dataframe_20200416.writing_files(self,self.dir_)
     # NOW ITS OPENING THE FILES HAVE BEEN JUST WRITTEN
-    self.logfile_rotor = open(self.rotor_control_app_path_output,'r') 
-    self.logfile_gimbal = open(self.gimbal_control_app_path_output,'r') 
-    self.logfile_system = open(self.system_control_app_path_output,'r') 
+    self.logfile_rotor   = open(self.rotor_control_app_path_output,'r') 
+    self.logfile_gimbal  = open(self.gimbal_control_app_path_output,'r') 
+    self.logfile_system  = open(self.system_control_app_path_output,'r') 
     self.logfile_pendant = open(self.pendant_control_app_path_output,'r') 
     #SCAN, HOUR AND DAY RECORDED EACH DAY
-    self.df_scans_rotor = python_analysis_dataframe_20200416.selecting_entries(self.logfile_rotor,"ROTOR") 
-    self.df_scans_gimbal = python_analysis_dataframe_20200416.selecting_entries(self.logfile_gimbal,"GIMBAL") 
-    self.df_scans_system = python_analysis_dataframe_20200416.selecting_entries(self.logfile_system,"SYSTEM") 
+    self.df_scans_rotor   = python_analysis_dataframe_20200416.selecting_entries(self.logfile_rotor,"ROTOR") 
+    self.df_scans_gimbal  = python_analysis_dataframe_20200416.selecting_entries(self.logfile_gimbal,"GIMBAL") 
+    self.df_scans_system  = python_analysis_dataframe_20200416.selecting_entries(self.logfile_system,"SYSTEM") 
     self.df_scans_pendant = python_analysis_dataframe_20200416.selecting_entries(self.logfile_pendant,"PENDANT") 
     self.data_df_all_subsystems = (pd.concat([self.df_scans_rotor,self.df_scans_gimbal,self.df_scans_system,self.df_scans_pendant], axis=1, sort=False))
     open_files = ["RotorControlApp.log","GimbalControlApp.log","SystemManagerApp.log","PendantUIApp.log"]
@@ -63,7 +63,7 @@ def file_folder_opening(self):
     column_names = ["DAY_GIMBAL","HOUR_GIMBAL","SCAN_GIMBAL"]
     hours = (getattr(self.df_scans_gimbal,column_names[1])).dropna()
     scans = (getattr(self.df_scans_gimbal,column_names[2])).dropna()
-    days = (getattr(self.df_scans_gimbal,column_names[0])).dropna()
+    days  = (getattr(self.df_scans_gimbal,column_names[0])).dropna()
     print ("SCANS")
     print (scans)
     scan_type = ["ScoutScan","AxialScan","HelicalScan","WarmupScan","GainCal","QCAxialFullScan","QCFullScan","QCDailyScan","QCAxialDailyScan","EStopTest"]
@@ -133,8 +133,8 @@ def file_output_filtering(self):
     self.output_path = QFileDialog.getExistingDirectory(self, 'Select a folder:', 'C:\\', QFileDialog.ShowDirsOnly)
     column_file_names = "FILE_NAME_" + str(self.logfile_type) 
     column_day = "DAY_" + str(self.logfile_type)
-    scan_day = "SCAN_" + str(self.logfile_type)
-    hour_day = "HOUR_" + str(self.logfile_type)
+    scan_day  = "SCAN_" + str(self.logfile_type)
+    hour_day  = "HOUR_" + str(self.logfile_type)
     column_names  = [scan_day,column_day,hour_day,column_file_names]
     #checking_values = []
     #date_values = list((getattr(self.data_df_all_subsystems,column_day)))
@@ -184,10 +184,10 @@ def filter_rotor_speed(self,path_motion):
 
 def checking_functions(self,columns,selection):
         if len(getattr(self.data_df_all_subsystems,columns[0]).dropna()) != 0:
-           condition_day = getattr(self.data_df_all_subsystems,columns[1]) == columns[3]
-           condition_hour = getattr(self.data_df_all_subsystems,columns[0]).str.contains(selection[0][0:4]) 
+           condition_day   = getattr(self.data_df_all_subsystems,columns[1]) == columns[3]
+           condition_hour  = getattr(self.data_df_all_subsystems,columns[0]).str.contains(selection[0][0:4]) 
            condition_rotor = getattr(self.data_df_all_subsystems,columns[2]).str.contains(selection[1])
-           index_hour = getattr(self.data_df_all_subsystems,columns[0])[(condition_day) & (condition_hour) & (condition_rotor)]
+           index_hour      = getattr(self.data_df_all_subsystems,columns[0])[(condition_day) & (condition_hour) & (condition_rotor)]
         else:
            index_hour = []
         return index_hour
